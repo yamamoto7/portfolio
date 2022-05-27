@@ -1,0 +1,139 @@
+@import ../../../styles/helpers
+
+.header
+  position: relative
+  z-index: 20
+  margin-bottom: 46px
+  margin-top: 40px
+  padding: 49px 0 
+  +x
+    margin-bottom: 15px
+  +t
+    margin-bottom: 32px
+    padding: 32px 0 
+  +m
+    margin-bottom: 24px
+
+.container
+    position: relative
+    z-index: 5
+    display: flex
+    align-items: center
+
+.logo
+  margin-right: auto
+  font-size: 0
+  img
+    object-fit: contain
+  +t
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    margin: 0
+  +m
+    left: calc(50% + 7px)
+  .logo_desktop
+    width: 400px
+    +m
+      display: none
+  .logo_mobile
+    width: 400px
+    max-width: 100%
+    display: none
+    +m
+      display: inline-block
+
+.burger
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+  width: 48px
+  height: 48px
+  padding: 5px 
+  border-radius: 50% 
+  background: $gray 
+  font-size: 0
+  transition: opacity .25s
+  +dark
+    background: $dark
+    &:before,
+    &:after
+      background: $wh 
+  +t
+    position: relative
+    top: auto
+    left: auto
+    transform: translate(0,0)
+    margin-right: auto
+  &:before,
+  &:after
+    content: ""
+    display: inline-block
+    width: 22px
+    height: 2px
+    background: $bl-dark
+    border-radius: 2px
+    transition: transform .25s 
+  &:before
+    margin-bottom: 3px
+  &:after
+    margin-top: 3px
+  &:hover
+    opacity: .85 
+  &.active
+    &:before
+      transform: translateY(4px) rotate(45deg) 
+    &:after
+      transform: translateY(-4px) rotate(-45deg)
+
+
+.control
+  display: flex
+  align-items: center
+  .hidden
+    +m
+      display: none
+  .item
+    position: relative
+    font-size: 0
+    &:hover
+      .basket.visible
+        visibility: visible
+        opacity: 1
+    a.active
+      &:before
+        content: ""
+        position: absolute
+        top: -5px
+        right: -8px
+        width: 16px
+        height: 16px
+        border-radius: 50%
+        border: 2px solid $wh 
+        background: $pink
+        +dark
+          border-color: $bg-dark
+    .basket
+      position: absolute
+      top: 100%
+      right: -56px
+      width: 488px
+      padding-top: 28px
+      visibility: hidden
+      opacity: 0
+      transition: all .25s
+      +d
+        display: none
+    +nl
+      margin-right: 36px
+      +m
+        margin: 0
+
+
+
+
+
+
+
