@@ -1,0 +1,10 @@
+
+//Bootstrap Required
+@import "./bs-theming/bs-theming";
+// Layout & components
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+
+//Theme Custom Push
+@import "./components/color";
+

@@ -1,0 +1,47 @@
+[class^="button"]
+  display: inline-flex
+  justify-content: center
+  align-items: center
+  min-width: 165px
+  padding: 0 40px 
+  height: 50px
+  border-radius: 32px
+  +f
+  font-size: 16px
+  font-weight: 700
+  transition: all .25s
+  +m
+    min-width: 91px
+    height: 48px
+    border-radius: 24px 
+    padding: 0 24px 
+    font-size: 16px
+    
+.button-mini
+  background: #ffffff
+  color: #333333
+  border: 1px solid #333333
+  width: 100%
+  text-align: center
+  padding: 0 20px 
+  height: 40px
+  border-radius: 8px
+  &:hover
+    background: lighten(#333333, .8)
+    color: #ffffff
+    
+.button-border
+  padding: 0 38px 
+  border: 2px solid #AAA
+  color: #999
+  +m
+    padding: 0 22px 
+  &:hover
+    border-color: $bl-dark 
+    color: $bl
+  +dark-common
+    border-color: $dark
+    background: $bg-dark
+    color: $dark-wh
+    &:hover
+      border-color: $dark-wh
