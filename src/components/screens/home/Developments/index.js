@@ -72,12 +72,65 @@ const developments = [
   },
 ]
 
+const developmentsBeforeGraduation = [
+  {
+    title: "Colorblind の視点再現と、区別しにくい境界線の検出",
+    img: "home/developments/color-blindness.png",
+    techs: [
+      {
+        title: "Software",
+        contents: [
+          'C++','OpenCV'
+        ]
+      }
+    ],
+    category: {
+      title: "SOFTWARE",
+      color: "pink",
+    },
+    contents: [
+      {
+        title: "概要",
+        contents: "カメラの入力をリアルタイムに処理して、Colorblindの視点を再現と見えにくい部分の抽出を行うやつ。何かに役立てたいと思って開発した。"
+      }
+    ],
+    links: []
+  },
+  {
+    title: "JPEGの画像圧縮ロジックを実装して挙動を確認する",
+    img: "home/developments/image-compression.png",
+    techs: [
+      {
+        title: "Software",
+        contents: [
+          'Java'
+        ]
+      }
+    ],
+    category: {
+      title: "SOFTWARE",
+      color: "pink",
+    },
+    contents: [
+      {
+        title: "概要",
+        contents: "画像圧縮ロジックを実装して遊んだやつ。"
+      }
+    ],
+    links: []
+  },
+]
+
 function Developments() {
   return (
     <>
       <div className={cn("center")}>
-        <h2 className={cn("title title_mb-lg")}>Developments</h2>
+        <h2 className={cn("title title_mb-lg")}>Works</h2>
         {developments.map((x, i) => (
+          <DevelopmentsSection key={i} x={x} />
+        ))}
+        <h2 className={cn("title title_mb-lg")}>Works (before graduation)</h2>
+        {developmentsBeforeGraduation.map((x, i) => (
           <DevelopmentsSection key={i} x={x} />
         ))}
       </div>

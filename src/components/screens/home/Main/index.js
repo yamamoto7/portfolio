@@ -10,7 +10,7 @@ function Main() {
       <div className={cn("center ")}>
         <div className={styles.container}>
           <div className={styles.details}>
-            <div className={styles.text}>I'm Kenta Yamamoto, a software engineer.<br /><br />Contact me via Linkedin or Facebook.</div>
+            <div className={styles.text}>I'm Kenta Yamamoto, a backend engineer.<br /><br />Contact me via Linkedin or Facebook.</div>
             <div className={styles.text}>
               <a href="https://github.com/yamamoto7">
                 <img className={styles.social} src="https://img.shields.io/badge/github-%2324292f.svg?&style=for-the-badge&logo=github&logoColor=white" alt="github" />
