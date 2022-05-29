@@ -13,7 +13,7 @@ const developments = [
       {
         title: "",
         contents: [
-          'React'
+          'React', 'Gatsby'
         ]
       }
     ],
@@ -89,12 +89,12 @@ const DevelopmentsSection = ({x}) => {
   return (
     <div className={cn("section")}>
       <div className={cn("center", styles.center)}>
+        <h2 className={styles.title}>{x.title}</h2>
         <div className={styles.row}>
           <div className={styles.col}>
             <div className={styles.photo} style={{ backgroundImage: `url(${getFilePath(x.img)})` }}></div>
           </div>
           <div className={styles.col}>
-            <h2 className={styles.title}>{x.title}</h2>
             {x.contents.map((content, j) => (
               <DevelopmentsSectionContent content={content} key={content.title} />
             ))}
