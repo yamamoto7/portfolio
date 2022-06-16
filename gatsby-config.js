@@ -7,6 +7,8 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
@@ -30,15 +32,16 @@ module.exports = {
         ignore: [`**/\.*`], // ignore files starting with a dot
       },
     },
-    "gatsby-plugin-sass", {
-    resolve: 'gatsby-plugin-google-analytics',
-    options: {
-      "trackingId": "G-YD35077DZE"
-    }
-  }, "gatsby-plugin-sitemap", {
-    resolve: 'gatsby-plugin-manifest',
-    options: {
-      "icon": "src/images/favicon-32x32.png"
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        "trackingId": "UA-124603267-3"
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        "icon": "src/images/favicon-32x32.png"
     }
   }]
 };
