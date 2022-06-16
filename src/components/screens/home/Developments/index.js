@@ -78,7 +78,7 @@ const developmentsBeforeGraduation = [
     img: "home/developments/color-blindness.png",
     techs: [
       {
-        title: "Software",
+        title: "",
         contents: [
           'C++','OpenCV'
         ]
@@ -101,7 +101,7 @@ const developmentsBeforeGraduation = [
     img: "home/developments/image-compression.png",
     techs: [
       {
-        title: "Software",
+        title: "",
         contents: [
           'Java'
         ]
