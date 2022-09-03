@@ -1,12 +1,12 @@
 import React from "react";
-import * as styles from "./Main.module.sass";
+import * as styles from "../privacyPolicy/Main.module.sass";
 
 function IndexPage() {
   // window.location.href('/')
   return (
     <section>
     <h2>
-      シンプル予算管理 プライバシポリシー
+      Share Buy List プライバシポリシー
     </h2>
     <h3>
       個人情報保護方針
@@ -97,3 +97,4 @@ function IndexPage() {
 }
 
 export default IndexPage;
+
