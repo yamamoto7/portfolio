@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="30px" viewBox="0 0 36 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>male-wallet</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Lapa" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile-App" transform="translate(-702.000000, -1213.000000)" fill-rule="nonzero">
+            <g id="Features" transform="translate(150.000000, 1001.000000)">
+                <g id="Item" transform="translate(390.000000, 195.000000)">
+                    <g id="Icon-Copy" transform="translate(148.000000, 0.000000)">
+                        <g id="wallet" transform="translate(12.000000, 12.000000)">
+                            <g id="male-wallet" transform="translate(2.500000, 5.000000)">
+                                <path d="M32.97,13.09 L28.42,13.09 C25.9071044,13.09 23.87,15.1271044 23.87,17.64 C23.87,20.1528956 25.9071044,22.19 28.42,22.19 L32.97,22.19 L32.97,24.92 C32.97,27.4328956 30.9328956,29.47 28.42,29.47 L2.94,29.47 C1.43226263,29.47 0.21,28.2477373 0.21,26.74 L0.21,6.72 C0.21,6.21742087 0.617420877,5.81 1.12,5.81 L28.42,5.81 C30.9328956,5.81 32.97,7.84710439 32.97,10.36 L32.97,13.09 L32.97,12.5585799 L32.97,13.09 Z" id="Path" fill="#1565D8"></path>
+                                <path d="M34.79,14.91 L34.79,20.37 L28.42,20.37 C26.9122627,20.37 25.69,19.1477373 25.69,17.64 C25.69,16.1322627 26.9122627,14.91 28.42,14.91 L28.42,14.91 L34.79,14.91 Z M24.78,0.35 C27.0001204,0.35 28.8488591,1.94007447 29.2495121,4.04351949 C28.9780052,4.00821163 28.7011294,3.99 28.42,3.99 L1.12,3.99 C0.825476942,3.99 0.541847069,4.03663927 0.27609306,4.12293513 C0.644807372,1.98022588 2.51202386,0.35 4.76,0.35 L24.78,0.35 Z" id="Path" fill="#B4CCEF"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

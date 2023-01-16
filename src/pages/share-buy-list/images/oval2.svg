@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="635px" height="964px" viewBox="0 0 635 964" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Oval</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="635" height="964"></rect>
+        <linearGradient x1="251.815875%" y1="50%" x2="17.9333859%" y2="50%" id="linearGradient-3">
+            <stop stop-color="#236ACF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="[NEW-UPDATE-Landing]" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="53---Personal-Web-Designer" transform="translate(-805.000000, -4856.000000)">
+            <g id="CTA" transform="translate(0.000000, 4856.000000)">
+                <g id="Oval" transform="translate(805.000000, 0.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Mask"></g>
+                    <path d="M593,964 C920.504857,964 1186,698.504857 1186,371 C1186,43.4951434 920.504857,-222 593,-222 C265.495143,-222 0,43.4951434 0,371 C0,698.504857 265.495143,964 593,964 Z M593,764 C375.952093,764 200,588.047907 200,371 C200,153.952093 375.952093,-22 593,-22 C810.047907,-22 986,153.952093 986,371 C986,588.047907 810.047907,764 593,764 Z" fill="url(#linearGradient-3)" mask="url(#mask-2)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
