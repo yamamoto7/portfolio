@@ -12,7 +12,10 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
+    "lint-fix": "eslint --fix --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
     "classnames": "^2.3.1",
@@ -33,5 +36,13 @@
     "sass": "^1.49.7",
     "stylelint": "^14.5.0",
     "stylelint-no-unused-selectors": "^1.0.40"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.1",
+    "eslint-plugin-react-hooks": "^4.6.0"
   }
 }
