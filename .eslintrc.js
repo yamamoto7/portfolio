@@ -201,7 +201,6 @@ module.exports = {
         'quotes': [ WARN, 'single' ],
         'react/prop-types': OFF,
         'semi-spacing': [ WARN, { before: false, after: true } ],
-        'semi': [ ERROR, 'always' ],
         'sort-vars': OFF,
         'keyword-spacing': WARN,
         'space-before-blocks': [ WARN, 'always' ],
