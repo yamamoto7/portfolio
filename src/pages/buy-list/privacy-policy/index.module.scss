@@ -34,6 +34,9 @@ $haiti: #0d152e;
 .terms-wrap {
     padding: 50px 0px 35px 0px;
     font-family: DM Sans,sans-serif;
+    width: 600px;
+    max-width: 90%;
+    margin: 0 auto;
 
     @include tablet {
         padding: 90px 0px 60px 0px;

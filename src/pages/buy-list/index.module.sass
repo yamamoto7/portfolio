@@ -1,0 +1,98 @@
+html
+  &.no-scroll
+    overflow: hidden
+*
+  margin: 0
+  padding: 0
+
+.header_container
+  display: flex
+  max-width: 90%
+  width: 800px
+  flex-wrap: wrap
+  align-items: center
+  justify-content: space-between
+  margin: 0 auto
+
+.header_logo
+  width: 60px
+  height: 60px
+  margin: 10px 0
+  display: flex
+  align-items: center
+  justify-content: center
+  background-color: #2A383D
+  border-radius: 10px
+
+.h3
+  text-align: center
+
+.section
+  max-width: 90%
+  margin: 0 auto
+  width: 800px
+  max-width: 90%
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+  .content_wrap
+    padding-top: 100px
+    text-align: right
+    width: 300px
+  .image_wrap
+    width: 300px
+  .content_wrap_right
+    padding-top: 100px
+    text-align: left
+    width: 300px
+
+.store_button
+  width: 120px
+
+.strong
+  font-weight: bold
+
+.mv
+  align-items: center
+  .mv_image_wrap
+    background: url(./images/mv.png) center
+    background-size: contain
+    background-repeat: no-repeat
+    width: 400px
+    height: 500px
+  .content_wrap
+    padding-top: 0
+    text-align: center
+    width: 400px
+    line-height: 2.8
+
+@media (max-width: 666px)
+  .section
+    .content_wrap, .content_wrap_right
+      text-align: center
+      padding-top: 40px
+      padding-bottom: 40px
+
+@media (max-width: 888px)
+  .mv
+    .content_wrap
+      padding-top: 0
+
+.footer
+  padding-top: 80px
+  padding-bottom: 80px
+  max-width: 90%
+  margin: 0 auto
+  width: 600px
+  .content_wrap
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+  .content_text
+    padding-top: 10px
+  .logo
+    img
+      width: 140px
+  .copyright
+    text-align: center
+    font-size: 12px
