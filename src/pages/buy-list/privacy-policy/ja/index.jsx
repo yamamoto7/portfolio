@@ -44,6 +44,9 @@ export default function Component() {
                     <ul><li>
                         <a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank" rel="noopener noreferrer">
                         AdMob</a>
+                    </li><li>
+                        <a href="https://firebase.google.com/support/privacy?hl=ja" target="_blank" rel="noopener noreferrer">
+                        Firebase Crashlytics</a>
                     </li></ul>
                 </p>
                 <h4>ログデータについて</h4>
