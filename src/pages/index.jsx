@@ -11,3 +11,7 @@ function IndexPage() {
 }
 
 export default IndexPage;
+
+export const Head = () => {
+    return <title>ychof villa</title>
+}

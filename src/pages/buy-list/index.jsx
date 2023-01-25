@@ -10,10 +10,9 @@ export default function Component() {
         <>
             <Header />
             <section className={`${styles.section} ${styles.mv}`}>
-                <div className={styles.mv_image_wrap}>
-                </div>
+                <div className={styles.mv_image_wrap} />
                 <div className={styles.content_wrap}>
-                    <img width="200px" src={getFilePath('contents/buy-list/name')} alt="Logo" className="" /><br />
+                    <img width="200px" src={getFilePath('contents/buy-list/name.png')} alt="Logo" className="" /><br />
                     フォルダ管理で貴方好みのお買物リストに<br />
                     <a href="https://apps.apple.com/app/id1665553308" className="">
                         <img className={styles.store_button} src={getFilePath('contents/common/appstore.png')} />
@@ -35,8 +34,9 @@ export default function Component() {
             </section>
             <section className={styles.section}>
                 <div className={styles.content_wrap}>
-                    <span className={styles.strong}>フォオルダ管理機能</span><br />
-                    貴方好みのリスト管理を実現<br />
+                    <span className={styles.strong}>好きなように使える</span><br />
+                    価格や商品名をメモして<br />
+                    長く使いやすいリストへ<br />
                 </div>
                 <div className={styles.image_wrap}>
                     <img width="100%" src={getFilePath('contents/buy-list/screen2.png')} alt="Logo" className="" />
@@ -47,12 +47,26 @@ export default function Component() {
                     <img width="100%" src={getFilePath('contents/buy-list/screen3.png')} alt="Logo" className="" />
                 </div>
                 <div className={styles.content_wrap_right}>
-                    <span className={styles.strong}>縮小表示機能</span><br />
-                    見える量を調整
+                    <span className={styles.strong}>フォルダ管理機能</span><br />
+                    お店ごと、カテゴリごとに<br />
+                    貴方好みのリスト管理を実現<br />
+                </div>
+            </section>
+            <section className={styles.section}>
+                <div className={styles.content_wrap}>
+                    <span className={styles.strong}>始めてみましょう</span><br />
+                    ちょっぴり新しい<br />お買い物リスト管理<br />
+                </div>
+                <div className={styles.image_wrap}>
+                    <img width="100%" src={getFilePath('contents/buy-list/screen4.png')} alt="Logo" className="" />
                 </div>
             </section>
             <Footer />
         </>
 
     );
+}
+
+export const Head = () => {
+    return <title>Buylis - ychof villa</title>
 }
