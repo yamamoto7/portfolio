@@ -13,7 +13,6 @@ const posts = [
             title: 'Company Tech Blog',
             color: 'pink',
         },
-        width: 'w50',
     },
     {
         title: '入門書を終えた人に捧げる、社会人のためのGit中級編',
@@ -24,7 +23,6 @@ const posts = [
             title: '',
             color: 'blue',
         },
-        width: 'w50',
     },
 ];
 
@@ -36,7 +34,7 @@ function Blog() {
 
                 <div className={cn(styles.list)}>
                     {posts.map((item, index) => {
-                        return <a className={cn(styles.item, styles[item.width])} href={item.url} key={index}>
+                        return <a className={cn(styles.item)} href={item.url} key={index}>
                             {item.status === 'badge1' && <div className={cn(styles.status, styles.badge1)}>Pick up</div>}
                             {item.status === 'badge2' && <div className={cn(styles.status, styles.badge2)}>New</div>}
 

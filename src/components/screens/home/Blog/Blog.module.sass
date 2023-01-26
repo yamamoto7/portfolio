@@ -8,6 +8,7 @@
 .list
   display: flex
   flex-wrap: wrap
+  justify-content: center
   // margin: -72px -24px 0
   +x
     // margin: -64px -28px 0 
@@ -20,16 +21,10 @@
     padding-bottom: 0
 
 .item
-  position: relative
-  margin: 72px 24px 0 
+  margin: 16px
   transition: opacity .2s
   color: $bl 
-  +x
-    margin: 64px 28px 0 
-  +t
-    margin: 0 0 60px
-  +m
-    display: block
+  width: 500px
   &:last-of-type
     margin-bottom: 0
   &:hover
@@ -37,60 +32,12 @@
     .info
       color: rgba($bl, .75)
 
-.w33
-  flex: 0 0 calc(33.333% - 48px)
-  width: calc(33.333% - 48px)
-  +x
-    flex: 0 0 calc(33.333% - 56px)
-    width: calc(33.333% - 56px)
-  +t
-    flex: 0 0 calc(50% - 48px)
-    width: calc(50% - 48px)
-  +m
-    width: 100% 
-
-.w50
-  flex: 0 0 calc(50% - 48px)
-  width: calc(50% - 48px)
-  +x
-    flex: 0 0 calc(50% - 56px)
-    width: calc(50% - 56px)
-  +t
-    flex: 0 0 calc(100% - 48px)
-    width: calc(100% - 48px)
-  +m
-    width: 100% 
-
-.w66
-  flex: 0 0 calc(66.666% - 48px)
-  width: calc(66.666% - 48px)
-  +x
-    flex: 0 0 calc(66.666% - 56px)
-    width: calc(66.666% - 56px)
-  +t
-    flex: 0 0 calc(100% - 48px)
-    width: calc(100% - 48px)
-  +m
-    width: 100% 
-
 .preview
-  height: 384px
-  margin-bottom: 24px
+  height: 300px
+  width: 500px
   border-radius: 56px 
-  width: 100%
-  background-size: cover
+  margin-bottom: 16px
   +cover
-  +x
-    height: 330px
-    margin-bottom: 32px
-    border-radius: 40px 
-  +d
-    height: 272px
-  +t
-    height: 320px
-    border-radius: 48px 
-  +m
-    height: 210px
 
 .status
   position: absolute

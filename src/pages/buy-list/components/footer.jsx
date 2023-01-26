@@ -8,7 +8,7 @@ export default function Footer() {
         <footer className={styles.footer}>
             <div className={styles.content_wrap}>
                 <div className={styles.content}>
-                    <a href="#" className={styles.logo}><img src={getFilePath('logo.svg')} alt="" /></a>
+                    <a href="/" className={styles.logo}><img src={getFilePath('logo.svg')} alt="" /></a>
                     <ul className={styles.content}>
                         <li>
                             <button className={styles.btn_rounded}>

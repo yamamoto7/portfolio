@@ -8,7 +8,7 @@ import getFilePath from '../../../../utils/getFilePath';
 const developments = [
     {
         title: 'ポートフォリオ',
-        img: 'inprogress.svg',
+        img: 'home/developments/portfolio_screen.png',
         techs: [
             {
                 title: '',
@@ -36,13 +36,13 @@ const developments = [
         ],
     },
     {
-        title: '(作成中)家族で共有するお買い物リストアプリ',
-        img: 'inprogress.svg',
+        title: 'お買い物リストアプリ',
+        img: 'home/developments/buylis_screen.png',
         techs: [
             {
                 title: 'アプリ',
                 contents: [
-                    'Flutter', 'GraphQL',
+                    'Flutter',
                 ],
             },
             {
@@ -59,14 +59,14 @@ const developments = [
         contents: [
             {
                 title: '概要',
-                contents: '家族、恋人同士でリアルタイムに共有できるお買い物リスト。android, iOSのストアからインストール可能。',
+                contents: 'お買い物リスト。android, iOSのストアからインストール可能。',
             },
         ],
         links: [
             {
-                title: 'GitHub',
-                icon: 'GitHub',
-                url: '/products/share-buy-list',
+                title: 'Product LP',
+                icon: 'Page',
+                url: '/buy-list',
             },
         ],
     },
@@ -124,12 +124,12 @@ const developmentsBeforeGraduation = [
 function Developments() {
     return (
         <div className={cn('center')}>
-            <h2 className={cn('title title_mb-lg')}>Works</h2>
+            <h2 className={cn('title title_mb-lg')}>Developments</h2>
             {developments.map((item, index) => {
                 return <DevelopmentsSection key={index} item={item} />;
             }
             )}
-            <h2 className={cn('title title_mb-lg')}>Works (before graduation)</h2>
+            <h2 className={cn('title title_mb-lg')}>Developments (before graduation)</h2>
             {developmentsBeforeGraduation.map((item, index) => {
                 return <DevelopmentsSection key={index} item={item} />;
             }
