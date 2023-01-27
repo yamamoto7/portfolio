@@ -3,25 +3,27 @@
 .container
   width: 800px
   margin: 0 auto
-  max-width: 90%
   display: flex
   background: $gray
   border-radius: 64px
+  flex-wrap: wrap
+  +max-width($width: 800px)
+    max-width: 90%
+    background: none
+    width: 500px
 
 .details
   max-width: 100%
   width: 500px
   padding: 64px 64px 0
+  +max-width($width: 800px)
+    padding: 0 32px 0
+    width: 100%
+    text-align: center
 
 .text
   margin-bottom: 40px
   font-weight: bold
-  +t
-    padding-top: 40px
-    text-align: center
-    margin-bottom: 24px
-  +m
-    margin-bottom: 24px
 
 .social
   margin-right: 10px
@@ -33,6 +35,10 @@
   font-size: 0
   width: 300px
   padding-top: 100px
+  +max-width($width: 800px)
+    padding-top: 20px
+    padding-bottom: 50px
+    width: 100%
 
 .pic
   width: 140px

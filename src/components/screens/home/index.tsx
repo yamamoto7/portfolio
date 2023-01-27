@@ -3,7 +3,7 @@ import Main from "./Main";
 import Blog from "./Blog";
 import Developments from "./Developments";
 
-function HomeScreen() {
+const HomeScreen: React.FC = () => {
   return (
     <>
       <Main />
@@ -11,6 +11,6 @@ function HomeScreen() {
       <Developments />
     </>
   );
-}
+};
 
 export default HomeScreen;
