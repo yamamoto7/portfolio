@@ -3,7 +3,7 @@ import * as React from "react";
 import getFilePath from "../../../utils/getFilePath";
 import * as styles from "../index.module.sass";
 
-export default function Header() {
+const Header: React.FC = () => {
   return (
     <header>
       <nav className={styles.header_container}>
@@ -18,4 +18,6 @@ export default function Header() {
       </nav>
     </header>
   );
-}
+};
+
+export default Header;

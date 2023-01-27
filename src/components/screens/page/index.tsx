@@ -5,7 +5,11 @@ import Header from "../../organisms/Header";
 import Footer from "../../organisms/Footer";
 import "../../../styles/app.sass";
 
-function Page({ children }) {
+type Props = {
+  children: React.ReactNode;
+};
+
+const Page: React.FC<Props> = ({ children }) => {
   return (
     <div className={cn("page", styles.page)}>
       <Header />
@@ -13,6 +17,6 @@ function Page({ children }) {
       <Footer />
     </div>
   );
-}
+};
 
 export default Page;

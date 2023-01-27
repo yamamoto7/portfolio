@@ -1,9 +1,8 @@
 import * as React from "react";
-// import './index.css';
 import getFilePath from "../../../utils/getFilePath";
 import * as styles from "../index.module.sass";
 
-export default function Footer() {
+const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.content_wrap}>
@@ -41,4 +40,6 @@ export default function Footer() {
       <div className={styles.copyright}>© 2022 All rights reserved</div>
     </footer>
   );
-}
+};
+
+export default Footer;

@@ -4,7 +4,7 @@ import Header from "../../components/header";
 import Footer from "../../components/footer";
 import * as styles from "../index.module.scss";
 
-export default function Component() {
+const Component: React.FC = () => {
   return (
     <>
       <Header />
@@ -140,4 +140,6 @@ export default function Component() {
       <Footer />
     </>
   );
-}
+};
+
+export default Component;
