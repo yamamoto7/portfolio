@@ -1,8 +1,14 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { StaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
+import Img, { GatsbyImageProps } from "gatsby-image";
 
-function Image({ src, className, alt }) {
+interface ImageProps {
+  src: string;
+  className?: string;
+  alt: string;
+}
+
+const Image: FunctionComponent<ImageProps> = ({ src, className, alt }) => {
   return (
     <StaticQuery
       query={graphql`
@@ -24,9 +30,11 @@ function Image({ src, className, alt }) {
         }
       `}
       render={(data) => {
-        const image = data.images.edges.find((n) => {
-          return n.node.relativePath.includes(src);
-        });
+        const image = data.images.edges.find(
+          (n: { node: { relativePath: string | string[] } }) => {
+            return n.node.relativePath.includes(src);
+          }
+        );
         if (!image) {
           return null;
         }
@@ -35,15 +43,14 @@ function Image({ src, className, alt }) {
             <img className={className} src={image.node.publicURL} alt={alt} />
           );
         }
-        return (
-          <Img
-            className={className}
-            fluid={image.node.childImageSharp.fluid}
-            alt={alt}
-          />
-        );
+        const imageProps: GatsbyImageProps = {
+          className,
+          fluid: image.node.childImageSharp.fluid,
+          alt,
+        };
+        return <Img {...imageProps} />;
       }}
     />
   );
-}
+};
 export default Image;
