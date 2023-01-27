@@ -1,13 +1,11 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import cn from "classnames";
 import * as styles from "./Main.module.sass";
 import getFilePath from "../../../../utils/getFilePath";
 
-function Main() {
+const Main: React.FC = () => {
   return (
-    <div className={cn("section", styles.main)}>
-      <div className={cn("center ")}>
+    <div className={cn(styles.main)}>
         <div className={styles.container}>
           <div className={styles.details}>
             <div className={styles.text}>
@@ -22,7 +20,6 @@ function Main() {
               <a href="https://github.com/yamamoto7">
                 <img
                   className={styles.social}
-                  // eslint-disable-next-line max-len
                   src="https://img.shields.io/badge/github-%2324292f.svg?&style=for-the-badge&logo=github&logoColor=white"
                   alt="github"
                 />
@@ -30,7 +27,6 @@ function Main() {
               <a href="https://www.facebook.com/kenta.yamamoto.94064176">
                 <img
                   className={styles.social}
-                  // eslint-disable-next-line max-len
                   src="https://img.shields.io/badge/facebook-%231877F2.svg?&style=for-the-badge&logo=facebook&logoColor=white"
                   alt="facebook"
                 />
@@ -38,7 +34,6 @@ function Main() {
               <a href="https://www.linkedin.com/in/kentayamamoto7/">
                 <img
                   className={styles.social}
-                  // eslint-disable-next-line max-len
                   src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"
                   alt="linkedin"
                 />
@@ -62,13 +57,12 @@ function Main() {
           <div className={styles.preview}>
             <img
               className={styles.pic}
-              src={getFilePath("main-pic.png")}
+              src={getFilePath("home/profile.png")}
               alt=""
             />
           </div>
         </div>
       </div>
-    </div>
   );
 }
 
