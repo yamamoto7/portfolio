@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-      title: `ychof villa`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `ychof villa`,
+    siteUrl: `https://ychof.com`,
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -14,8 +14,8 @@ module.exports = {
       options: {
         rule: {
           include: `${__dirname}/src/images/`,
-        }
-      }
+        },
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -29,19 +29,23 @@ module.exports = {
       options: {
         name: `data`,
         path: `${__dirname}/src/images/`,
-        ignore: [`**/\.*`], // ignore files starting with a dot
+        ignore: [`**/.*`], // ignore files starting with a dot
       },
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        "trackingId": "UA-124603267-3"
-      }
+        trackingIds: ["G-YD35077DZE"],
+        pluginConfig: {
+          head: true,
+        },
+      },
     },
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: "gatsby-plugin-manifest",
       options: {
-        "icon": "src/images/favicon-32x32.png"
-    }
-  }]
+        icon: "src/images/favicon-32x32.png",
+      },
+    },
+  ],
 };

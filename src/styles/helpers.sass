@@ -54,9 +54,13 @@
   @media only screen and (max-width: "474px")
     @content
 
+=max-width($width)
+  @media only screen and (max-width: $width)
+    @content
+
 $bl-dark: #000
 $bl: #1A202C
-$dark: #1E1E27
+$dark: #2e2e3a
 $text-gray: #4E4E47
 $dark-wh: #F7FAFC
 $bg-dark: #14141B
@@ -328,19 +332,16 @@ $red: #FF0000
 // @import url('https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Roboto+Mono:wght@300;400&display=swap')
 
 =f
-  font-family: 'Roboto Mono', 'Noto+Sans+JP', sans-serif
+  font-family: 'General Sans', 'Roboto Mono', 'Noto+Sans+JP', sans-serif
 
 =dark
   @at-root :global(.dark-mode) &
     @content
 
 =dark-body
-    @at-root .dark-mode
-        @content
+  @at-root .dark-mode
+    @content
 
 =dark-common
   @at-root .dark-mode &
-      @content
-
-
-
+    @content

@@ -1,108 +1,19 @@
 @import ../../../styles/helpers
-  
-.footer
-  padding-bottom: 72px
-  +x
-    padding-bottom: 64px
-  +m
-    padding-bottom: 56px
-  .center
-    max-width: 1244px
 
-.row
-  display: flex
-  padding-right: 15px
-  +x
-    padding: 0
-  +t
-    flex-wrap: wrap
-    margin-top: -64px
-    padding-right: 30px
-  +m
-    margin-top: -56px
-    padding: 0
-  .col
-    +t
-      flex: 0 0 50%
-      width: 50%
-      margin-top: 64px
-      padding-right: 32px
-    +m
-      margin-top: 58px
-      padding-right: 24px
-    +a
-      width: auto
-      flex: 0 0 auto
-      padding: 0
-    &:nth-child(2n+1)
-      +a
-        margin-right: auto !important
-        padding-right: 20px
-    &:nth-child(2n)
-      +a
-        width: 113px 
-    +nl
-      margin-right: auto
-      +t
-        margin-right: 0
+.footer
+  padding: 72px 0
+  width: 800px
+  max-width: 90%
+  margin: 0 auto
 
 .logo
   display: inline-block
   margin-bottom: 25px
   font-size: 0
-  +m
-    margin-bottom: 15px
-  .logo_desktop, .logo_mobile
+  img
     width: 117px
-    +m
-      width: 74px
-      margin-top: -2px
-  .logo_desktop
-    +m
-      display: none
-  .logo_mobile
-    display: none
-    +m
-      display: inline-block
 
 .copyright
+  text-align: center
   margin-bottom: 32px
   line-height: 1.5
-  +t
-    margin-bottom: 24px
-  +m
-    margin-bottom: 24px
-    font-size: 14px
-  +a
-    max-width: 135px
-
-
-.category
-  margin-bottom: 26px
-  font-size: 24px
-  font-weight: 700 
-  +m
-    margin-bottom: 16px
-    font-size: 20px
-    line-height: 1.6
-
-.menu
-  display: flex
-  flex-direction: column
-  align-items: flex-start
-  .link
-    line-height: 1.5
-    color: $bl
-    transition: color .25s
-    +dark
-      color: $dark-wh
-      &:hover
-        color: rgba($dark-wh, .75) 
-    +m
-      font-size: 14px    
-    &:hover
-      color: rgba($bl, .75)
-    +nl
-      margin-bottom: 16px
-      +m
-        margin-bottom: 19px
