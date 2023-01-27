@@ -19,7 +19,7 @@ const posts: Post[] = [
     title: "データカタログを作成してZOZOTOWNデータベース定義をまとめた話",
     url: "https://techblog.zozo.com/entry/data-catalog",
     img: "home/blog/data-catalogue.jpg",
-    status: "badge2",
+    // status: "badge2",
     category: {
       title: "Company Tech Blog",
       color: styles.pink,
@@ -29,9 +29,9 @@ const posts: Post[] = [
     title: "入門書を終えた人に捧げる、社会人のためのGit中級編",
     url: "https://qiita.com/yamamoto7/items/fe15a1e7e360b4015fae",
     img: "home/blog/git.png",
-    status: "badge1",
+    // status: "badge1",
     category: {
-      title: "hoge",
+      title: "",
       color: styles.blue,
     },
   },
