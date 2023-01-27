@@ -206,10 +206,7 @@ const DevelopmentsSectionLink: React.FC<DevelopmentsSectionLinkProps> = (
   return (
     <a href={props.link.url}>
       <button className={cn(styles.link_button)}>
-        <Icon
-          className={cn(styles.link_icon)}
-          name={props.link.icon}
-        />
+        <Icon className={cn(styles.link_icon)} name={props.link.icon} />
         <span>{props.link.title}</span>
       </button>
     </a>
