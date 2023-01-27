@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `ychof villa`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://ychof.com`,
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -29,7 +29,7 @@ module.exports = {
       options: {
         name: `data`,
         path: `${__dirname}/src/images/`,
-        ignore: [`**/\.*`], // ignore files starting with a dot
+        ignore: [`**/.*`], // ignore files starting with a dot
       },
     },
     {
