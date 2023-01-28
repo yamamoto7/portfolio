@@ -49,6 +49,12 @@
   margin: 15px 0 30px
   +max-width($width: 800px)
     text-align: center
+  +max-width($width: 660px)
+    display: none
+  &_sp
+    display: none
+    +max-width($width: 660px)
+      display: block
 
 .contents_text
   font-size: 14px
@@ -69,7 +75,7 @@
   justify-content: center
   align-items: center
   &:hover
-    background: lighten(#333333, .8)
-    color: #ffffff
+    background: lighten(#EAEAEA, .8)
+    border: 1px solid #CDCDCD
   span
     display: block

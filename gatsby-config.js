@@ -48,5 +48,12 @@ module.exports = {
         icon: "src/images/favicon-32x32.png",
       },
     },
+    {
+      resolve: "gatsby-plugin-i18n",
+      options: {
+        langKeyDefault: "en",
+        useLangKeyLayout: false,
+      },
+    },
   ],
 };

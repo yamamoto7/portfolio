@@ -5,14 +5,16 @@ import { TechIcons, TechIconModel } from "../../../molecules/TechIcons";
 import Icon from "../../../atoms/Icon";
 import getFilePath from "../../../../utils/getFilePath";
 
+interface DevelopmentCategoryModel {
+  title: string;
+  color: string;
+}
+
 interface DevelopmentModel {
   title: string;
   img: string;
   techs: TechIconModel[];
-  category: {
-    title: string;
-    color: string;
-  };
+  categories: DevelopmentCategoryModel[];
   contents: Array<{
     title: string;
     contents: string;
@@ -24,124 +26,27 @@ interface DevelopmentModel {
   }>;
 }
 
-const developments: DevelopmentModel[] = [
-  {
-    title: "ポートフォリオ",
-    img: "home/developments/portfolio_screen.png",
-    techs: [
-      {
-        title: "",
-        contents: ["React", "Gatsby", "TypeScript"],
-      },
-    ],
-    category: {
-      title: "MOBILE APP",
-      color: "pink",
-    },
-    contents: [
-      {
-        title: "概要",
-        contents:
-          "このサイト。作ったものを見れるようにしようと思い作成。作成中だけどとりあえず公開中。",
-      },
-    ],
-    links: [
-      {
-        title: "GitHub",
-        icon: "GitHub",
-        url: "/products/share-buy-list",
-      },
-    ],
-  },
-  {
-    title: "お買い物リストアプリ",
-    img: "home/developments/buylis_screen.png",
-    techs: [
-      {
-        title: "アプリ",
-        contents: ["Flutter"],
-      },
-      {
-        title: "LP",
-        contents: ["React", "Gatsby", "TypeScript"],
-      },
-    ],
-    category: {
-      title: "MOBILE APP",
-      color: "pink",
-    },
-    contents: [
-      {
-        title: "概要",
-        contents: "お買い物リスト。android, iOSのストアからインストール可能。",
-      },
-    ],
-    links: [
-      {
-        title: "Product LP",
-        icon: "Page",
-        url: "/buy-list",
-      },
-    ],
-  },
-];
+interface DevelopmentSectionModel {
+  title: string;
+  developments: DevelopmentModel[];
+}
 
-const developmentsNotDeployed: DevelopmentModel[] = [
-  {
-    title: "Colorblind の視点再現と、区別しにくい境界線の検出",
-    img: "home/developments/color-blindness.png",
-    techs: [
-      {
-        title: "",
-        contents: ["C++", "OpenCV"],
-      },
-    ],
-    category: {
-      title: "SOFTWARE",
-      color: "pink",
-    },
-    contents: [
-      {
-        title: "概要",
-        contents:
-          "カメラの入力をリアルタイムに処理して、Colorblindの視点を再現と見えにくい部分の抽出を行うやつ。何かに役立てたいと思って開発した。",
-      },
-    ],
-    links: [],
-  },
-  {
-    title: "JPEGの画像圧縮ロジックを実装して挙動を確認する",
-    img: "home/developments/image-compression.png",
-    techs: [
-      {
-        title: "",
-        contents: ["Java"],
-      },
-    ],
-    category: {
-      title: "SOFTWARE",
-      color: "pink",
-    },
-    contents: [
-      {
-        title: "概要",
-        contents: "画像圧縮ロジックを実装して遊んだやつ。",
-      },
-    ],
-    links: [],
-  },
-];
+interface DevelopmentsProps {
+  developmentSections: DevelopmentSectionModel[];
+}
 
-const Developments: React.FC = () => {
+const Developments: React.FC<DevelopmentsProps> = (props) => {
   return (
     <div className={cn(styles.container)}>
-      <h2 className={cn(styles.title)}>Developments</h2>
-      {developments.map((item, index) => {
-        return <DevelopmentsSection key={index} item={item} />;
-      })}
-      <h2 className={cn(styles.title)}>Developments (Not deployed)</h2>
-      {developmentsNotDeployed.map((item, index) => {
-        return <DevelopmentsSection key={index} item={item} />;
+      {props.developmentSections.map((developmentSection) => {
+        return (
+          <>
+            <h2 className={cn(styles.title)}>{developmentSection.title}</h2>
+            {developmentSection.developments.map((item, index) => {
+              return <DevelopmentsSection key={index} item={item} />;
+            })}
+          </>
+        );
       })}
     </div>
   );
@@ -154,6 +59,9 @@ interface DevelopmentsSectionProps {
 const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = (props) => {
   return (
     <div className={cn(styles.section_wrap)}>
+      <h2 className={cn(styles.contents_title, styles.contents_title_sp)}>
+        {props.item.title}
+      </h2>
       <div className={cn(styles.image_wrap)}>
         <div
           className={cn(styles.photo)}
@@ -167,7 +75,6 @@ const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = (props) => {
             <DevelopmentsSectionContent content={content} key={content.title} />
           );
         })}
-        <div className={cn(styles.category)}>使用技術</div>
         <div className={cn(styles.contents_text)}>
           <TechIcons list={props.item.techs} />
         </div>
@@ -213,4 +120,5 @@ const DevelopmentsSectionLink: React.FC<DevelopmentsSectionLinkProps> = (
   );
 };
 
-export default Developments;
+export { Developments };
+export type { DevelopmentSectionModel };
