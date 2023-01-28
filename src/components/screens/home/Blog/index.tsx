@@ -3,15 +3,17 @@ import cn from "classnames";
 import * as styles from "./Blog.module.sass";
 import getFilePath from "../../../../utils/getFilePath";
 
+interface PostCategoryModel {
+  title: string;
+  color: string;
+}
+
 interface Post {
   title: string;
   url: string;
   img: string;
   status?: string;
-  category: {
-    title: string;
-    color: string;
-  };
+  categories: PostCategoryModel[];
 }
 
 const posts: Post[] = [
@@ -20,20 +22,28 @@ const posts: Post[] = [
     url: "https://techblog.zozo.com/entry/data-catalog",
     img: "home/blog/data-catalogue.jpg",
     // status: "badge2",
-    category: {
-      title: "Company Tech Blog",
-      color: styles.pink,
-    },
+    categories: [
+      {
+        title: "Company Tech Blog",
+        color: styles.pink,
+      },
+      {
+        title: "Japanese",
+        color: styles.blue,
+      },
+    ],
   },
   {
     title: "入門書を終えた人に捧げる、社会人のためのGit中級編",
     url: "https://qiita.com/yamamoto7/items/fe15a1e7e360b4015fae",
     img: "home/blog/git.png",
     // status: "badge1",
-    category: {
-      title: "",
-      color: styles.blue,
-    },
+    categories: [
+      {
+        title: "Japanese",
+        color: styles.blue,
+      },
+    ],
   },
 ];
 
@@ -61,9 +71,13 @@ const Blog: React.FC = () => {
                 {item.status === "badge2" && (
                   <div className={cn(styles.status, styles.badge2)}>New</div>
                 )}
-                <div className={cn(item.category.color, styles.category)}>
-                  {item.category.title}
-                </div>
+                {item.categories.map((category, index) => {
+                  return (
+                    <div className={cn(category.color, styles.category)}>
+                      {category.title}
+                    </div>
+                  );
+                })}
               </div>
             </a>
           );

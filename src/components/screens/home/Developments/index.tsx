@@ -5,14 +5,16 @@ import { TechIcons, TechIconModel } from "../../../molecules/TechIcons";
 import Icon from "../../../atoms/Icon";
 import getFilePath from "../../../../utils/getFilePath";
 
+interface DevelopmentCategoryModel {
+  title: string;
+  color: string;
+}
+
 interface DevelopmentModel {
   title: string;
   img: string;
   techs: TechIconModel[];
-  category: {
-    title: string;
-    color: string;
-  };
+  categories: DevelopmentCategoryModel[];
   contents: Array<{
     title: string;
     contents: string;
@@ -30,14 +32,16 @@ const developments: DevelopmentModel[] = [
     img: "home/developments/portfolio_screen.png",
     techs: [
       {
-        title: "",
+        title: "使用技術",
         contents: ["React", "Gatsby", "TypeScript"],
       },
     ],
-    category: {
-      title: "MOBILE APP",
-      color: "pink",
-    },
+    categories: [
+      {
+        title: "MOBILE APP",
+        color: "pink",
+      },
+    ],
     contents: [
       {
         title: "概要",
@@ -58,18 +62,20 @@ const developments: DevelopmentModel[] = [
     img: "home/developments/buylis_screen.png",
     techs: [
       {
-        title: "アプリ",
+        title: "使用技術 - アプリ",
         contents: ["Flutter"],
       },
       {
-        title: "LP",
+        title: "使用技術 - LP",
         contents: ["React", "Gatsby", "TypeScript"],
       },
     ],
-    category: {
-      title: "MOBILE APP",
-      color: "pink",
-    },
+    categories: [
+      {
+        title: "MOBILE APP",
+        color: "pink",
+      },
+    ],
     contents: [
       {
         title: "概要",
@@ -92,14 +98,16 @@ const developmentsNotDeployed: DevelopmentModel[] = [
     img: "home/developments/color-blindness.png",
     techs: [
       {
-        title: "",
+        title: "使用技術",
         contents: ["C++", "OpenCV"],
       },
     ],
-    category: {
-      title: "SOFTWARE",
-      color: "pink",
-    },
+    categories: [
+      {
+        title: "SOFTWARE",
+        color: "pink",
+      },
+    ],
     contents: [
       {
         title: "概要",
@@ -114,14 +122,16 @@ const developmentsNotDeployed: DevelopmentModel[] = [
     img: "home/developments/image-compression.png",
     techs: [
       {
-        title: "",
+        title: "使用技術",
         contents: ["Java"],
       },
     ],
-    category: {
-      title: "SOFTWARE",
-      color: "pink",
-    },
+    categories: [
+      {
+        title: "SOFTWARE",
+        color: "pink",
+      },
+    ],
     contents: [
       {
         title: "概要",
@@ -154,6 +164,9 @@ interface DevelopmentsSectionProps {
 const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = (props) => {
   return (
     <div className={cn(styles.section_wrap)}>
+      <h2 className={cn(styles.contents_title, styles.contents_title_sp)}>
+        {props.item.title}
+      </h2>
       <div className={cn(styles.image_wrap)}>
         <div
           className={cn(styles.photo)}
@@ -167,7 +180,6 @@ const DevelopmentsSection: React.FC<DevelopmentsSectionProps> = (props) => {
             <DevelopmentsSectionContent content={content} key={content.title} />
           );
         })}
-        <div className={cn(styles.category)}>使用技術</div>
         <div className={cn(styles.contents_text)}>
           <TechIcons list={props.item.techs} />
         </div>
