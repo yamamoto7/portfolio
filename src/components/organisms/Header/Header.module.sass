@@ -10,6 +10,9 @@
   margin: 0 auto
   max-width: 90%
   display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  align-items: center
   +max-width($width: 800px)
     justify-content: center
 
@@ -20,3 +23,23 @@
   align-items: center
   img
     object-fit: contain
+
+.button_wrap
+  display: flex
+  justify-content: space-between
+
+.button
+  background: #ffffff
+  color: #888888
+  border: 1px solid #CCCCCC
+  margin-right: 10px
+  text-align: center
+  padding: 10px 20px
+  border-radius: 20px
+  &:hover
+    border: 1px solid #333333
+    color: #333333
+  &.active
+    border: 1px solid #333333
+    background: #333
+    color: white

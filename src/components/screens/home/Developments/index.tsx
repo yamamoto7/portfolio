@@ -26,132 +26,27 @@ interface DevelopmentModel {
   }>;
 }
 
-const developments: DevelopmentModel[] = [
-  {
-    title: "ポートフォリオ",
-    img: "home/developments/portfolio_screen.png",
-    techs: [
-      {
-        title: "使用技術",
-        contents: ["React", "Gatsby", "TypeScript"],
-      },
-    ],
-    categories: [
-      {
-        title: "MOBILE APP",
-        color: "pink",
-      },
-    ],
-    contents: [
-      {
-        title: "概要",
-        contents:
-          "このサイト。作ったものを見れるようにしようと思い作成。作成中だけどとりあえず公開中。",
-      },
-    ],
-    links: [
-      {
-        title: "GitHub",
-        icon: "GitHub",
-        url: "/products/share-buy-list",
-      },
-    ],
-  },
-  {
-    title: "お買い物リストアプリ",
-    img: "home/developments/buylis_screen.png",
-    techs: [
-      {
-        title: "使用技術 - アプリ",
-        contents: ["Flutter"],
-      },
-      {
-        title: "使用技術 - LP",
-        contents: ["React", "Gatsby", "TypeScript"],
-      },
-    ],
-    categories: [
-      {
-        title: "MOBILE APP",
-        color: "pink",
-      },
-    ],
-    contents: [
-      {
-        title: "概要",
-        contents: "お買い物リスト。android, iOSのストアからインストール可能。",
-      },
-    ],
-    links: [
-      {
-        title: "Product LP",
-        icon: "Page",
-        url: "/buy-list",
-      },
-    ],
-  },
-];
+interface DevelopmentSectionModel {
+  title: string;
+  developments: DevelopmentModel[];
+}
 
-const developmentsNotDeployed: DevelopmentModel[] = [
-  {
-    title: "Colorblind の視点再現と、区別しにくい境界線の検出",
-    img: "home/developments/color-blindness.png",
-    techs: [
-      {
-        title: "使用技術",
-        contents: ["C++", "OpenCV"],
-      },
-    ],
-    categories: [
-      {
-        title: "SOFTWARE",
-        color: "pink",
-      },
-    ],
-    contents: [
-      {
-        title: "概要",
-        contents:
-          "カメラの入力をリアルタイムに処理して、Colorblindの視点を再現と見えにくい部分の抽出を行うやつ。何かに役立てたいと思って開発した。",
-      },
-    ],
-    links: [],
-  },
-  {
-    title: "JPEGの画像圧縮ロジックを実装して挙動を確認する",
-    img: "home/developments/image-compression.png",
-    techs: [
-      {
-        title: "使用技術",
-        contents: ["Java"],
-      },
-    ],
-    categories: [
-      {
-        title: "SOFTWARE",
-        color: "pink",
-      },
-    ],
-    contents: [
-      {
-        title: "概要",
-        contents: "画像圧縮ロジックを実装して遊んだやつ。",
-      },
-    ],
-    links: [],
-  },
-];
+interface DevelopmentsProps {
+  developmentSections: DevelopmentSectionModel[];
+}
 
-const Developments: React.FC = () => {
+const Developments: React.FC<DevelopmentsProps> = (props) => {
   return (
     <div className={cn(styles.container)}>
-      <h2 className={cn(styles.title)}>Developments</h2>
-      {developments.map((item, index) => {
-        return <DevelopmentsSection key={index} item={item} />;
-      })}
-      <h2 className={cn(styles.title)}>Developments (Not deployed)</h2>
-      {developmentsNotDeployed.map((item, index) => {
-        return <DevelopmentsSection key={index} item={item} />;
+      {props.developmentSections.map((developmentSection) => {
+        return (
+          <>
+            <h2 className={cn(styles.title)}>{developmentSection.title}</h2>
+            {developmentSection.developments.map((item, index) => {
+              return <DevelopmentsSection key={index} item={item} />;
+            })}
+          </>
+        );
       })}
     </div>
   );
@@ -225,4 +120,5 @@ const DevelopmentsSectionLink: React.FC<DevelopmentsSectionLinkProps> = (
   );
 };
 
-export default Developments;
+export { Developments };
+export type { DevelopmentSectionModel };

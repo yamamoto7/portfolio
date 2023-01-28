@@ -5,10 +5,10 @@ import { Developments, DevelopmentSectionModel } from "./Developments";
 
 const postSections: PostSectionModel[] = [
   {
-    title: "Recent posts",
+    title: "技術ブログ",
     posts: [
       {
-        title: "Create the Data Catalog which automatically generates database documents",
+        title: "データカタログを作成してZOZOTOWNデータベース定義をまとめた話",
         url: "https://techblog.zozo.com/entry/data-catalog",
         img: "home/blog/data-catalogue.jpg",
         // status: "badge2",
@@ -22,7 +22,7 @@ const postSections: PostSectionModel[] = [
         ],
       },
       {
-        title: "For People Who Have Completed Beginner Books, Intermediate Git for Working Adults",
+        title: "入門書を終えた人に捧げる、社会人のためのGit中級編",
         url: "https://qiita.com/yamamoto7/items/fe15a1e7e360b4015fae",
         img: "home/blog/git.png",
         // status: "badge1",
@@ -37,14 +37,14 @@ const postSections: PostSectionModel[] = [
 ];
 const developmentSections: DevelopmentSectionModel[] = [
   {
-    title: "Developments",
+    title: "開発物",
     developments: [
       {
-        title: "Portfolio",
+        title: "ポートフォリオ",
         img: "home/developments/portfolio_screen.png",
         techs: [
           {
-            title: "Technologies",
+            title: "使用技術",
             contents: ["React", "Gatsby", "TypeScript"],
           },
         ],
@@ -56,9 +56,9 @@ const developmentSections: DevelopmentSectionModel[] = [
         ],
         contents: [
           {
-            title: "About",
+            title: "概要",
             contents:
-              "This website.",
+              "このサイト。作ったものを見れるようにしようと思い作成。作成中だけどとりあえず公開中。",
           },
         ],
         links: [
@@ -70,50 +70,50 @@ const developmentSections: DevelopmentSectionModel[] = [
         ],
       },
       {
-        title: "Buylis - Shopping list APP",
+        title: "お買い物リストアプリ",
         img: "home/developments/buylis_screen.png",
         techs: [
           {
-            title: "Technologies - APP",
+            title: "使用技術 - アプリ",
             contents: ["Flutter"],
           },
           {
-              title: "Technologies - LP",
-              contents: ["React", "Gatsby", "TypeScript"],
-            },
-          ],
-          categories: [
-            {
-              title: "MOBILE APP",
-              color: "pink",
-            },
-          ],
-          contents: [
-            {
-              title: "About",
-              contents:
-                "A shopping list APP. Available for install from the android and iOS stores.",
-            },
-          ],
-          links: [
-            {
-              title: "Product LP",
-              icon: "Page",
-              url: "/buy-list",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      title: "Developments (not deployed)",
-      developments: [
-        {
-          title: "Real-time Reproduction of Colorblind Perspectives and Detection of Hard-to-Distinguish Boundaries",
-          img: "home/developments/color-blindness.png",
-          techs: [
-            {
-              title: "Technologies",
+            title: "使用技術 - LP",
+            contents: ["React", "Gatsby", "TypeScript"],
+          },
+        ],
+        categories: [
+          {
+            title: "MOBILE APP",
+            color: "pink",
+          },
+        ],
+        contents: [
+          {
+            title: "概要",
+            contents:
+              "お買い物リスト。android, iOSのストアからインストール可能。",
+          },
+        ],
+        links: [
+          {
+            title: "Product LP",
+            icon: "Page",
+            url: "/buy-list",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "開発物(未deploy)",
+    developments: [
+      {
+        title: "Colorblind の視点再現と、区別しにくい境界線の検出",
+        img: "home/developments/color-blindness.png",
+        techs: [
+          {
+            title: "使用技術",
             contents: ["C++", "OpenCV"],
           },
         ],
@@ -125,19 +125,19 @@ const developmentSections: DevelopmentSectionModel[] = [
         ],
         contents: [
           {
-            title: "About",
+            title: "概要",
             contents:
-              "I am interested in solving the problem of color blindness, and as a first step, I reproduced the viewpoint of a color blind person. I also defined areas that are difficult to distinguish and developed a function to visualize these points.",
+              "カメラの入力をリアルタイムに処理して、Colorblindの視点を再現と見えにくい部分の抽出を行うやつ。何かに役立てたいと思って開発した。",
           },
         ],
         links: [],
       },
       {
-        title: "Application that reproduces the compression logic to check the behavior of JPEG",
+        title: "JPEGの画像圧縮ロジックを実装して挙動を確認する",
         img: "home/developments/image-compression.png",
         techs: [
           {
-            title: "Technologies",
+            title: "使用技術",
             contents: ["Java"],
           },
         ],
@@ -149,8 +149,8 @@ const developmentSections: DevelopmentSectionModel[] = [
         ],
         contents: [
           {
-            title: "About",
-            contents: "The objective was to reproduce the image compression logic and visualize its behavior to satisfy intellectual curiosity.",
+            title: "概要",
+            contents: "画像圧縮ロジックを実装して遊んだやつ。",
           },
         ],
         links: [],

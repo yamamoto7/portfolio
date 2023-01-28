@@ -7,13 +7,14 @@ import "../../../styles/app.sass";
 
 type Props = {
   children: React.ReactNode;
+  lang?: string
 };
 
-const Page: React.FC<Props> = ({ children }) => {
+const Page: React.FC<Props> = (props) => {
   return (
     <div className={cn("page", styles.page)}>
-      <Header />
-      <div className={styles.inner}>{children}</div>
+      <Header lang={props.lang != null ? props.lang : 'en'} />
+      <div className={styles.inner}>{props.children}</div>
       <Footer />
     </div>
   );
