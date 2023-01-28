@@ -2,7 +2,7 @@ import * as React from "react";
 import cn from "classnames";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
-import * as styles from "../index.module.scss";
+import * as styles from "../index.module.sass";
 
 const Component: React.FC = () => {
   return (
