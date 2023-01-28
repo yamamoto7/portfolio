@@ -38,6 +38,7 @@ module.exports = {
         trackingIds: ["G-YD35077DZE"],
         pluginConfig: {
           head: true,
+          anonymize_ip: true,
         },
       },
     },

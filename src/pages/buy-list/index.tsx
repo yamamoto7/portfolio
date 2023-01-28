@@ -1,5 +1,4 @@
 import * as React from "react";
-// import './index.css';
 import getFilePath from "../../utils/getFilePath";
 import Header from "./components/header";
 import Footer from "./components/footer";
