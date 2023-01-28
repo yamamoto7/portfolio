@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 
-function IndexPage() {
+const IndexPage: FunctionComponent = () => {
   return (
     <section>
       <h2>シンプル予算管理 プライバシポリシー</h2>
@@ -105,6 +105,6 @@ function IndexPage() {
       </p>
     </section>
   );
-}
+};
 
 export default IndexPage;
