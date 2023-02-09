@@ -29,9 +29,9 @@ const Footer: React.FC = () => {
           </ul>
         </div>
         <div className={styles.content_text}>
-          <a href="/buy-list/">アプリ紹介ページ</a>
+          <a href="/buylis/">アプリ紹介ページ</a>
           <br />
-          <a href="/buy-list/privacy-policy/ja/">プライバシーポリシー</a>
+          <a href="/buylis/privacy-policy/ja/">プライバシーポリシー</a>
         </div>
         <div className={styles.content_text}>
           <a href="/">開発者について</a>

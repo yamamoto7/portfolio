@@ -13,7 +13,7 @@ export default function Component() {
         <div className={styles.content_wrap}>
           <img
             width="200px"
-            src={getFilePath("contents/buy-list/name.png")}
+            src={getFilePath("contents/buylis/name.png")}
             alt="Logo"
             className=""
           />
@@ -38,7 +38,7 @@ export default function Component() {
         <div className={styles.image_wrap}>
           <img
             width="100%"
-            src={getFilePath("contents/buy-list/screen1.png")}
+            src={getFilePath("contents/buylis/screen1.png")}
             alt="Logo"
             className=""
           />
@@ -61,7 +61,7 @@ export default function Component() {
         <div className={styles.image_wrap}>
           <img
             width="100%"
-            src={getFilePath("contents/buy-list/screen2.png")}
+            src={getFilePath("contents/buylis/screen2.png")}
             alt="Logo"
             className=""
           />
@@ -71,7 +71,7 @@ export default function Component() {
         <div className={styles.image_wrap}>
           <img
             width="100%"
-            src={getFilePath("contents/buy-list/screen3.png")}
+            src={getFilePath("contents/buylis/screen3.png")}
             alt="Logo"
             className=""
           />
@@ -97,7 +97,7 @@ export default function Component() {
         <div className={styles.image_wrap}>
           <img
             width="100%"
-            src={getFilePath("contents/buy-list/screen4.png")}
+            src={getFilePath("contents/buylis/screen4.png")}
             alt="Logo"
             className=""
           />

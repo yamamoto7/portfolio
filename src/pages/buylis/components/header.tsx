@@ -7,10 +7,10 @@ const Header: React.FC = () => {
   return (
     <header>
       <nav className={styles.header_container}>
-        <a className={styles.header_logo} href="/buy-list">
+        <a className={styles.header_logo} href="/buylis">
           <img
             width="25px"
-            src={getFilePath("contents/buy-list/icon.svg")}
+            src={getFilePath("contents/buylis/icon.svg")}
             alt="Logo"
             className=""
           />

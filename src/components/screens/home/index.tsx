@@ -8,7 +8,8 @@ const postSections: PostSectionModel[] = [
     title: "Recent posts",
     posts: [
       {
-        title: "Create the Data Catalog which automatically generates database documents",
+        title:
+          "Create the Data Catalog which automatically generates database documents",
         url: "https://techblog.zozo.com/entry/data-catalog",
         img: "home/blog/data-catalogue.jpg",
         // status: "badge2",
@@ -22,7 +23,8 @@ const postSections: PostSectionModel[] = [
         ],
       },
       {
-        title: "For People Who Have Completed Beginner Books, Intermediate Git for Working Adults",
+        title:
+          "For People Who Have Completed Beginner Books, Intermediate Git for Working Adults",
         url: "https://qiita.com/yamamoto7/items/fe15a1e7e360b4015fae",
         img: "home/blog/git.png",
         // status: "badge1",
@@ -57,15 +59,14 @@ const developmentSections: DevelopmentSectionModel[] = [
         contents: [
           {
             title: "About",
-            contents:
-              "This website.",
+            contents: "This website.",
           },
         ],
         links: [
           {
             title: "GitHub",
             icon: "GitHub",
-            url: "/products/share-buy-list",
+            url: "https://github.com/yamamoto7/portfolio",
           },
         ],
       },
@@ -78,42 +79,43 @@ const developmentSections: DevelopmentSectionModel[] = [
             contents: ["Flutter"],
           },
           {
-              title: "Technologies - LP",
-              contents: ["React", "Gatsby", "TypeScript"],
-            },
-          ],
-          categories: [
-            {
-              title: "MOBILE APP",
-              color: "pink",
-            },
-          ],
-          contents: [
-            {
-              title: "About",
-              contents:
-                "A shopping list APP. Available for install from the android and iOS stores.",
-            },
-          ],
-          links: [
-            {
-              title: "Product LP",
-              icon: "Page",
-              url: "/buy-list",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      title: "Developments (not deployed)",
-      developments: [
-        {
-          title: "Real-time Reproduction of Colorblind Perspectives and Detection of Hard-to-Distinguish Boundaries",
-          img: "home/developments/color-blindness.png",
-          techs: [
-            {
-              title: "Technologies",
+            title: "Technologies - LP",
+            contents: ["React", "Gatsby", "TypeScript"],
+          },
+        ],
+        categories: [
+          {
+            title: "MOBILE APP",
+            color: "pink",
+          },
+        ],
+        contents: [
+          {
+            title: "About",
+            contents:
+              "A shopping list APP. Available for install from the android and iOS stores.",
+          },
+        ],
+        links: [
+          {
+            title: "Product LP",
+            icon: "Page",
+            url: "/buylis",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Developments (not deployed)",
+    developments: [
+      {
+        title:
+          "Real-time Reproduction of Colorblind Perspectives and Detection of Hard-to-Distinguish Boundaries",
+        img: "home/developments/color-blindness.png",
+        techs: [
+          {
+            title: "Technologies",
             contents: ["C++", "OpenCV"],
           },
         ],
@@ -133,7 +135,8 @@ const developmentSections: DevelopmentSectionModel[] = [
         links: [],
       },
       {
-        title: "Application that reproduces the compression logic to check the behavior of JPEG",
+        title:
+          "Application that reproduces the compression logic to check the behavior of JPEG",
         img: "home/developments/image-compression.png",
         techs: [
           {
@@ -150,7 +153,8 @@ const developmentSections: DevelopmentSectionModel[] = [
         contents: [
           {
             title: "About",
-            contents: "The objective was to reproduce the image compression logic and visualize its behavior to satisfy intellectual curiosity.",
+            contents:
+              "The objective was to reproduce the image compression logic and visualize its behavior to satisfy intellectual curiosity.",
           },
         ],
         links: [],

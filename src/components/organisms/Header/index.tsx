@@ -15,12 +15,22 @@ const Header: React.FC<HeaderProps> = (props) => {
         </a>
         <div className={styles.button_wrap}>
           <a href="/ja">
-            <button className={cn(styles.button, props.lang == 'ja' ? styles.active : null)}>
+            <button
+              className={cn(
+                styles.button,
+                props.lang == "ja" ? styles.active : null
+              )}
+            >
               JP
             </button>
           </a>
           <a href="/">
-            <button className={cn(styles.button, props.lang == 'en' ? styles.active : null)}>
+            <button
+              className={cn(
+                styles.button,
+                props.lang == "en" ? styles.active : null
+              )}
+            >
               EN
             </button>
           </a>
