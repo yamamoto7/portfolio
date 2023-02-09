@@ -65,7 +65,7 @@ const developmentSections: DevelopmentSectionModel[] = [
           {
             title: "GitHub",
             icon: "GitHub",
-            url: "/products/share-buy-list",
+            url: "https://github.com/yamamoto7/portfolio",
           },
         ],
       },
@@ -99,7 +99,7 @@ const developmentSections: DevelopmentSectionModel[] = [
           {
             title: "Product LP",
             icon: "Page",
-            url: "/buy-list",
+            url: "/buylis",
           },
         ],
       },
