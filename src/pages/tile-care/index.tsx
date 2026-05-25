@@ -32,14 +32,14 @@ export default function Component() {
             <img
               className={styles.heroVisualImg}
               src={getFilePath("contents/tile-care/mv.png")}
-              alt="タイルケア"
+              alt="タイルカーペット管理"
             />
           </div>
           <div className={styles.heroBody}>
             <img
               className={styles.heroLogo}
               src={getFilePath("contents/tile-care/name.png")}
-              alt="タイルケア"
+              alt="タイルカーペット管理"
             />
             <h1 className={styles.heroTitle}>
               タイルカーペットの
@@ -90,7 +90,7 @@ export default function Component() {
       </div>
 
       <section className={styles.cta}>
-        <p className={styles.ctaTitle}>タイルケア、はじめてみませんか。</p>
+        <p className={styles.ctaTitle}>タイルカーペット管理、はじめてみませんか。</p>
         {/* TODO: App Store / Google Play のURLを設定 */}
         <div className={styles.storeButtons}>
           <a href="#">
@@ -116,5 +116,5 @@ export default function Component() {
 }
 
 export const Head = () => {
-  return <title>タイルケア - ychof villa</title>;
+  return <title>タイルカーペット管理 - ychof villa</title>;
 };
