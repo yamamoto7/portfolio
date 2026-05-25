@@ -4,110 +4,112 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import * as styles from "./index.module.sass";
 
+const features = [
+  {
+    heading: "マニアを唸らせる難問のみ収録",
+    desc: "簡単な問題はもう卒業。歯ごたえのある難問だけを厳選して収録しました。",
+    shot: "contents/mugen-sudoku/screen1.png",
+  },
+  {
+    heading: "邪魔な広告は一切なし",
+    desc: "思考を妨げるバナーやポップアップはゼロ。ただ問題に集中できます。",
+    shot: "contents/mugen-sudoku/screen2.png",
+  },
+  {
+    heading: "爽快な操作感",
+    desc: "ナンプレマニア監修。ストレスのない入力で、解く快感だけが残ります。",
+    shot: "contents/mugen-sudoku/screen3.png",
+  },
+];
+
 export default function Component() {
   return (
     <>
       <Header />
-      <section className={`${styles.section} ${styles.mv}`}>
-        <div className={styles.mv_image_wrap} />
-        <div className={styles.content_wrap}>
-          {/* TODO: プロダクトのロゴ画像に差し替え */}
-          <img
-            width="200px"
-            src={getFilePath("contents/buylis/name.png")}
-            alt="Logo"
-            className=""
-          />
-          <br />
-          {/* TODO: キャッチコピー */}
-          キャッチコピー
-          <br />
-          {/* TODO: App Store / Play Store のURLを設定 */}
-          <a href="#" className="">
+      <section className={styles.hero}>
+        <div className={styles.heroInner}>
+          <div className={styles.heroVisual}>
             <img
-              className={styles.store_button}
-              src={getFilePath("contents/common/appstore.png")}
+              className={styles.heroVisualImg}
+              src={getFilePath("contents/mugen-sudoku/mv.png")}
+              alt="無限数独"
             />
-          </a>{" "}
+          </div>
+          <div className={styles.heroBody}>
+            <img
+              className={styles.heroLogo}
+              src={getFilePath("contents/mugen-sudoku/name.png")}
+              alt="無限数独"
+            />
+            <h1 className={styles.heroTitle}>
+              激ムズを求める
+              <br />
+              あなたにおすすめ
+            </h1>
+            <p className={styles.heroLead}>
+              ナンプレマニア監修。感動の操作体験を、広告なしで。
+            </p>
+            {/* TODO: App Store / Google Play のURLを設定 */}
+            <div className={styles.storeButtons}>
+              <a href="#">
+                <img
+                  className={styles.storeButton}
+                  src={getFilePath("contents/common/appstore.png")}
+                  alt="App Store"
+                />
+              </a>
+              <a href="#">
+                <img
+                  className={styles.storeButton}
+                  src={getFilePath("contents/common/playstore.png")}
+                  alt="Google Play"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className={styles.features}>
+        {features.map((f, i) => (
+          <section className={styles.feature} key={f.shot}>
+            <div className={styles.featureShot}>
+              <img
+                className={styles.featureShotImg}
+                src={getFilePath(f.shot)}
+                alt=""
+              />
+            </div>
+            <div className={styles.featureText}>
+              <span className={styles.featureLabel}>POINT 0{i + 1}</span>
+              <h2 className={styles.featureHeading}>{f.heading}</h2>
+              <p className={styles.featureDesc}>{f.desc}</p>
+            </div>
+          </section>
+        ))}
+      </div>
+
+      <section className={styles.cta}>
+        <p className={styles.ctaTitle}>激ムズナンプレ、はじめてみませんか。</p>
+        {/* TODO: App Store / Google Play のURLを設定 */}
+        <div className={styles.storeButtons}>
           <a href="#">
             <img
-              className={styles.store_button}
+              className={styles.storeButton}
+              src={getFilePath("contents/common/appstore.png")}
+              alt="App Store"
+            />
+          </a>
+          <a href="#">
+            <img
+              className={styles.storeButton}
               src={getFilePath("contents/common/playstore.png")}
+              alt="Google Play"
             />
           </a>
         </div>
       </section>
-      <section className={styles.section}>
-        <div className={styles.image_wrap}>
-          {/* TODO: スクリーンショットに差し替え */}
-          <img
-            width="100%"
-            src={getFilePath("contents/buylis/screen1.png")}
-            alt=""
-            className=""
-          />
-        </div>
-        <div className={styles.content_wrap_right}>
-          {/* TODO: 見出し・説明 */}
-          <span className={styles.strong}>見出し</span>
-          <br />
-          説明テキスト
-        </div>
-      </section>
-      <section className={styles.section}>
-        <div className={styles.content_wrap}>
-          {/* TODO: 見出し・説明 */}
-          <span className={styles.strong}>見出し</span>
-          <br />
-          説明テキスト
-          <br />
-        </div>
-        <div className={styles.image_wrap}>
-          {/* TODO: スクリーンショットに差し替え */}
-          <img
-            width="100%"
-            src={getFilePath("contents/buylis/screen2.png")}
-            alt=""
-            className=""
-          />
-        </div>
-      </section>
-      <section className={styles.section}>
-        <div className={styles.image_wrap}>
-          {/* TODO: スクリーンショットに差し替え */}
-          <img
-            width="100%"
-            src={getFilePath("contents/buylis/screen3.png")}
-            alt=""
-            className=""
-          />
-        </div>
-        <div className={styles.content_wrap_right}>
-          {/* TODO: 見出し・説明 */}
-          <span className={styles.strong}>見出し</span>
-          <br />
-          説明テキスト
-          <br />
-        </div>
-      </section>
-      <section className={styles.section}>
-        <div className={styles.content_wrap}>
-          {/* TODO: 見出し・説明 */}
-          <span className={styles.strong}>見出し</span>
-          <br />
-          説明テキスト
-          <br />
-        </div>
-        <div className={styles.image_wrap}>
-          {/* TODO: スクリーンショットに差し替え */}
-          <img
-            width="100%"
-            src={getFilePath("contents/buylis/screen4.png")}
-            alt=""
-            className=""
-          />
-        </div>
-      </section>
+
       <Footer />
     </>
   );

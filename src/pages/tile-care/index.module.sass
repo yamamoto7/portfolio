@@ -1,98 +1,242 @@
-html
-  &.no-scroll
-    overflow: hidden
+$accent: #0ca678
+$ink: #1b2330
+$muted: #5f6b7a
+$line: #e6eaf0
+$bg: #ffffff
+$bg-alt: #f6f8fb
+
 *
   margin: 0
   padding: 0
+  box-sizing: border-box
 
-.header_container
-  display: flex
-  max-width: 90%
-  width: 800px
-  flex-wrap: wrap
-  align-items: center
-  justify-content: space-between
+body
+  color: $ink
+  background: $bg
+  font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif
+  line-height: 1.75
+  -webkit-font-smoothing: antialiased
+
+img
+  display: block
+  max-width: 100%
+
+.header
+  position: sticky
+  top: 0
+  z-index: 10
+  background: rgba(255, 255, 255, 0.85)
+  -webkit-backdrop-filter: saturate(160%) blur(12px)
+  backdrop-filter: saturate(160%) blur(12px)
+  border-bottom: 1px solid $line
+
+.headerInner
+  max-width: 960px
   margin: 0 auto
+  padding: 12px 20px
+  display: flex
+  align-items: center
 
-.header_logo
-  width: 60px
-  height: 60px
-  margin: 10px 0
+.headerBrand
+  display: flex
+  align-items: center
+  gap: 10px
+  text-decoration: none
+
+.headerIcon
+  width: 36px
+  height: 36px
+  border-radius: 9px
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12)
+
+.headerName
+  height: 20px
+  width: auto
+
+.hero
+  background: linear-gradient(180deg, $bg-alt 0%, $bg 100%)
+  border-bottom: 1px solid $line
+
+.heroInner
+  max-width: 960px
+  margin: 0 auto
+  padding: 64px 20px 72px
   display: flex
   align-items: center
   justify-content: center
-  background-color: #2A383D
-  border-radius: 10px
+  gap: 48px
+  flex-wrap: wrap
 
-.h3
+.heroVisual
+  flex: 0 0 auto
+  width: 320px
+  max-width: 80vw
+  display: flex
+  justify-content: center
+
+.heroVisualImg
+  width: 100%
+  height: auto
+  filter: drop-shadow(0 24px 48px rgba(27, 35, 48, 0.18))
+
+.heroBody
+  flex: 1 1 360px
+  max-width: 460px
+
+.heroLogo
+  height: 40px
+  width: auto
+  margin-bottom: 22px
+
+.heroTitle
+  font-size: 32px
+  font-weight: 800
+  line-height: 1.35
+  margin-bottom: 16px
+
+.heroLead
+  font-size: 16px
+  color: $muted
+  margin-bottom: 28px
+
+.storeButtons
+  display: flex
+  gap: 12px
+  flex-wrap: wrap
+
+.storeButton
+  height: 48px
+  width: auto
+  transition: transform 0.15s ease
+
+.storeButton:hover
+  transform: translateY(-2px)
+
+.features
+  max-width: 960px
+  margin: 0 auto
+  padding: 16px 20px 24px
+
+.feature
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 56px
+  padding: 56px 0
+  flex-wrap: wrap
+
+.feature + .feature
+  border-top: 1px solid $line
+
+.feature:nth-child(even)
+  flex-direction: row-reverse
+
+.featureShot
+  flex: 0 0 auto
+  width: 240px
+  max-width: 70vw
+
+.featureShotImg
+  width: 100%
+  height: auto
+  border-radius: 28px
+  box-shadow: 0 18px 40px rgba(27, 35, 48, 0.16)
+
+.featureText
+  flex: 1 1 320px
+  max-width: 420px
+
+.featureLabel
+  display: inline-block
+  font-size: 13px
+  font-weight: 700
+  letter-spacing: 0.08em
+  color: $accent
+  margin-bottom: 12px
+
+.featureHeading
+  font-size: 24px
+  font-weight: 800
+  line-height: 1.4
+  margin-bottom: 12px
+
+.featureDesc
+  font-size: 15px
+  color: $muted
+
+.cta
+  background: $bg-alt
+  border-top: 1px solid $line
   text-align: center
+  padding: 64px 20px
 
-.section
-  max-width: 90%
-  margin: 0 auto
-  width: 800px
-  max-width: 90%
-  display: flex
+.ctaTitle
+  font-size: 22px
+  font-weight: 800
+  margin-bottom: 24px
+
+.cta .storeButtons
   justify-content: center
-  flex-wrap: wrap
-  .content_wrap
-    padding-top: 100px
-    text-align: right
-    width: 300px
-  .image_wrap
-    width: 300px
-  .content_wrap_right
-    padding-top: 100px
-    text-align: left
-    width: 300px
-
-.store_button
-  width: 120px
-
-.strong
-  font-weight: bold
-
-.mv
-  align-items: center
-  .mv_image_wrap
-    background: url(../buylis/images/mv.png) center
-    background-size: contain
-    background-repeat: no-repeat
-    width: 400px
-    height: 500px
-  .content_wrap
-    padding-top: 0
-    text-align: center
-    width: 400px
-    line-height: 2.8
-
-@media (max-width: 666px)
-  .section
-    .content_wrap, .content_wrap_right
-      text-align: center
-      padding-top: 40px
-      padding-bottom: 40px
-
-@media (max-width: 888px)
-  .mv
-    .content_wrap
-      padding-top: 0
 
 .footer
-  padding-top: 80px
-  padding-bottom: 80px
-  max-width: 90%
+  border-top: 1px solid $line
+  background: $bg
+
+.footerInner
+  max-width: 960px
   margin: 0 auto
-  width: 600px
-  .content_wrap
-    display: flex
-    justify-content: space-between
-    flex-wrap: wrap
-  .content_text
-    padding-top: 10px
-  .logo
-    img
-      width: 140px
-  .copyright
-    text-align: center
-    font-size: 12px
+  padding: 36px 20px 12px
+  display: flex
+  align-items: center
+  justify-content: space-between
+  gap: 16px
+  flex-wrap: wrap
+
+.footerBrand
+  display: flex
+  align-items: center
+  gap: 10px
+  text-decoration: none
+  color: $ink
+  font-weight: 700
+  font-size: 15px
+
+.footerIcon
+  width: 28px
+  height: 28px
+  border-radius: 7px
+
+.footerLinks
+  display: flex
+  gap: 20px
+  flex-wrap: wrap
+
+.footerLink
+  color: $muted
+  text-decoration: none
+  font-size: 14px
+
+.footerLink:hover
+  color: $accent
+
+.copyright
+  width: 100%
+  text-align: center
+  color: $muted
+  font-size: 12px
+  padding: 8px 20px 28px
+
+@media (max-width: 720px)
+  .heroInner
+    padding: 44px 20px 52px
+    gap: 32px
+  .heroTitle
+    font-size: 26px
+  .feature
+    gap: 28px
+    padding: 40px 0
+    flex-direction: column
+  .feature:nth-child(even)
+    flex-direction: column
+  .featureShot
+    width: 200px

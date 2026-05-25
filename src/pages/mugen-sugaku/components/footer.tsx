@@ -5,39 +5,28 @@ import * as styles from "../index.module.sass";
 const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
-      <div className={styles.content_wrap}>
-        <div className={styles.content}>
-          <a href="/" className={styles.logo}>
-            <img src={getFilePath("logo.svg")} alt="" />
+      <div className={styles.footerInner}>
+        <a className={styles.footerBrand} href="/mugen-sugaku">
+          <img
+            className={styles.footerIcon}
+            src={getFilePath("contents/mugen-sugaku/icon.png")}
+            alt="無限数学"
+          />
+          <span>無限数学</span>
+        </a>
+        <nav className={styles.footerLinks}>
+          <a className={styles.footerLink} href="/mugen-sugaku/">
+            アプリ紹介
           </a>
-          <ul className={styles.content}>
-            <li>
-              <button className={styles.btn_rounded}>
-                <i className={styles.facebook} />
-              </button>
-            </li>
-            <li>
-              <button className={styles.btn_rounded}>
-                <i className={styles.twitter} />
-              </button>
-            </li>
-            <li>
-              <button className={styles.btn_rounded}>
-                <i className={styles.linkedin} />
-              </button>
-            </li>
-          </ul>
-        </div>
-        <div className={styles.content_text}>
-          <a href="/mugen-sugaku/">アプリ紹介ページ</a>
-          <br />
-          <a href="/mugen-sugaku/privacy-policy/">プライバシーポリシー</a>
-        </div>
-        <div className={styles.content_text}>
-          <a href="/">開発者について</a>
-        </div>
+          <a className={styles.footerLink} href="/mugen-sugaku/privacy-policy/">
+            プライバシーポリシー
+          </a>
+          <a className={styles.footerLink} href="/">
+            開発者について
+          </a>
+        </nav>
       </div>
-      <div className={styles.copyright}>© 2022 All rights reserved</div>
+      <div className={styles.copyright}>© 2026 ychof. All rights reserved.</div>
     </footer>
   );
 };

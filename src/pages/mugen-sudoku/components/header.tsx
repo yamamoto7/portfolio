@@ -4,18 +4,21 @@ import * as styles from "../index.module.sass";
 
 const Header: React.FC = () => {
   return (
-    <header>
-      <nav className={styles.header_container}>
-        <a className={styles.header_logo} href="/mugen-sudoku">
-          {/* TODO: プロダクトのアイコンに差し替え */}
+    <header className={styles.header}>
+      <div className={styles.headerInner}>
+        <a className={styles.headerBrand} href="/mugen-sudoku">
           <img
-            width="25px"
-            src={getFilePath("contents/buylis/icon.svg")}
-            alt="Logo"
-            className=""
+            className={styles.headerIcon}
+            src={getFilePath("contents/mugen-sudoku/icon.png")}
+            alt="無限数独"
+          />
+          <img
+            className={styles.headerName}
+            src={getFilePath("contents/mugen-sudoku/name.png")}
+            alt="無限数独"
           />
         </a>
-      </nav>
+      </div>
     </header>
   );
 };

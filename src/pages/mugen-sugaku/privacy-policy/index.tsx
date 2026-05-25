@@ -49,15 +49,6 @@ const Component: React.FC = () => {
                 AdMob
               </a>
             </li>
-            <li>
-              <a
-                href="https://firebase.google.com/support/privacy?hl=ja"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Firebase Crashlytics
-              </a>
-            </li>
           </ul>
         </p>
         <h4>ログデータについて</h4>
