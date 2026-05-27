@@ -110,6 +110,21 @@ export default function Component() {
         </div>
       </section>
 
+      <section className={styles.contact}>
+        <h2 className={styles.contactTitle}>お困りですか？</h2>
+        <p className={styles.contactLead}>
+          アプリの使い方・ご要望・不具合のご報告など、お気軽にお問い合わせください。
+        </p>
+        <a
+          className={styles.contactButton}
+          href="https://docs.google.com/forms/d/e/1FAIpQLSf0hPNDtFBaBPpp_N2UQjwXMye-LJYD72MU8k0Edj3nZKRQog/viewform?entry.1388710164=%E8%B6%85%E9%9B%A3%E5%95%8F%20%E6%95%B0%E7%8B%AC999%E5%95%8F"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          お問い合わせ
+        </a>
+      </section>
+
       <Footer />
     </>
   );

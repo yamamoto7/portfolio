@@ -21,6 +21,14 @@ const Footer: React.FC = () => {
           <a className={styles.footerLink} href="/mugen-sudoku/privacy-policy/">
             プライバシーポリシー
           </a>
+          <a
+            className={styles.footerLink}
+            href="https://docs.google.com/forms/d/e/1FAIpQLSf0hPNDtFBaBPpp_N2UQjwXMye-LJYD72MU8k0Edj3nZKRQog/viewform?entry.1388710164=%E8%B6%85%E9%9B%A3%E5%95%8F%20%E6%95%B0%E7%8B%AC999%E5%95%8F"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            お問い合わせ
+          </a>
           <a className={styles.footerLink} href="/">
             開発者について
           </a>
