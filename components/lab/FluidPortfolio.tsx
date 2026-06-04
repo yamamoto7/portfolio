@@ -46,7 +46,9 @@ export default function FluidPortfolio() {
     nameLine1: "KENTA",
     nameLine2: "YAMAMOTO",
     fontFamily,
-    namePos: [0.5, 0.66], // sit the name in the top half
+    namePos: [0.5, 0.6], // sit the name in the top half
+    energy: 0.12, // calm when idle; pointer still stirs lively
+    nameColor: [0.3, 0.95, 0.9],
   });
   const [profileOpen, setProfileOpen] = useState(false);
   const [worksOpen, setWorksOpen] = useState(false);
@@ -80,8 +82,8 @@ export default function FluidPortfolio() {
     <main className="relative h-[100dvh] w-screen overflow-hidden bg-black text-white">
       <canvas ref={ref} className="absolute inset-0 touch-none" />
 
-      {/* subtle contrast helpers (top for the name, bottom for the links) */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/45" />
+      {/* light contrast helper, mostly for the top-left label */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/20" />
 
       <div className="pointer-events-none absolute inset-0 z-10 flex flex-col justify-between p-5 sm:p-8">
         {/* top-left — kept as-is */}
@@ -94,18 +96,18 @@ export default function FluidPortfolio() {
           </p>
         </div>
 
-        {/* bottom row — Profile (left) / Works (right) */}
+        {/* bottom row — frosted frames that blend with the fluid behind them */}
         <div className="flex items-end justify-between">
           <button
             ref={profileBtn}
             onClick={() => setProfileOpen(true)}
-            className="pointer-events-auto flex flex-col items-start"
+            className="pointer-events-auto flex flex-col items-start gap-1 rounded-2xl border border-white/15 bg-white/[0.04] px-5 py-3.5 backdrop-blur-md transition-colors hover:border-white/30 hover:bg-white/[0.09] sm:px-6 sm:py-4"
           >
-            <span className="text-2xl font-semibold leading-none text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)] sm:text-3xl">
+            <span className="text-xl font-medium leading-none text-white/90 sm:text-2xl">
               Profile
             </span>
             <span
-              className="mt-1 text-[10px] uppercase tracking-[0.3em] text-white/55"
+              className="text-[10px] uppercase tracking-[0.3em] text-white/45"
               style={{ fontFamily: "var(--font-mono)" }}
             >
               about me ↗
@@ -115,13 +117,13 @@ export default function FluidPortfolio() {
           <button
             ref={worksBtn}
             onClick={() => setWorksOpen(true)}
-            className="pointer-events-auto flex flex-col items-end"
+            className="pointer-events-auto flex flex-col items-end gap-1 rounded-2xl border border-white/15 bg-white/[0.04] px-5 py-3.5 backdrop-blur-md transition-colors hover:border-white/30 hover:bg-white/[0.09] sm:px-6 sm:py-4"
           >
-            <span className="text-2xl font-semibold leading-none text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)] sm:text-3xl">
+            <span className="text-xl font-medium leading-none text-white/90 sm:text-2xl">
               Works
             </span>
             <span
-              className="mt-1 text-[10px] uppercase tracking-[0.3em] text-white/55"
+              className="text-[10px] uppercase tracking-[0.3em] text-white/45"
               style={{ fontFamily: "var(--font-mono)" }}
             >
               ↗ what i built

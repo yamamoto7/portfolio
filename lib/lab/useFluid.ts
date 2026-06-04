@@ -140,6 +140,12 @@ export type FluidOptions = {
   fontFamily?: string;
   /** Where the name sits, normalized (x right, y up). Default center [0.5,0.5]. */
   namePos?: [number, number];
+  /** Build the dye-mask canvas yourself (overrides states/text rendering). */
+  maskBuilder?: () => HTMLCanvasElement;
+  /** Overall liveliness 0..1. Lower = much calmer when idle. Default 1. */
+  energy?: number;
+  /** Pointer stir strength. Default 6500. */
+  pointerForce?: number;
 };
 
 /** A continuous "smoke" source — e.g. behind a button — in fluid space. */
@@ -153,6 +159,8 @@ export type FluidApi = {
   setState: (i: number) => void;
   /** Replace the set of continuous smoke emitters. */
   setEmitters: (list: Emitter[]) => void;
+  /** Rebuild the dye mask (e.g. after a web font finishes loading). */
+  refresh: () => void;
 };
 
 export function useFluid(
@@ -165,6 +173,7 @@ export function useFluid(
     cycle: () => {},
     setState: () => {},
     setEmitters: () => {},
+    refresh: () => {},
   });
 
   useEffect(() => {
@@ -186,6 +195,8 @@ export function useFluid(
     const nameAmt = opts.nameAmt ?? 0.16;
     const family = opts.fontFamily ?? "system-ui, sans-serif";
     const namePos: [number, number] = opts.namePos ?? [0.5, 0.5];
+    const energy = Math.max(0.05, opts.energy ?? 1);
+    const pointerForce = opts.pointerForce ?? 6500;
     let emitters: { x: number; y: number; color: number[]; seed: number }[] = [];
     const states: FluidState[] =
       opts.states ?? [
@@ -193,7 +204,10 @@ export function useFluid(
       ];
 
     function makeMask(s: FluidState) {
-      return canvasTexture(gl!, textCanvas(s.line1, s.line2, { fontFamily: family }));
+      const c = opts.maskBuilder
+        ? opts.maskBuilder()
+        : textCanvas(s.line1, s.line2, { fontFamily: family });
+      return canvasTexture(gl!, c);
     }
 
     let stateIdx = 0;
@@ -335,6 +349,11 @@ export function useFluid(
     api.current.setEmitters = (list) => {
       emitters = list.map((e, i) => ({ x: e.x, y: e.y, color: e.color, seed: i * 2.3 + 0.7 }));
     };
+    api.current.refresh = () => {
+      const t = makeMask(states[stateIdx]);
+      gl!.deleteTexture(maskTex);
+      maskTex = t;
+    };
 
     let autoT = 0;
     let ci = 0;
@@ -354,7 +373,7 @@ export function useFluid(
       if (ptr.moved) {
         const mag = Math.hypot(ptr.dx, ptr.dy);
         if (mag > 0.0002) {
-          const f = mobile ? 5500 : 6500;
+          const f = pointerForce * (mobile ? 0.85 : 1) * (0.7 + 0.3 * energy);
           doSplat(
             ptr.x,
             ptr.y,
@@ -368,22 +387,32 @@ export function useFluid(
         ptr.dy = 0;
       }
 
+      // ambient drift — rarer and gentler the calmer `energy` is
       autoT -= dt;
       if (autoT <= 0) {
-        autoT = 1.1 + (elapsed % 0.7);
+        autoT = (mobile ? 2.0 : 1.6) / energy + (elapsed % 0.7);
         const ang = elapsed * 1.7;
         const px = 0.5 + Math.cos(ang) * 0.28;
         const py = 0.5 + Math.sin(ang * 1.3) * 0.28;
-        doSplat(px, py, Math.cos(ang) * 2600, Math.sin(ang) * 2600, PALETTE[ci % PALETTE.length]);
+        const p = 2600 * energy;
+        doSplat(
+          px,
+          py,
+          Math.cos(ang) * p,
+          Math.sin(ang) * p,
+          PALETTE[ci % PALETTE.length].map((v) => v * (0.35 + 0.45 * energy))
+        );
         ci++;
       }
 
-      // continuous smoke from registered emitters (rises behind the buttons)
+      // soft, in-place "モワモワ" behind the buttons — a faint billow rather
+      // than a rising plume, kept gentle to match the calm name.
       for (const e of emitters) {
-        const sway = Math.sin(elapsed * 2.2 + e.seed) * 0.6 + Math.sin(elapsed * 5.3 + e.seed) * 0.4;
-        const r = mobile ? 0.0017 : 0.0012;
-        splatVel(e.x + sway * 0.01, e.y, sway * 1000, mobile ? 950 : 1300, r);
-        splatDye(e.x + sway * 0.01, e.y, e.color, r);
+        const r = mobile ? 0.0026 : 0.0019; // larger, softer cloud
+        const sx = Math.sin(elapsed * 1.3 + e.seed) * 0.5 + Math.sin(elapsed * 2.9 + e.seed) * 0.3;
+        const sy = Math.cos(elapsed * 1.1 + e.seed * 1.7) * 0.5;
+        splatVel(e.x, e.y, sx * 280, 150 + sy * 200, r);
+        splatDye(e.x, e.y, e.color, r);
       }
 
       curlP.use({ vel: { tex: vel.read.tex, unit: 0 }, texel: simTexel });
@@ -393,7 +422,7 @@ export function useFluid(
         vel: { tex: vel.read.tex, unit: 0 },
         curl: { tex: curl.read.tex, unit: 1 },
         texel: simTexel,
-        curlAmt: 26,
+        curlAmt: 26 * (0.55 + 0.45 * energy),
         dt,
       });
       R.blit(vel.write);
@@ -424,7 +453,7 @@ export function useFluid(
         src: { tex: vel.read.tex, unit: 0 },
         texel: simTexel,
         dt,
-        diss: 0.995,
+        diss: 0.985 + 0.01 * energy,
       });
       R.blit(vel.write);
       vel.swap();
