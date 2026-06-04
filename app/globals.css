@@ -1,26 +1,43 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Home palette */
+  --color-gray-bg: #f6f7fb;
+  --color-ink: #1a202c;
+  --color-dark: #2e2e3a;
+  --color-green: #00cc96;
+  --color-red: #ff0000;
+
+  /* App landing palette */
+  --color-app-ink: #1b2330;
+  --color-muted: #5f6b7a;
+  --color-line: #e6eaf0;
+  --color-bg-alt: #f6f8fb;
+
+  /* Privacy policy */
+  --color-haiti: #0d152e;
+
+  /* Fonts (CSS variables provided by next/font in the root layout) */
+  --font-sans: var(--font-roboto-mono), var(--font-noto-sans-jp), sans-serif;
+  --font-mono: var(--font-roboto-mono), monospace;
+  --font-jp: var(--font-noto-sans-jp), sans-serif;
+  --font-dm: var(--font-dm-sans), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-ink);
+  background: #ffffff;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
