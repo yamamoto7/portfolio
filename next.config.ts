@@ -23,11 +23,6 @@ const nextConfig: NextConfig = {
         destination: "/buylis/privacy-policy",
         permanent: true,
       },
-      {
-        source: "/privacyPolicy/simpleYosan",
-        destination: "/simple-yosan-privacy",
-        permanent: true,
-      },
     ];
   },
 };

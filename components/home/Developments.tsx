@@ -38,11 +38,13 @@ function DevelopmentCard({ item }: { item: Development }) {
 
         <div className="mb-[30px] text-sm">
           {item.links.map((link) => (
-            <a key={link.title} href={link.url}>
-              <button className="flex h-10 w-full items-center justify-center rounded-lg border border-[#333] bg-white text-[#333] hover:border-[#cdcdcd] hover:bg-[#eaeaea]">
-                <Icon name={link.icon} className="mr-[18px] block" />
-                <span className="block">{link.title}</span>
-              </button>
+            <a
+              key={link.title}
+              href={link.url}
+              className="flex h-10 w-full items-center justify-center rounded-lg border border-[#333] bg-white text-[#333] hover:border-[#cdcdcd] hover:bg-[#eaeaea]"
+            >
+              <Icon name={link.icon} className="mr-[18px] block" />
+              <span className="block">{link.title}</span>
             </a>
           ))}
         </div>
