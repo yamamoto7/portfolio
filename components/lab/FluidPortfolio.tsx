@@ -92,7 +92,7 @@ export default function FluidPortfolio() {
   }, [api, view]);
 
   const frame =
-    "pointer-events-auto flex flex-col gap-1 rounded-2xl border border-white/15 bg-white/[0.04] px-5 py-3.5 backdrop-blur-md transition-colors hover:border-white/30 hover:bg-white/[0.09] sm:px-6 sm:py-4";
+    "pointer-events-auto flex flex-col gap-1 rounded-2xl bg-white/[0.04] px-5 py-3.5 backdrop-blur-md transition-colors hover:bg-white/[0.09] sm:px-6 sm:py-4";
 
   return (
     <main className="relative h-[100dvh] w-screen overflow-hidden bg-black text-white">
