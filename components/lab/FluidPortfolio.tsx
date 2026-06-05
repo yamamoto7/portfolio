@@ -6,11 +6,11 @@ import { FaGithub, FaXTwitter, FaLinkedin, FaFacebook } from "react-icons/fa6";
 import { useFluid } from "@/lib/lab/useFluid";
 import { cssFontFamily } from "@/lib/lab/glu";
 
-// Portfolio over the fluid engine. Pressing Profile / Outputs morphs the fluid
-// name (KENTA YAMAMOTO → PROFILE / OUTPUTS) and reveals content below — all in
+// Portfolio over the fluid engine. Pressing About / Outputs morphs the fluid
+// name (KENTA YAMAMOTO → ABOUT / OUTPUTS) and reveals content below — all in
 // the same fluid space, single no-scroll screen.
 
-type View = "home" | "profile" | "outputs";
+type View = "home" | "about" | "outputs";
 
 type Output = {
   title: string;
@@ -23,7 +23,7 @@ type Output = {
 
 const STATES = [
   { line1: "KENTA", line2: "YAMAMOTO" }, // 0 home
-  { line1: "PROFILE" }, //                  1
+  { line1: "ABOUT" }, //                  1
   { line1: "OUTPUTS" }, //                  2
 ];
 
@@ -121,7 +121,7 @@ export default function FluidPortfolio() {
     setSelected(null);
     if (v === "outputs") setPage(0);
     setView(v);
-    api.current.setState(v === "home" ? 0 : v === "profile" ? 1 : 2);
+    api.current.setState(v === "home" ? 0 : v === "about" ? 1 : 2);
   }
 
   const pageCount = Math.ceil(OUTPUTS.length / PER_PAGE);
@@ -165,7 +165,7 @@ export default function FluidPortfolio() {
       {view !== "home" && (
         <div className="pointer-events-none absolute inset-x-0 top-[50%] bottom-28 z-10 flex justify-center px-6">
           <Reveal key={view} className="pointer-events-auto w-full max-w-md">
-            {view === "profile" ? (
+            {view === "about" ? (
               <div className="flex flex-col items-center text-center">
                 <Image
                   src="/home/profile.png"
@@ -201,7 +201,10 @@ export default function FluidPortfolio() {
                   {pageItems.map((o) => (
                     <button
                       key={o.title}
-                      onClick={() => setSelected(o)}
+                      onClick={() => {
+                        api.current.burst(); // scatter the fluid on tap
+                        setSelected(o);
+                      }}
                       className="w-full rounded-xl bg-white/[0.05] p-3.5 text-left backdrop-blur-md transition-colors hover:bg-white/[0.1]"
                     >
                       <div className="flex items-center justify-between gap-3">
@@ -263,12 +266,12 @@ export default function FluidPortfolio() {
           </p>
         </button>
 
-        {/* bottom row — Profile (left) / Outputs (right) fixed; active one hides */}
+        {/* bottom row — About (left) / Outputs (right) fixed; active one hides */}
         <div className="flex items-end justify-between">
-          {view !== "profile" && (
-            <button ref={leftBtn} onClick={() => go("profile")} className={`${frame} items-start`}>
+          {view !== "about" && (
+            <button ref={leftBtn} onClick={() => go("about")} className={`${frame} items-start`}>
               <span className="text-xl font-medium leading-none text-white/90 sm:text-2xl">
-                Profile
+                About
               </span>
               <span className="text-[10px] uppercase tracking-[0.3em] text-white/45" style={MONO}>
                 about me ↗

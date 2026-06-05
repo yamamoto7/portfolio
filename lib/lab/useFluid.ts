@@ -161,6 +161,8 @@ export type FluidApi = {
   setEmitters: (list: Emitter[]) => void;
   /** Rebuild the dye mask (e.g. after a web font finishes loading). */
   refresh: () => void;
+  /** Scatter the fluid with a radial velocity burst (no state change). */
+  burst: () => void;
 };
 
 export function useFluid(
@@ -174,6 +176,7 @@ export function useFluid(
     setState: () => {},
     setEmitters: () => {},
     refresh: () => {},
+    burst: () => {},
   });
 
   useEffect(() => {
@@ -354,6 +357,7 @@ export function useFluid(
       gl!.deleteTexture(maskTex);
       maskTex = t;
     };
+    api.current.burst = () => burst();
 
     let autoT = 0;
     let ci = 0;
