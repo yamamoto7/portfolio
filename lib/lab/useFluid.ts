@@ -373,7 +373,7 @@ export function useFluid(
       if (ptr.moved) {
         const mag = Math.hypot(ptr.dx, ptr.dy);
         if (mag > 0.0002) {
-          const f = pointerForce * (mobile ? 0.85 : 1) * (0.7 + 0.3 * energy);
+          const f = pointerForce * (mobile ? 0.85 : 1); // pointer stays lively regardless of energy
           doSplat(
             ptr.x,
             ptr.y,
@@ -405,13 +405,15 @@ export function useFluid(
         ci++;
       }
 
-      // soft, in-place "モワモワ" behind the buttons — a faint billow rather
-      // than a rising plume, kept gentle to match the calm name.
+      // soft, in-place "モワモワ" behind the buttons. Velocity is ZERO-MEAN in
+      // both axes (no net direction) so it churns where it sits instead of
+      // drifting upward like wind/smoke.
       for (const e of emitters) {
-        const r = mobile ? 0.0026 : 0.0019; // larger, softer cloud
-        const sx = Math.sin(elapsed * 1.3 + e.seed) * 0.5 + Math.sin(elapsed * 2.9 + e.seed) * 0.3;
-        const sy = Math.cos(elapsed * 1.1 + e.seed * 1.7) * 0.5;
-        splatVel(e.x, e.y, sx * 280, 150 + sy * 200, r);
+        const r = mobile ? 0.0019 : 0.0013; // tighter, more localized cloud
+        const sx = Math.sin(elapsed * 1.1 + e.seed) * 0.6 + Math.sin(elapsed * 2.3 + e.seed * 1.7) * 0.4;
+        const sy = Math.cos(elapsed * 0.9 + e.seed * 1.3) * 0.6 + Math.cos(elapsed * 2.0 + e.seed) * 0.4;
+        const wob = 80; // gentle churn, very little spread
+        splatVel(e.x, e.y, sx * wob, sy * wob, r);
         splatDye(e.x, e.y, e.color, r);
       }
 
@@ -422,7 +424,7 @@ export function useFluid(
         vel: { tex: vel.read.tex, unit: 0 },
         curl: { tex: curl.read.tex, unit: 1 },
         texel: simTexel,
-        curlAmt: 26 * (0.55 + 0.45 * energy),
+        curlAmt: 26 * (0.25 + 0.75 * energy),
         dt,
       });
       R.blit(vel.write);
