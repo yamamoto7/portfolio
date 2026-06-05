@@ -39,47 +39,23 @@ const SOCIAL = [
 
 // TODO: placeholder intro — replace later.
 const INTRO = [
-  "Kenta Yamamoto — a software engineer focused on the backend.",
-  "After building backend systems at ZOZO, now CTO at FAcraft.",
-  "I like building products end-to-end, from design to operations.",
+  "Hi, I'm Kenta Yamamoto.",
+  "CTO at FAcraft Inc.",
+  "I enjoy developing software and turning ideas into real products.",
 ];
 
 // TODO: descriptions / store links are placeholders — replace later.
 const OUTPUTS: Output[] = [
   {
     title: "Buylis",
-    category: "App",
-    tags: ["Flutter", "React", "Gatsby"],
+    category: "Mobile App",
+    tags: ["Flutter"],
     image: "/home/developments/buylis_screen.png",
     description:
       "A mobile app to share shopping lists with family in real time. I designed and built both the app and its landing page.",
     links: [
       { label: "Landing page", href: "/buylis" },
-      { label: "App Store", href: "#" }, // TODO
-      { label: "Google Play", href: "#" }, // TODO
     ],
-  },
-  {
-    title: "Mugen Sudoku",
-    category: "App",
-    tags: ["Flutter"],
-    description: "An endless sudoku app with an infinite supply of puzzles.",
-    links: [{ label: "Page", href: "/mugen-sudoku" }],
-  },
-  {
-    title: "Tile Care",
-    category: "App",
-    tags: ["Flutter"],
-    description: "A small utility app to track tile replacement cycles.",
-    links: [{ label: "Page", href: "/tile-care" }],
-  },
-  {
-    title: "Portfolio",
-    category: "Web",
-    tags: ["React", "Gatsby", "TypeScript"],
-    image: "/home/developments/portfolio_screen.png",
-    description: "The predecessor of this site.",
-    links: [{ label: "GitHub", href: "https://github.com/yamamoto7/portfolio" }],
   },
   {
     title: "Color-blindness simulator",
