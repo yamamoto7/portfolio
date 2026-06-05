@@ -3,8 +3,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { FaGithub, FaXTwitter, FaLinkedin, FaFacebook } from "react-icons/fa6";
-import { useFluid } from "@/lib/lab/useFluid";
-import { cssFontFamily } from "@/lib/lab/glu";
+import { useFluid } from "@/lib/portfolio/useFluid";
+import { cssFontFamily } from "@/lib/portfolio/glu";
 
 // Portfolio over the fluid engine. Pressing About / Outputs morphs the fluid
 // name (KENTA YAMAMOTO → ABOUT / OUTPUTS) and reveals content below — all in
@@ -278,7 +278,7 @@ export default function FluidPortfolio() {
           onClick={() => setSelected(null)}
         >
           <div
-            className="w-full max-w-md rounded-2xl border border-white/10 bg-[#0c0d12]/92 p-5 shadow-2xl"
+            className="w-full max-w-md rounded-2xl bg-white/[0.07] p-5 shadow-2xl backdrop-blur-xl"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="mb-3 flex items-start justify-between gap-3">

@@ -1,5 +1,5 @@
-// Minimal WebGL2 helpers shared by the /lab demos.
-// Kept tiny and dependency-free on purpose — each demo owns its own shaders.
+// Minimal WebGL2 helpers for the fluid portfolio.
+// Kept tiny and dependency-free on purpose.
 
 export type GL = WebGL2RenderingContext;
 

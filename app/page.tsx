@@ -1,4 +1,4 @@
-import FluidPortfolio from "@/components/lab/FluidPortfolio";
+import FluidPortfolio from "@/components/portfolio/FluidPortfolio";
 
 export default function Page() {
   return <FluidPortfolio />;
