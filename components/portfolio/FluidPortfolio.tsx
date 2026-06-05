@@ -139,8 +139,11 @@ export default function FluidPortfolio() {
 
       {/* revealed content (below the morphed name) */}
       {view !== "home" && (
-        <div className="pointer-events-none absolute inset-x-0 top-[50%] bottom-28 z-10 flex justify-center px-6">
-          <Reveal key={view} className="pointer-events-auto w-full max-w-md">
+        <div className="pointer-events-none absolute inset-x-0 top-[45%] bottom-36 z-10 flex items-center justify-center px-6 sm:top-[50%] sm:bottom-28">
+          <Reveal
+            key={view}
+            className="pointer-events-auto max-h-full w-full max-w-md overflow-y-auto"
+          >
             {view === "about" ? (
               <div className="flex flex-col items-center text-center">
                 <Image
@@ -148,7 +151,7 @@ export default function FluidPortfolio() {
                   alt="Kenta Yamamoto"
                   width={160}
                   height={160}
-                  className="h-20 w-20 rounded-full object-cover ring-1 ring-white/25 sm:h-24 sm:w-24"
+                  className="h-16 w-16 rounded-full object-cover ring-1 ring-white/25 sm:h-24 sm:w-24"
                 />
                 <div className="mt-4 max-w-sm space-y-1 text-sm leading-relaxed text-white/85 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
                   {INTRO.map((line) => (
@@ -181,7 +184,7 @@ export default function FluidPortfolio() {
                         api.current.burst(); // scatter the fluid on tap
                         setSelected(o);
                       }}
-                      className="w-full rounded-xl bg-white/[0.05] p-3.5 text-left backdrop-blur-md transition-colors hover:bg-white/[0.1]"
+                      className="w-full rounded-xl bg-white/[0.05] p-3 text-left backdrop-blur-md transition-colors hover:bg-white/[0.1] sm:p-3.5"
                     >
                       <div className="flex items-center justify-between gap-3">
                         <span className="text-sm font-medium">{o.title}</span>
