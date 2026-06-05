@@ -1,47 +1,102 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import Image from "next/image";
+import { FaGithub, FaXTwitter, FaLinkedin, FaFacebook } from "react-icons/fa6";
 import { useFluid } from "@/lib/lab/useFluid";
 import { cssFontFamily } from "@/lib/lab/glu";
 
-// Portfolio over the fluid engine. Pressing Profile / Works morphs the fluid
-// name (KENTA YAMAMOTO → PROFILE / WORKS) and reveals content below — all in
-// the same fluid space, no modal, single no-scroll screen.
+// Portfolio over the fluid engine. Pressing Profile / Outputs morphs the fluid
+// name (KENTA YAMAMOTO → PROFILE / OUTPUTS) and reveals content below — all in
+// the same fluid space, single no-scroll screen.
 
-type View = "home" | "profile" | "works";
+type View = "home" | "profile" | "outputs";
+
+type Output = {
+  title: string;
+  category: string;
+  tags: string[];
+  image?: string;
+  description: string;
+  links: { label: string; href: string }[];
+};
 
 const STATES = [
   { line1: "KENTA", line2: "YAMAMOTO" }, // 0 home
   { line1: "PROFILE" }, //                  1
-  { line1: "WORKS" }, //                    2
+  { line1: "OUTPUTS" }, //                  2
 ];
+
+const MONO = { fontFamily: "var(--font-mono)" };
+const PER_PAGE = 3;
 
 const SOCIAL = [
-  { label: "GitHub", href: "https://github.com/yamamoto7" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/kentayamamoto7/" },
-  { label: "Facebook", href: "https://www.facebook.com/kenta.yamamoto.94064176" },
-  { label: "履歴書 JP", href: "https://github.com/yamamoto7/yamamoto7/blob/master/RESUME.md" },
-  { label: "Resume EN", href: "https://github.com/yamamoto7/yamamoto7/blob/master/RESUME-en.md" },
+  { label: "GitHub", href: "https://github.com/yamamoto7", Icon: FaGithub },
+  { label: "X", href: "https://x.com/yamamoto7", Icon: FaXTwitter }, // TODO: confirm X handle
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/kentayamamoto7/", Icon: FaLinkedin },
+  { label: "Facebook", href: "https://www.facebook.com/kenta.yamamoto.94064176", Icon: FaFacebook },
 ];
 
-const WORKS = [
+// TODO: placeholder intro — replace later.
+const INTRO = [
+  "Kenta Yamamoto — a software engineer focused on the backend.",
+  "After building backend systems at ZOZO, now CTO at FAcraft.",
+  "I like building products end-to-end, from design to operations.",
+];
+
+// TODO: descriptions / store links are placeholders — replace later.
+const OUTPUTS: Output[] = [
   {
-    title: "Buylis — Shopping list app",
-    stack: "Flutter · React · Gatsby",
-    href: "/buylis",
-    about: "買い物リストを家族と共有できるモバイルアプリ。LP も自作。",
+    title: "Buylis",
+    category: "App",
+    tags: ["Flutter", "React", "Gatsby"],
+    image: "/home/developments/buylis_screen.png",
+    description:
+      "A mobile app to share shopping lists with family in real time. I designed and built both the app and its landing page.",
+    links: [
+      { label: "Landing page", href: "/buylis" },
+      { label: "App Store", href: "#" }, // TODO
+      { label: "Google Play", href: "#" }, // TODO
+    ],
+  },
+  {
+    title: "Mugen Sudoku",
+    category: "App",
+    tags: ["Flutter"],
+    description: "An endless sudoku app with an infinite supply of puzzles.",
+    links: [{ label: "Page", href: "/mugen-sudoku" }],
+  },
+  {
+    title: "Tile Care",
+    category: "App",
+    tags: ["Flutter"],
+    description: "A small utility app to track tile replacement cycles.",
+    links: [{ label: "Page", href: "/tile-care" }],
   },
   {
     title: "Portfolio",
-    stack: "React · Gatsby · TypeScript",
-    href: "https://github.com/yamamoto7/portfolio",
-    about: "このサイトの前身。",
+    category: "Web",
+    tags: ["React", "Gatsby", "TypeScript"],
+    image: "/home/developments/portfolio_screen.png",
+    description: "The predecessor of this site.",
+    links: [{ label: "GitHub", href: "https://github.com/yamamoto7/portfolio" }],
   },
   {
     title: "Color-blindness simulator",
-    stack: "C++ · OpenCV",
-    href: "https://github.com/yamamoto7",
-    about: "色覚多様性の見え方を再現し、識別困難領域を可視化。",
+    category: "Experiment",
+    tags: ["C++", "OpenCV"],
+    image: "/home/developments/color-blindness.png",
+    description:
+      "Reproduces how scenes look with color-vision deficiency and visualizes regions that are hard to tell apart.",
+    links: [{ label: "GitHub", href: "https://github.com/yamamoto7" }],
+  },
+  {
+    title: "Image compression",
+    category: "Experiment",
+    tags: ["Java"],
+    image: "/home/developments/image-compression.png",
+    description: "An image-compression experiment.",
+    links: [{ label: "GitHub", href: "https://github.com/yamamoto7" }],
   },
 ];
 
@@ -59,11 +114,18 @@ export default function FluidPortfolio() {
     nameAmt: 0.12,
   });
   const [view, setView] = useState<View>("home");
+  const [page, setPage] = useState(0);
+  const [selected, setSelected] = useState<Output | null>(null);
 
   function go(v: View) {
+    setSelected(null);
+    if (v === "outputs") setPage(0);
     setView(v);
     api.current.setState(v === "home" ? 0 : v === "profile" ? 1 : 2);
   }
+
+  const pageCount = Math.ceil(OUTPUTS.length / PER_PAGE);
+  const pageItems = OUTPUTS.slice(page * PER_PAGE, page * PER_PAGE + PER_PAGE);
 
   // keep the two bottom buttons registered as smoke sources (positions shift
   // when their labels change between views)
@@ -101,50 +163,84 @@ export default function FluidPortfolio() {
 
       {/* revealed content (below the morphed name) */}
       {view !== "home" && (
-        <div className="pointer-events-none absolute inset-x-0 top-[52%] bottom-28 z-10 flex justify-center px-6">
+        <div className="pointer-events-none absolute inset-x-0 top-[50%] bottom-28 z-10 flex justify-center px-6">
           <Reveal key={view} className="pointer-events-auto w-full max-w-md">
             {view === "profile" ? (
-              <div className="text-center">
-                <p className="text-sm leading-relaxed text-white/85 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
-                  バックエンドを中心に、設計から実装まで。データ基盤やモバイルアプリ
-                  まで幅広く手を動かします。{/* TODO: 本文は仮 */}
-                </p>
-                <div className="mt-5 flex flex-wrap justify-center gap-2">
+              <div className="flex flex-col items-center text-center">
+                <Image
+                  src="/home/profile.png"
+                  alt="Kenta Yamamoto"
+                  width={160}
+                  height={160}
+                  className="h-20 w-20 rounded-full object-cover ring-1 ring-white/25 sm:h-24 sm:w-24"
+                />
+                <div className="mt-4 max-w-sm space-y-1 text-sm leading-relaxed text-white/85 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+                  {INTRO.map((line) => (
+                    <p key={line}>{line}</p>
+                  ))}
+                </div>
+                <div className="mt-6 flex items-center justify-center gap-3">
                   {SOCIAL.map((s) => (
                     <a
                       key={s.label}
                       href={s.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="rounded-full border border-white/20 bg-white/[0.06] px-3 py-1.5 text-xs text-white/85 backdrop-blur-sm transition-colors hover:border-white/50 hover:text-white"
+                      aria-label={s.label}
+                      title={s.label}
+                      className="grid h-11 w-11 place-items-center rounded-full bg-white/[0.06] text-white/80 backdrop-blur-md transition-colors hover:bg-white/[0.14] hover:text-white"
                     >
-                      {s.label}
+                      <s.Icon className="h-5 w-5" />
                     </a>
                   ))}
                 </div>
               </div>
             ) : (
-              <div className="grid gap-2">
-                {WORKS.map((w) => (
-                  <a
-                    key={w.title}
-                    href={w.href}
-                    target={w.href.startsWith("http") ? "_blank" : undefined}
-                    rel="noreferrer"
-                    className="block rounded-xl border border-white/10 bg-white/[0.05] p-3.5 backdrop-blur-md transition-colors hover:border-white/30 hover:bg-white/[0.1]"
-                  >
-                    <div className="flex items-baseline justify-between gap-3">
-                      <span className="text-sm font-medium">{w.title}</span>
-                      <span className="shrink-0 text-xs text-white/40">→</span>
-                    </div>
-                    <p
-                      className="mt-0.5 text-[10px] uppercase tracking-wide text-white/45"
-                      style={{ fontFamily: "var(--font-mono)" }}
+              <div className="w-full">
+                <div className="grid gap-2">
+                  {pageItems.map((o) => (
+                    <button
+                      key={o.title}
+                      onClick={() => setSelected(o)}
+                      className="w-full rounded-xl bg-white/[0.05] p-3.5 text-left backdrop-blur-md transition-colors hover:bg-white/[0.1]"
                     >
-                      {w.stack}
-                    </p>
-                  </a>
-                ))}
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="text-sm font-medium">{o.title}</span>
+                        <span className="shrink-0 text-xs text-white/40">↗</span>
+                      </div>
+                      <div className="mt-2 flex flex-wrap items-center gap-1.5">
+                        <Badge>{o.category}</Badge>
+                        {o.tags.map((t) => (
+                          <Tag key={t}>{t}</Tag>
+                        ))}
+                      </div>
+                    </button>
+                  ))}
+                </div>
+
+                {pageCount > 1 && (
+                  <div className="mt-3 flex items-center justify-center gap-5 text-white/60">
+                    <button
+                      disabled={page === 0}
+                      onClick={() => setPage((p) => Math.max(0, p - 1))}
+                      className="text-base transition-colors hover:text-white disabled:opacity-25"
+                      aria-label="previous"
+                    >
+                      ←
+                    </button>
+                    <span className="text-[11px] tracking-[0.2em]" style={MONO}>
+                      {page + 1} / {pageCount}
+                    </span>
+                    <button
+                      disabled={page === pageCount - 1}
+                      onClick={() => setPage((p) => Math.min(pageCount - 1, p + 1))}
+                      className="text-base transition-colors hover:text-white disabled:opacity-25"
+                      aria-label="next"
+                    >
+                      →
+                    </button>
+                  </div>
+                )}
               </div>
             )}
           </Reveal>
@@ -153,78 +249,136 @@ export default function FluidPortfolio() {
 
       {/* chrome */}
       <div className="pointer-events-none absolute inset-0 z-10 flex flex-col justify-between p-5 sm:p-8">
-        {/* top-left — kept as-is */}
-        <div style={{ fontFamily: "var(--font-mono)" }}>
-          <p className="text-[13px] font-medium text-white/90 sm:text-sm">Software Engineer</p>
-          <p className="text-[11px] uppercase tracking-[0.2em] text-white/55">Tokyo, Japan</p>
-        </div>
+        {/* top-left — HOME link */}
+        <button
+          onClick={() => view !== "home" && go("home")}
+          className="pointer-events-auto text-left transition-opacity hover:opacity-70"
+          style={MONO}
+        >
+          <p className="text-[13px] font-medium lowercase text-white/90 sm:text-sm">
+            kenta yamamoto
+          </p>
+          <p className="text-[11px] uppercase tracking-[0.2em] text-white/55">
+            Software Engineer / Japan
+          </p>
+        </button>
 
-        {/* bottom row */}
+        {/* bottom row — Profile (left) / Outputs (right) fixed; active one hides */}
         <div className="flex items-end justify-between">
-          {view === "home" ? (
-            <>
-              <button ref={leftBtn} onClick={() => go("profile")} className={`${frame} items-start`}>
-                <span className="text-xl font-medium leading-none text-white/90 sm:text-2xl">
-                  Profile
-                </span>
-                <span
-                  className="text-[10px] uppercase tracking-[0.3em] text-white/45"
-                  style={{ fontFamily: "var(--font-mono)" }}
-                >
-                  about me ↗
-                </span>
-              </button>
-              <button ref={rightBtn} onClick={() => go("works")} className={`${frame} items-end`}>
-                <span className="text-xl font-medium leading-none text-white/90 sm:text-2xl">
-                  Works
-                </span>
-                <span
-                  className="text-[10px] uppercase tracking-[0.3em] text-white/45"
-                  style={{ fontFamily: "var(--font-mono)" }}
-                >
-                  ↗ what i built
-                </span>
-              </button>
-            </>
-          ) : (
-            <>
-              <button ref={leftBtn} onClick={() => go("home")} className={`${frame} items-start`}>
-                <span className="text-lg font-medium leading-none text-white/90 sm:text-xl">
-                  ← Back
-                </span>
-                <span
-                  className="text-[10px] uppercase tracking-[0.3em] text-white/45"
-                  style={{ fontFamily: "var(--font-mono)" }}
-                >
-                  home
-                </span>
-              </button>
-              <button
-                ref={rightBtn}
-                onClick={() => go(view === "profile" ? "works" : "profile")}
-                className={`${frame} items-end`}
-              >
-                <span className="text-lg font-medium leading-none text-white/90 sm:text-xl">
-                  {view === "profile" ? "Works" : "Profile"}
-                </span>
-                <span
-                  className="text-[10px] uppercase tracking-[0.3em] text-white/45"
-                  style={{ fontFamily: "var(--font-mono)" }}
-                >
-                  ↗ switch
-                </span>
-              </button>
-            </>
+          {view !== "profile" && (
+            <button ref={leftBtn} onClick={() => go("profile")} className={`${frame} items-start`}>
+              <span className="text-xl font-medium leading-none text-white/90 sm:text-2xl">
+                Profile
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.3em] text-white/45" style={MONO}>
+                about me ↗
+              </span>
+            </button>
+          )}
+          {view !== "outputs" && (
+            <button
+              ref={rightBtn}
+              onClick={() => go("outputs")}
+              className={`${frame} ml-auto items-end`}
+            >
+              <span className="text-xl font-medium leading-none text-white/90 sm:text-2xl">
+                Outputs
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.3em] text-white/45" style={MONO}>
+                ↗ what i built
+              </span>
+            </button>
           )}
         </div>
       </div>
 
+      {/* output detail modal */}
+      {selected && (
+        <div
+          className="absolute inset-0 z-40 flex items-center justify-center bg-black/55 p-5 backdrop-blur-sm"
+          onClick={() => setSelected(null)}
+        >
+          <div
+            className="w-full max-w-md rounded-2xl border border-white/10 bg-[#0c0d12]/92 p-5 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="mb-3 flex items-start justify-between gap-3">
+              <div>
+                <h3 className="text-lg font-semibold">{selected.title}</h3>
+                <div className="mt-1.5 flex flex-wrap gap-1.5">
+                  <Badge>{selected.category}</Badge>
+                  {selected.tags.map((t) => (
+                    <Tag key={t}>{t}</Tag>
+                  ))}
+                </div>
+              </div>
+              <button
+                onClick={() => setSelected(null)}
+                className="shrink-0 rounded-full border border-white/20 px-2.5 py-1 text-xs text-white/70 hover:text-white"
+              >
+                ✕
+              </button>
+            </div>
+
+            {selected.image && (
+              <div className="relative mb-3 h-52 w-full overflow-hidden rounded-lg bg-white/5">
+                <Image
+                  src={selected.image}
+                  alt={selected.title}
+                  fill
+                  sizes="(max-width: 768px) 90vw, 400px"
+                  className="object-contain"
+                />
+              </div>
+            )}
+
+            <p className="text-[13px] leading-relaxed text-white/75">{selected.description}</p>
+
+            <div className="mt-4 flex flex-wrap gap-2">
+              {selected.links.map((l) => (
+                <a
+                  key={l.label}
+                  href={l.href}
+                  target={l.href.startsWith("http") ? "_blank" : undefined}
+                  rel="noreferrer"
+                  className="rounded-full bg-white/[0.08] px-3.5 py-1.5 text-xs text-white/85 transition-colors hover:bg-white/[0.16] hover:text-white"
+                >
+                  {l.label} ↗
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       {!supported && (
-        <div className="absolute inset-0 z-30 grid place-items-center bg-black text-white/70">
+        <div className="absolute inset-0 z-50 grid place-items-center bg-black text-white/70">
           WebGL2 not supported on this device.
         </div>
       )}
     </main>
+  );
+}
+
+function Badge({ children }: { children: React.ReactNode }) {
+  return (
+    <span
+      className="rounded-full bg-white/[0.16] px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-white/85"
+      style={MONO}
+    >
+      {children}
+    </span>
+  );
+}
+
+function Tag({ children }: { children: React.ReactNode }) {
+  return (
+    <span
+      className="rounded-full bg-white/[0.06] px-2 py-0.5 text-[10px] text-white/55"
+      style={MONO}
+    >
+      {children}
+    </span>
   );
 }
 
