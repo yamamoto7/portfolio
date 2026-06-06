@@ -22,6 +22,7 @@
   --font-mono: var(--font-roboto-mono), monospace;
   --font-jp: var(--font-noto-sans-jp), sans-serif;
   --font-dm: var(--font-dm-sans), sans-serif;
+  --font-mincho: var(--font-noto-serif-jp), serif;
 }
 
 html {

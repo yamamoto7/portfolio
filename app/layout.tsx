@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Noto_Sans_JP, Roboto_Mono, DM_Sans } from "next/font/google";
+import { Noto_Sans_JP, Noto_Serif_JP, Roboto_Mono, DM_Sans } from "next/font/google";
 import "./globals.css";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
   subsets: ["latin"],
   weight: ["300", "400", "700"],
+});
+
+const notoSerifJP = Noto_Serif_JP({
+  variable: "--font-noto-serif-jp",
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "900"],
 });
 
 const robotoMono = Roboto_Mono({
@@ -41,7 +47,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${notoSansJP.variable} ${robotoMono.variable} ${dmSans.variable} h-full`}
+      className={`${notoSansJP.variable} ${notoSerifJP.variable} ${robotoMono.variable} ${dmSans.variable} h-full`}
     >
       <body className="flex min-h-full flex-col">
         {children}

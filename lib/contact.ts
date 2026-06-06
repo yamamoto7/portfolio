@@ -16,7 +16,7 @@ export const CONTACT_CATEGORIES: ContactOption[] = [
 export const CONTACT_APPS: ContactOption[] = [
   { id: "routin", label: ROUTIN_APP_NAME },
   { id: "buylis", label: "Buylis" },
-  { id: "mugen-sudoku", label: "無限数独" },
+  { id: "mugen-sudoku", label: "鬼難易度数独" },
   { id: "mugen-sugaku", label: "無限数学" },
   { id: "tile-care", label: "タイルケア" },
 ];

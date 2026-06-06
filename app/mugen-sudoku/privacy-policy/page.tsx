@@ -17,7 +17,7 @@ const APP_NAME = MUGEN_SUDOKU_NAME;
 export default function Page() {
   return (
     <div
-      className="font-jp flex min-h-screen flex-col bg-white text-app-ink"
+      className="font-jp flex min-h-screen flex-col bg-[#ECE3D0] text-app-ink"
       style={{ "--accent": MUGEN_SUDOKU_ACCENT } as React.CSSProperties}
     >
       <MugenSudokuHeader
@@ -116,7 +116,7 @@ export default function Page() {
         </p>
       </div>
 
-      <footer className="border-t border-line bg-white px-5 py-12 text-center">
+      <footer className="border-t border-[#D6CBB2] bg-[#ECE3D0] px-5 py-12 text-center">
         <div className="mx-auto flex max-w-[960px] flex-wrap items-center justify-center gap-x-5 gap-y-2">
           <Link
             href="/mugen-sudoku"
