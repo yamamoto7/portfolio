@@ -27,34 +27,6 @@ export interface AppConfig {
 }
 
 export const apps: Record<string, AppConfig> = {
-  "mugen-sudoku": {
-    slug: "mugen-sudoku",
-    displayName: "無限数独",
-    fullName: "無限数独",
-    accent: "#4263eb",
-    heroTitle: ["激ムズを求める", "あなたにおすすめ"],
-    heroLead: "ナンプレマニア監修。感動の操作体験を、広告なしで。",
-    ctaTitle: "激ムズナンプレ、はじめてみませんか。",
-    contactForm:
-      "https://docs.google.com/forms/d/e/1FAIpQLSf0hPNDtFBaBPpp_N2UQjwXMye-LJYD72MU8k0Edj3nZKRQog/viewform?entry.1388710164=%E8%B6%85%E9%9B%A3%E5%95%8F%20%E6%95%B0%E7%8B%AC999%E5%95%8F",
-    features: [
-      {
-        heading: "マニアを唸らせる難問のみ収録",
-        desc: "簡単な問題はもう卒業。歯ごたえのある難問だけを厳選して収録しました。",
-      },
-      {
-        heading: "邪魔な広告は一切なし",
-        desc: "思考を妨げるバナーやポップアップはゼロ。ただ問題に集中できます。",
-      },
-      {
-        heading: "爽快な操作感",
-        desc: "ナンプレマニア監修。ストレスのない入力で、解く快感だけが残ります。",
-      },
-    ],
-    nameSize: { w: 736, h: 321 },
-    mvSize: { w: 1122, h: 1402 },
-    effectiveDate: "2026-05-25",
-  },
   "mugen-sugaku": {
     slug: "mugen-sugaku",
     displayName: "無限数学",
