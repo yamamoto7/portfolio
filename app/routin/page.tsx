@@ -13,8 +13,7 @@ const APP_STORE_URL = "#";
 
 /* ------------------------------------------------------------------ *
  * Routin はアプリの世界観（静けさ・余白・sage green）を LP に移植する。
- * カラートークンはアプリの Theme から流用。ダークモードは Tailwind v4 の
- * dark:（既定で prefers-color-scheme）で再現している。
+ * カラートークンはアプリの Theme から流用（ライト単一モード）。
  * ビジュアルは App Store 提出用スクショ（上部見出しをクロップ済み）を使用。
  * ------------------------------------------------------------------ */
 
@@ -54,7 +53,7 @@ function Shot({
         width={1242}
         height={2228}
         priority={priority}
-        className="h-auto w-full rounded-[26px] shadow-[0_20px_48px_rgba(40,40,38,0.16)] dark:shadow-[0_20px_48px_rgba(0,0,0,0.55)]"
+        className="h-auto w-full rounded-[26px] shadow-[0_20px_48px_rgba(40,40,38,0.16)]"
       />
     </div>
   );
@@ -107,9 +106,9 @@ const NO_PRESSURE = [
 
 export default function Page() {
   return (
-    <div className="font-jp min-h-screen bg-[#F7F5F0] text-[#282826] dark:bg-[#121214] dark:text-[#EBEAE3]">
+    <div className="font-jp min-h-screen bg-[#F7F5F0] text-[#282826]">
       {/* Header */}
-      <header className="sticky top-0 z-10 border-b border-[#E6E4DB]/70 bg-[#F7F5F0]/80 backdrop-blur-md dark:border-[#343439]/70 dark:bg-[#121214]/80">
+      <header className="sticky top-0 z-10 border-b border-[#E6E4DB]/70 bg-[#F7F5F0]/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-[960px] items-center justify-between px-5 py-3">
           <Link href="/routin" className="flex items-center gap-2.5 no-underline">
             <Image
@@ -125,7 +124,7 @@ export default function Page() {
           </Link>
           <a
             href={APP_STORE_URL}
-            className="rounded-full bg-[#6A826D] px-4 py-2 text-[13px] font-bold text-white no-underline transition-opacity hover:opacity-90 dark:bg-[#99B2A1] dark:text-[#121214]"
+            className="rounded-full bg-[#6A826D] px-4 py-2 text-[13px] font-bold text-white no-underline transition-opacity hover:opacity-90"
           >
             入手する
           </a>
@@ -147,7 +146,7 @@ export default function Page() {
             <br />
             いい。
           </h1>
-          <p className="mb-9 text-[17px] leading-[1.9] text-[#85827D] dark:text-[#989792]">
+          <p className="mb-9 text-[17px] leading-[1.9] text-[#85827D]">
             ストリークも、スコアも、通知もありません。
             <br />
             静かに続けられる、ルーティンアプリ。
@@ -158,21 +157,19 @@ export default function Page() {
       </section>
 
       {/* 引き算の価値 */}
-      <section className="border-y border-[#E6E4DB] bg-[#FFFBFA] dark:border-[#343439] dark:bg-[#212223]">
+      <section className="border-y border-[#E6E4DB] bg-[#FFFBFA]">
         <div className="mx-auto max-w-[960px] px-5 py-16 text-center">
-          <p className="mb-10 text-[15px] tracking-[0.04em] text-[#85827D] dark:text-[#989792]">
+          <p className="mb-10 text-[15px] tracking-[0.04em] text-[#85827D]">
             続けるために、削ぎ落としたもの。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             {NO_PRESSURE.map((item) => (
               <div
                 key={item.k}
-                className="min-w-[200px] flex-[1_1_220px] rounded-[16px] border border-[#E6E4DB] bg-[#F7F5F0] px-6 py-7 dark:border-[#343439] dark:bg-[#121214]"
+                className="min-w-[200px] flex-[1_1_220px] rounded-[16px] border border-[#E6E4DB] bg-[#F7F5F0] px-6 py-7"
               >
-                <p className="mb-1.5 text-[15px] text-[#85827D] dark:text-[#989792]">
-                  {item.k}
-                </p>
-                <p className="text-[26px] font-extrabold text-[#6A826D] dark:text-[#99B2A1]">
+                <p className="mb-1.5 text-[15px] text-[#85827D]">{item.k}</p>
+                <p className="text-[26px] font-extrabold text-[#6A826D]">
                   {item.v}
                 </p>
               </div>
@@ -186,17 +183,17 @@ export default function Page() {
         {FEATURES.map((f) => (
           <section
             key={f.badge}
-            className="flex flex-wrap items-center justify-center gap-x-16 gap-y-8 border-[#E6E4DB] py-16 [&:not(:first-child)]:border-t dark:border-[#343439] [&:nth-child(even)]:flex-row-reverse max-[720px]:flex-col max-[720px]:gap-8 max-[720px]:py-12 max-[720px]:[&:nth-child(even)]:flex-col"
+            className="flex flex-wrap items-center justify-center gap-x-16 gap-y-8 border-[#E6E4DB] py-16 [&:not(:first-child)]:border-t [&:nth-child(even)]:flex-row-reverse max-[720px]:flex-col max-[720px]:gap-8 max-[720px]:py-12 max-[720px]:[&:nth-child(even)]:flex-col"
           >
             <Shot n={f.shot} label={f.alt} />
             <div className="max-w-[400px] flex-[1_1_320px]">
-              <span className="mb-3 inline-block text-[12px] font-bold tracking-[0.12em] text-[#6A826D] dark:text-[#99B2A1]">
+              <span className="mb-3 inline-block text-[12px] font-bold tracking-[0.12em] text-[#6A826D]">
                 {f.badge}
               </span>
               <h2 className="mb-4 text-[26px] leading-[1.45] font-extrabold tracking-[-0.01em] max-[720px]:text-[22px]">
                 {f.heading}
               </h2>
-              <p className="text-[15px] leading-[1.95] text-[#85827D] dark:text-[#989792]">
+              <p className="text-[15px] leading-[1.95] text-[#85827D]">
                 {f.desc}
               </p>
             </div>
@@ -205,11 +202,11 @@ export default function Page() {
       </div>
 
       {/* CTA */}
-      <section className="border-t border-[#E6E4DB] bg-[#FFFBFA] px-5 py-20 text-center dark:border-[#343439] dark:bg-[#212223]">
+      <section className="border-t border-[#E6E4DB] bg-[#FFFBFA] px-5 py-20 text-center">
         <h2 className="mb-3 text-[26px] font-extrabold tracking-[-0.01em]">
           今日から、静かに。
         </h2>
-        <p className="mx-auto mb-8 max-w-[440px] text-[15px] leading-[1.9] text-[#85827D] dark:text-[#989792]">
+        <p className="mx-auto mb-8 max-w-[440px] text-[15px] leading-[1.9] text-[#85827D]">
           アカウントは要りません。データはあなたの端末の中だけに、そっと。
         </p>
         <div className="flex justify-center">
@@ -218,14 +215,12 @@ export default function Page() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#F7F5F0] px-5 py-12 text-center dark:bg-[#121214]">
+      <footer className="bg-[#F7F5F0] px-5 py-12 text-center">
         <div className="mx-auto flex max-w-[960px] flex-col items-center gap-3">
-          <span className="font-dm text-[15px] font-bold text-[#85827D] dark:text-[#989792]">
+          <span className="font-dm text-[15px] font-bold text-[#85827D]">
             Routin
           </span>
-          <p className="text-[13px] text-[#85827D] dark:text-[#989792]">
-            © {2026} ychof
-          </p>
+          <p className="text-[13px] text-[#85827D]">© {2026} ychof</p>
         </div>
       </footer>
     </div>
