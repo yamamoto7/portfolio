@@ -499,7 +499,9 @@ export function useFluid(
       window.removeEventListener("pointermove", onMove);
       window.removeEventListener("pointerdown", onDown);
       window.removeEventListener("pointerup", onUp);
-      gl.getExtension("WEBGL_lose_context")?.loseContext();
+      // NOTE: ここで loseContext() を呼ぶと、同じ canvas 要素を使い回す再マウント時
+      // （React Strict Mode の二重 effect など）に破棄済みコンテキストを掴んでしまい、
+      // シェーダーコンパイルが "null" で失敗する。コンテキストは canvas の GC に任せる。
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

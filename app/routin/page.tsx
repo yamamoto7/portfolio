@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import RoutinHeader from "@/components/routin/RoutinHeader";
+import { ROUTIN_APP_NAME } from "@/lib/routin";
 
 export const metadata: Metadata = {
-  title: "Routin — 静かなルーティン",
+  title: ROUTIN_APP_NAME,
   description:
     "頑張らなくても、いい。ストリークもスコアも通知もない、静かに続けられるルーティンアプリ。",
 };
@@ -108,28 +110,16 @@ export default function Page() {
   return (
     <div className="font-jp min-h-screen bg-[#F7F5F0] text-[#282826]">
       {/* Header */}
-      <header className="sticky top-0 z-10 border-b border-[#E6E4DB]/70 bg-[#F7F5F0]/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-[960px] items-center justify-between px-5 py-3">
-          <Link href="/routin" className="flex items-center gap-2.5 no-underline">
-            <Image
-              src="/contents/routin/icon.png"
-              alt="Routin"
-              width={1024}
-              height={1024}
-              className="h-9 w-9 rounded-[9px] shadow-[0_2px_8px_rgba(40,40,38,0.14)]"
-            />
-            <span className="font-dm text-[19px] font-bold tracking-[-0.01em]">
-              Routin
-            </span>
-          </Link>
+      <RoutinHeader
+        right={
           <a
             href={APP_STORE_URL}
             className="rounded-full bg-[#6A826D] px-4 py-2 text-[13px] font-bold text-white no-underline transition-opacity hover:opacity-90"
           >
             入手する
           </a>
-        </div>
-      </header>
+        }
+      />
 
       {/* Hero */}
       <section className="mx-auto flex max-w-[960px] flex-wrap items-center justify-center gap-x-16 gap-y-10 px-5 pt-20 pb-24 max-[720px]:pt-12 max-[720px]:pb-16">
@@ -214,12 +204,44 @@ export default function Page() {
         </div>
       </section>
 
+      {/* Contact 導線 */}
+      <section className="border-t border-[#E6E4DB] bg-[#F7F5F0] px-5 py-16 text-center">
+        <h2 className="mb-3 text-[22px] font-extrabold tracking-[-0.01em]">
+          お困りですか？
+        </h2>
+        <p className="mx-auto mb-7 max-w-[480px] text-[15px] leading-[1.9] text-[#85827D]">
+          アプリの使い方・ご要望・不具合のご報告など、
+          <br className="max-[480px]:hidden" />
+          お気軽にお問い合わせください。
+        </p>
+        <Link
+          href="/contact?category=app&app=routin"
+          className="inline-block rounded-[12px] border border-[#E6E4DB] bg-[#FFFBFA] px-8 py-3 text-[15px] font-bold text-[#6A826D] no-underline transition-transform hover:-translate-y-0.5"
+        >
+          お問い合わせ
+        </Link>
+      </section>
+
       {/* Footer */}
       <footer className="bg-[#F7F5F0] px-5 py-12 text-center">
         <div className="mx-auto flex max-w-[960px] flex-col items-center gap-3">
           <span className="font-dm text-[15px] font-bold text-[#85827D]">
-            Routin
+            {ROUTIN_APP_NAME}
           </span>
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            <Link
+              href="/contact?category=app&app=routin"
+              className="text-[13px] text-[#85827D] no-underline transition-colors hover:text-[#6A826D]"
+            >
+              お問い合わせ
+            </Link>
+            <Link
+              href="/routin/privacy-policy"
+              className="text-[13px] text-[#85827D] no-underline transition-colors hover:text-[#6A826D]"
+            >
+              プライバシーポリシー
+            </Link>
+          </div>
           <p className="text-[13px] text-[#85827D]">© {2026} ychof</p>
         </div>
       </footer>
