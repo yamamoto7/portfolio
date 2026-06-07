@@ -1,4 +1,5 @@
 import { ROUTIN_APP_NAME } from "@/lib/routin";
+import { LASTTIME_APP_NAME } from "@/lib/lasttime";
 
 export interface ContactOption {
   id: string;
@@ -15,6 +16,7 @@ export const CONTACT_CATEGORIES: ContactOption[] = [
 /** カテゴリが "app" のときに選べるアプリ一覧。 */
 export const CONTACT_APPS: ContactOption[] = [
   { id: "routin", label: ROUTIN_APP_NAME },
+  { id: "lasttime-list", label: LASTTIME_APP_NAME },
   { id: "buylis", label: "Buylis" },
   { id: "mugen-sudoku", label: "鬼難易度数独" },
   { id: "mugen-sugaku", label: "無限数学" },
