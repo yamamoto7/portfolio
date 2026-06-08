@@ -1,5 +1,6 @@
 import { ROUTIN_APP_NAME } from "@/lib/routin";
 import { LASTTIME_APP_NAME } from "@/lib/lasttime";
+import { VERDASH_APP_NAME } from "@/lib/verdash";
 
 export interface ContactOption {
   id: string;
@@ -17,6 +18,7 @@ export const CONTACT_CATEGORIES: ContactOption[] = [
 export const CONTACT_APPS: ContactOption[] = [
   { id: "routin", label: ROUTIN_APP_NAME },
   { id: "lasttime-list", label: LASTTIME_APP_NAME },
+  { id: "verdash", label: VERDASH_APP_NAME },
   { id: "buylis", label: "Buylis" },
   { id: "mugen-sudoku", label: "鬼難易度数独" },
   { id: "mugen-sugaku", label: "無限数学" },

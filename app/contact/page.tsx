@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import ContactForm from "@/components/contact/ContactForm";
+import Wordmark from "@/components/Wordmark";
 import {
   CONTACT_CATEGORIES,
   CONTACT_APPS,
@@ -41,16 +41,7 @@ export default async function Page({
     <div className="flex min-h-full flex-col bg-white text-app-ink">
       <header className="border-b border-line">
         <div className="mx-auto flex w-[800px] max-w-[90%] items-center py-5">
-          <Link href="/" className="inline-block leading-[0]">
-            <Image
-              src="/logo.svg"
-              alt="ychof villa"
-              width={247}
-              height={82}
-              className="h-7 w-auto"
-              priority
-            />
-          </Link>
+          <Wordmark href="/" />
         </div>
       </header>
 

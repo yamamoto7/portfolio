@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 import { cn } from "@/lib/cn";
 import type { Lang } from "@/lib/home-content";
+import Wordmark from "@/components/Wordmark";
 
 function LangButton({
   href,
@@ -31,16 +31,7 @@ export default function SiteHeader({ lang = "en" }: { lang?: Lang }) {
   return (
     <header className="mt-10 mb-[46px] py-[49px]">
       <div className="mx-auto flex w-[800px] max-w-[90%] flex-wrap items-center justify-between max-[800px]:justify-center">
-        <Link href="/" className="flex w-[300px] items-center justify-center">
-          <Image
-            src="/logo.svg"
-            alt="logo image for this site"
-            width={247}
-            height={82}
-            className="object-contain"
-            priority
-          />
-        </Link>
+        <Wordmark href="/" />
         <div className="flex justify-between">
           <LangButton href="/ja" active={lang === "ja"}>
             JP

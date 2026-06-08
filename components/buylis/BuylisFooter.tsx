@@ -1,19 +1,11 @@
 import Link from "next/link";
-import Image from "next/image";
+import Wordmark from "@/components/Wordmark";
 
 export default function BuylisFooter() {
   return (
     <footer className="mx-auto w-[600px] max-w-[90%] py-20">
       <div className="flex flex-wrap justify-between">
-        <Link href="/" className="inline-block">
-          <Image
-            src="/logo.svg"
-            alt="ychof villa"
-            width={247}
-            height={82}
-            className="w-[140px]"
-          />
-        </Link>
+        <Wordmark href="/" />
         <div className="pt-2.5">
           <Link href="/buylis">アプリ紹介ページ</Link>
           <br />
