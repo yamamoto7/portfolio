@@ -1,4 +1,4 @@
-// Routin の問い合わせ受け口（Vercel Function）。
+// 問い合わせ受け口（Vercel Function）。
 // Web フォームと iOS アプリの両方から呼べる。
 // 受け取った内容を Slack Incoming Webhook に通知する。
 // 環境変数 CONTACT_WEBHOOK_URL に Slack の Webhook URL を設定すること
@@ -11,8 +11,8 @@
 //     "message":  "本文（必須・最大4000字）",
 //     "email":    "返信先（任意）",
 //     "category": "app" | "work" | "other"（任意。lib/contact.ts 参照）,
-//     "app":      "routin" 等（category=app のとき・任意）,
-//     "source":   "web" | "ios"（任意・既定 web）,
+//     "app":      "routin" 等（任意・受け取った生値をそのまま表示）,
+//     "source":   "web" | "ios" 等（任意・既定 web・生値をそのまま表示）,
 //     "meta":     { "appVersion": "1.0.0", "os": "iOS 17.5", ... }（任意）,
 //     "company":  "ハニーポット（Webのみ。値が入っていたら破棄）"
 //   }
@@ -21,14 +21,14 @@
 //   ※ iOS から特定アプリの問い合わせを送るときは category=app, app=<id> を付ける。
 // ───────────────────────────────────────────────────────────────
 
-import { categoryLabel, appLabel } from "@/lib/contact";
+import { categoryLabel } from "@/lib/contact";
 
 const MAX_MESSAGE = 4000;
 const MAX_EMAIL = 254;
 const MAX_META_KEYS = 12;
 const MAX_META_LEN = 200;
-
-const ALLOWED_SOURCES = new Set(["web", "ios"]);
+const MAX_SOURCE = 40;
+const MAX_APP = 80;
 
 function formatMeta(meta: unknown): string[] {
   if (!meta || typeof meta !== "object") return [];
@@ -68,13 +68,17 @@ export async function POST(request: Request) {
 
   const replyTo =
     typeof email === "string" ? email.trim().slice(0, MAX_EMAIL) : "";
+  // source は許可リストで正規化せず、受け取った生値をそのまま使う（未指定なら web）。
   const src =
-    typeof source === "string" && ALLOWED_SOURCES.has(source) ? source : "web";
+    typeof source === "string" && source.trim() !== ""
+      ? source.trim().slice(0, MAX_SOURCE)
+      : "web";
   const metaLines = formatMeta(meta);
 
-  // カテゴリ・アプリは既知の値ならラベル化、未知なら生値を控えめに表示
+  // カテゴリは既知ならラベル化、未知なら生値。
   const catLabel = categoryLabel(category) ?? (category ? `${category}` : "");
-  const appName = appLabel(app) ?? (app ? `${app}` : "");
+  // app はフィルタ・ラベル化せず、受け取った生値をそのまま使う。
+  const appName = typeof app === "string" ? app.trim().slice(0, MAX_APP) : "";
 
   const webhookUrl = process.env.CONTACT_WEBHOOK_URL;
   if (!webhookUrl) {
@@ -85,22 +89,26 @@ export async function POST(request: Request) {
   const contextText = [
     catLabel ? `種類: ${catLabel}` : null,
     appName ? `アプリ: ${appName}` : null,
-    `経路: ${src === "ios" ? "iOS アプリ" : "Web"}`,
+    `経路: ${src}`,
     replyTo ? `返信先: ${replyTo}` : "返信先: （なし）",
     ...metaLines,
   ]
     .filter(Boolean)
     .join("  ·  ");
 
+  // タイトルの主語（アプリ名）・経路は正規化せず生値を表示する。
+  const subject = appName || "サイト";
+  const headline = `:inbox_tray: ${subject} への問い合わせ（${src}）`;
+
   // Slack Incoming Webhook 形式
   const payload = {
-    text: `:seedling: Routin への問い合わせ（${src === "ios" ? "iOS" : "Web"}）`,
+    text: headline,
     blocks: [
       {
         type: "section",
         text: {
           type: "mrkdwn",
-          text: `*:seedling: Routin への問い合わせ（${src === "ios" ? "iOS" : "Web"}）*`,
+          text: `*${headline}*`,
         },
       },
       {
