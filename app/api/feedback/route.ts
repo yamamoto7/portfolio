@@ -13,19 +13,22 @@
 //   POST /api/feedback
 //   Authorization: Bearer <FEEDBACK_API_KEY>   （または x-api-key: <KEY>）
 //   Content-Type: application/json
-//   [
-//     { "title": "評価",   "content": "5" },
-//     { "title": "本文",   "content": "とても良いアプリです" },
-//     { "title": "OS",     "content": "iOS 17.5" }
-//   ]
-//   ※ { "fields": [ ... ] } の形でも受け付ける。
-//   ※ title がシートのヘッダー列に対応し、その列へ content を入れる。
+//   {
+//     "target_app": "routin",          // 必須・書き込み先シート（タブ）を決める
+//     "feedbacks": [
+//       { "title": "評価",   "content": "5" },
+//       { "title": "本文",   "content": "とても良いアプリです" },
+//       { "title": "OS",     "content": "iOS 17.5" }
+//     ]
+//   }
+//   ※ target_app が GAS 側のシート（タブ）に対応する（無ければ自動作成）。
+//   ※ title がそのシートのヘッダー列に対応し、その列へ content を入れる。
 //      未知の title は GAS 側でヘッダー列を自動追加する。
 //   レスポンス: { "ok": true } / { "ok": false }
 //   ※ ネイティブ（iOS/Android）からの呼び出しはブラウザではないため CORS 不要。
 // ───────────────────────────────────────────────────────────────
 
-import { normalizeFields } from "@/lib/feedback";
+import { parseFeedbackPayload } from "@/lib/feedback";
 
 /** Authorization: Bearer か x-api-key からキーを取り出す。 */
 function extractApiKey(request: Request): string {
@@ -52,8 +55,8 @@ export async function POST(request: Request) {
     return Response.json({ ok: false }, { status: 400 });
   }
 
-  const fields = normalizeFields(body);
-  if (!fields) {
+  const parsed = parseFeedbackPayload(body);
+  if (!parsed) {
     return Response.json({ ok: false }, { status: 400 });
   }
 
@@ -63,11 +66,12 @@ export async function POST(request: Request) {
     return Response.json({ ok: false }, { status: 500 });
   }
 
-  // GAS（doPost）へ渡すペイロード。GAS 側が title→列 を解決して追記する。
+  // GAS（doPost）へ渡すペイロード。GAS 側が target_app→シート, title→列 を解決して追記する。
   const payload = {
     token: process.env.FEEDBACK_SHEET_TOKEN ?? "",
     receivedAt: new Date().toISOString(),
-    fields,
+    targetApp: parsed.targetApp,
+    feedbacks: parsed.feedbacks,
   };
 
   try {

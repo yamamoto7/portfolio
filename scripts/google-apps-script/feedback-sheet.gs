@@ -8,15 +8,17 @@
  *   {
  *     "token": "...",                 // 任意・SHARED_TOKEN と照合
  *     "receivedAt": "ISO日時",
- *     "fields": [
+ *     "targetApp": "routin",          // 書き込み先シート（タブ）名
+ *     "feedbacks": [
  *       { "title": "評価", "content": "5" },
  *       { "title": "本文", "content": "..." }
  *     ]
  *   }
  *
  * 動作:
- *   - 1 行目をヘッダーとして扱う。
- *   - 各 field の title と一致する列を探し、その列に content を入れる。
+ *   - targetApp と同名のシート（タブ）を探す。無ければ自動作成する。
+ *   - そのシートの 1 行目をヘッダーとして扱う。
+ *   - 各 feedback の title と一致する列を探し、その列に content を入れる。
  *   - title がまだ無ければヘッダーの末尾に新しい列を追加する。
  *   - 先頭列は常に「受信日時」。
  *
@@ -36,8 +38,8 @@
 // route.ts の FEEDBACK_SHEET_TOKEN と一致させる。空文字なら検証しない。
 const SHARED_TOKEN = "";
 
-// 追記先シート名。存在しなければ自動作成する。
-const SHEET_NAME = "Feedback";
+// targetApp が空のときに使うフォールバックのシート名。
+const DEFAULT_SHEET_NAME = "Feedback";
 
 // 先頭の固定列見出し。
 const TIMESTAMP_HEADER = "受信日時";
@@ -52,8 +54,8 @@ function doPost(e) {
       return jsonOutput({ ok: false, error: "unauthorized" });
     }
 
-    const fields = Array.isArray(data.fields) ? data.fields : [];
-    const sheet = getSheet_();
+    const fields = Array.isArray(data.feedbacks) ? data.feedbacks : [];
+    const sheet = getSheet_(data.targetApp);
 
     // 現在のヘッダー（title -> 列番号, 1 始まり）を読む。
     const lastCol = sheet.getLastColumn();
@@ -99,11 +101,12 @@ function doGet() {
   return jsonOutput({ ok: true, service: "feedback-sheet" });
 }
 
-function getSheet_() {
+function getSheet_(targetApp) {
+  const name = sheetName_(targetApp);
   const ss = SpreadsheetApp.getActiveSpreadsheet();
-  let sheet = ss.getSheetByName(SHEET_NAME);
+  let sheet = ss.getSheetByName(name);
   if (!sheet) {
-    sheet = ss.insertSheet(SHEET_NAME);
+    sheet = ss.insertSheet(name);
   }
   // 先頭列の見出しと固定行を保証する。
   if (sheet.getLastColumn() === 0) {
@@ -111,6 +114,16 @@ function getSheet_() {
     sheet.setFrozenRows(1);
   }
   return sheet;
+}
+
+// targetApp をシート（タブ）名として安全な文字列に整える。
+// シート名に使えない文字（: \ / ? * [ ]）を除き、空ならフォールバック。
+function sheetName_(targetApp) {
+  const cleaned = String(targetApp || "")
+    .replace(/[:\\\/?*\[\]]/g, " ")
+    .trim()
+    .slice(0, 100);
+  return cleaned || DEFAULT_SHEET_NAME;
 }
 
 function jsonOutput(obj) {
