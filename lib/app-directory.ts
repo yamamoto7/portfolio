@@ -75,6 +75,6 @@ export const appDirectory: AppDirItem[] = [
     href: "/tile-care",
     icon: "/contents/tile-care/icon.png",
     accent: apps["tile-care"].accent,
-    genre: "UTILITY",
+    genre: "PET",
   },
 ];

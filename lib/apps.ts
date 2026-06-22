@@ -57,12 +57,12 @@ export const apps: Record<string, AppConfig> = {
   },
   "tile-care": {
     slug: "tile-care",
-    displayName: "タイルケア",
-    fullName: "タイルカーペット管理",
+    displayName: "タイル交換周期",
+    fullName: "タイル交換周期",
     accent: "#0ca678",
-    heroTitle: ["タイルカーペットの", "洗濯周期を管理"],
-    heroLead: "いつどのタイルを洗ったか、次はどれか。それだけのアプリ。",
-    ctaTitle: "タイルカーペット管理、はじめてみませんか。",
+    heroTitle: ["タイルカーペットの", "交換周期を管理"],
+    heroLead: "いつどのタイルを交換したか、次はどれか。それだけのアプリ。",
+    ctaTitle: "タイルカーペットの交換管理、はじめませんか。",
     contactForm:
       "https://docs.google.com/forms/d/e/1FAIpQLSf0hPNDtFBaBPpp_N2UQjwXMye-LJYD72MU8k0Edj3nZKRQog/viewform?entry.1388710164=%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%AB%E3%83%BC%E3%83%9A%E3%83%83%E3%83%88%E4%BA%A4%E6%8F%9B%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86",
     features: [
@@ -71,12 +71,12 @@ export const apps: Record<string, AppConfig> = {
         desc: "あなたの部屋のレイアウトそのままに、タイルを並べて登録できます。",
       },
       {
-        heading: "洗濯周期は私に任せて！",
-        desc: "次に洗うべきタイルを、アプリがそっと教えてくれます。",
+        heading: "交換周期は私に任せて！",
+        desc: "次に交換すべきタイルを、アプリがそっと教えてくれます。",
       },
       {
         heading: "綺麗好きでペットに尽くすあなたへ",
-        desc: "清潔な空間を、大切な家族のために。洗ったタイルもひと目で分かります。",
+        desc: "清潔な空間を、大切な家族のために。交換済みのタイルもひと目で分かります。",
       },
     ],
     nameSize: { w: 1279, h: 300 },
