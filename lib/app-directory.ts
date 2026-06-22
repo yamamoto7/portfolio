@@ -2,6 +2,9 @@ import { ROUTIN_APP_NAME } from "@/lib/routin";
 import { LASTTIME_APP_NAME } from "@/lib/lasttime";
 import { VERDASH_APP_NAME } from "@/lib/verdash";
 import { MUGEN_SUDOKU_NAME, MUGEN_SUDOKU_ACCENT } from "@/lib/mugen-sudoku";
+import { ANNIV_APP_NAME, ANNIV_ACCENT } from "@/lib/anniv";
+import { SEEHUE_APP_NAME, SEEHUE_ACCENT } from "@/lib/seehue";
+import { MARKPAD_APP_NAME, MARKPAD_ACCENT } from "@/lib/markpad";
 import { apps } from "@/lib/apps";
 
 export interface AppDirItem {
@@ -76,5 +79,29 @@ export const appDirectory: AppDirItem[] = [
     icon: "/contents/tile-care/icon.png",
     accent: apps["tile-care"].accent,
     genre: "PET",
+  },
+  {
+    name: ANNIV_APP_NAME,
+    tagline: "誕生日も記念日も、贈り物の記録も。大切な人を、まとめて。",
+    href: "/anniv",
+    icon: "/contents/anniv/icon.png",
+    accent: ANNIV_ACCENT,
+    genre: "REMINDER",
+  },
+  {
+    name: SEEHUE_APP_NAME,
+    tagline: "色を補正し、色名を調べ、見え方をチェック。色のサポートカメラ。",
+    href: "/seehue",
+    icon: "/contents/seehue/icon.png",
+    accent: SEEHUE_ACCENT,
+    genre: "ACCESSIBILITY",
+  },
+  {
+    name: MARKPAD_APP_NAME,
+    tagline: "さっと書いて貼り付けて、すぐ美しく。Markdown エディタ。",
+    href: "/markpad",
+    icon: "/contents/markpad/icon.png",
+    accent: MARKPAD_ACCENT,
+    genre: "EDITOR",
   },
 ];

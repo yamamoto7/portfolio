@@ -1,6 +1,9 @@
 import { ROUTIN_APP_NAME } from "@/lib/routin";
 import { LASTTIME_APP_NAME } from "@/lib/lasttime";
 import { VERDASH_APP_NAME } from "@/lib/verdash";
+import { ANNIV_APP_NAME } from "@/lib/anniv";
+import { SEEHUE_APP_NAME } from "@/lib/seehue";
+import { MARKPAD_APP_NAME } from "@/lib/markpad";
 
 export interface ContactOption {
   id: string;
@@ -22,7 +25,10 @@ export const CONTACT_APPS: ContactOption[] = [
   { id: "buylis", label: "Buylis" },
   { id: "mugen-sudoku", label: "鬼難易度数独" },
   { id: "mugen-sugaku", label: "無限数学" },
-  { id: "tile-care", label: "タイルケア" },
+  { id: "tile-care", label: "タイル交換周期" },
+  { id: "anniv", label: ANNIV_APP_NAME },
+  { id: "seehue", label: SEEHUE_APP_NAME },
+  { id: "markpad", label: MARKPAD_APP_NAME },
 ];
 
 /** アプリ選択を出すカテゴリ ID。 */
