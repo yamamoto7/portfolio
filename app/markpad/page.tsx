@@ -46,14 +46,14 @@ function Shot({
   priority?: boolean;
 }) {
   return (
-    <div className="w-[260px] max-w-[66vw] shrink-0">
+    <div className="w-[270px] max-w-[68vw] shrink-0">
       <Image
         src={`/contents/markpad/screen${n}.png`}
         alt={label}
-        width={1179}
-        height={2556}
+        width={1320}
+        height={2868}
         priority={priority}
-        className="h-auto w-full rounded-[26px] border border-[#E6E8EB] shadow-[0_20px_48px_rgba(31,35,40,0.14)]"
+        className="h-auto w-full rounded-[26px] shadow-[0_20px_48px_rgba(31,35,40,0.14)]"
       />
     </div>
   );
@@ -69,11 +69,11 @@ interface Feature {
 
 const FEATURES: Feature[] = [
   {
-    badge: "EDIT",
-    heading: "書くことに、集中できる。",
-    desc: "編集とプレビューはワンタップで切り替え。見出し・太字・リスト・チェックリスト・コードなどの編集ツールバーがキーボードの上に並び、スマホでもサッと書けます。",
-    shot: 1,
-    alt: "MarkPad の編集画面",
+    badge: "PREVIEW",
+    heading: "貼り付けて、すぐ美しく。",
+    desc: "AIが返す Markdown を貼り付ければ、見出し・リスト・表・図まで崩れずきれいに。編集とプレビューはワンタップで切り替えられ、スマホでもサッと読めます。",
+    shot: 2,
+    alt: "MarkPad のプレビュー画面",
   },
   {
     badge: "THEME",
@@ -149,7 +149,7 @@ export default function Page() {
           </p>
           <AppStoreBadge />
         </div>
-        <Shot n={2} label="MarkPad のプレビュー画面" priority />
+        <Shot n={1} label="MarkPad の編集画面" priority />
       </section>
 
       {/* オフライン・広告なし */}

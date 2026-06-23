@@ -46,14 +46,14 @@ function Shot({
   priority?: boolean;
 }) {
   return (
-    <div className="w-[260px] max-w-[66vw] shrink-0">
+    <div className="w-[270px] max-w-[68vw] shrink-0">
       <Image
         src={`/contents/seehue/screen${n}.png`}
         alt={label}
-        width={1179}
-        height={2556}
+        width={1320}
+        height={2868}
         priority={priority}
-        className="h-auto w-full rounded-[26px] border border-[#ECE7DE] shadow-[0_20px_48px_rgba(42,46,51,0.16)]"
+        className="h-auto w-full rounded-[26px] shadow-[0_20px_48px_rgba(42,46,51,0.16)]"
       />
     </div>
   );
@@ -83,33 +83,32 @@ interface Feature {
 
 const FEATURES: Feature[] = [
   {
-    badge: "CORRECT",
-    heading: "見分けにくい色を、くっきりと。",
-    desc: "カメラの映像にリアルタイムで補正をかけ、見分けにくい色のコントラストを強調します。写真を読み込んで同じ補正をかけ、保存・共有することもできます。",
-    shot: 1,
-    alt: "補正カメラの画面",
-  },
-  {
-    badge: "SIMULATE",
-    heading: "見え方を、そのまま再現。",
-    desc: "「そのまま／補正／シミュレート」をワンタップで切り替え。色覚特性での見え方をシミュレートして、自分や相手にどう映るかを確かめられます。",
+    badge: "SIMULATE & SHARE",
+    heading: "見え方を、そのまま伝える。",
+    desc: "「そのまま／補正／シミュレート」をワンタップで切り替え。見えている色をそのまま再現して写真にすれば、家族や友だちに自分の見え方を伝えられます。",
     shot: 2,
-    alt: "色覚シミュレートの画面",
-  },
-];
-
-const MORE = [
-  {
-    k: "色を調べる",
-    v: "画面中央の色を、色名（赤・青緑など）と明るさ・鮮やかさで表示。保存した基準色とリアルタイムで照合でき、服や小物の色合わせに。",
+    alt: "見え方のシミュレートとシェアの画面",
   },
   {
-    k: "色覚セルフチェック",
-    v: "モザイク状の色を見分けるスライダー方式で、赤緑・青黄それぞれの見分けやすさを測定。結果に合わせて補正の強さが自動調整されます。",
+    badge: "INSPECT",
+    heading: "この色は、なに色？",
+    desc: "画面中央に写ったものの色を、色名（赤・青緑など）と明るさ・鮮やかさで表示。近い色の候補もわかるので、色の判断に迷ったときの相棒になります。",
+    shot: 3,
+    alt: "色名を調べるカラーピッカーの画面",
   },
   {
-    k: "パーソナライズ",
-    v: "1型（P型）・2型（D型）・3型（T型）に対応し、軸ごとに強さを調整。人や環境ごとに複数のプロファイルを作って切り替えられます。",
+    badge: "COMPARE",
+    heading: "保存して、その場で見くらべ。",
+    desc: "気になった色を保存しておけば、基準の色とカメラ映像をリアルタイムで照合。「同じ／似ている／ちがう」をその場で確認でき、服や小物の色合わせに便利です。",
+    shot: 4,
+    alt: "保存した色と見くらべる画面",
+  },
+  {
+    badge: "SELF-CHECK",
+    heading: "見分けやすさを、チェック。",
+    desc: "赤緑・青黄それぞれの見分けやすさをセルフチェックで測定し、結果に合わせて補正の強さを自動調整。1型・2型・3型に対応し、プロファイルも作れます。",
+    shot: 5,
+    alt: "色覚セルフチェックの画面",
   },
 ];
 
@@ -192,30 +191,6 @@ export default function Page() {
           </section>
         ))}
       </div>
-
-      {/* できること（テキストカード） */}
-      <section className="border-t border-[#ECE7DE] bg-white">
-        <div className="mx-auto max-w-[960px] px-5 py-16">
-          <p className="mb-10 text-center text-[15px] tracking-[0.04em] text-[#6E7378]">
-            まだまだ、これだけ。
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            {MORE.map((item) => (
-              <div
-                key={item.k}
-                className="min-w-[240px] flex-[1_1_260px] rounded-[16px] border border-[#ECE7DE] bg-[#FAF7F2] px-6 py-7"
-              >
-                <p className="mb-2 text-[16px] font-bold text-[#2A2E33]">
-                  {item.k}
-                </p>
-                <p className="text-[14px] leading-[1.85] text-[#6E7378]">
-                  {item.v}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="border-t border-[#ECE7DE] bg-[#FAF7F2] px-5 py-20 text-center">
