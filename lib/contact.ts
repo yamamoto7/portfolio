@@ -4,6 +4,7 @@ import { VERDASH_APP_NAME } from "@/lib/verdash";
 import { ANNIV_APP_NAME } from "@/lib/anniv";
 import { SEEHUE_APP_NAME } from "@/lib/seehue";
 import { MARKPAD_APP_NAME } from "@/lib/markpad";
+import { HEADER_MODIFY_APP_NAME } from "@/lib/header-modify";
 
 export interface ContactOption {
   id: string;
@@ -29,6 +30,7 @@ export const CONTACT_APPS: ContactOption[] = [
   { id: "anniv", label: ANNIV_APP_NAME },
   { id: "seehue", label: SEEHUE_APP_NAME },
   { id: "markpad", label: MARKPAD_APP_NAME },
+  { id: "header-modify", label: HEADER_MODIFY_APP_NAME },
 ];
 
 /** アプリ選択を出すカテゴリ ID。 */
