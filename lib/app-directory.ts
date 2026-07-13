@@ -26,7 +26,7 @@ export interface AppDirItem {
 export const appDirectory: AppDirItem[] = [
   {
     name: ROUTIN_APP_NAME,
-    tagline: "頑張らなくても、いい。静かに続けられるルーティンアプリ。",
+    tagline: "No pressure to push hard. A routine app you can keep up with, quietly.",
     href: "/routin",
     icon: "/contents/routin/icon.png",
     accent: "#6A826D",
@@ -34,7 +34,7 @@ export const appDirectory: AppDirItem[] = [
   },
   {
     name: LASTTIME_APP_NAME,
-    tagline: "大切なことの「最後にやった日」を記録する記録帳。",
+    tagline: "A logbook for tracking the last time you did the things that matter.",
     href: "/lasttime-list",
     icon: "/contents/lasttime/icon.png",
     accent: "#2E6A50",
@@ -42,7 +42,7 @@ export const appDirectory: AppDirItem[] = [
   },
   {
     name: VERDASH_APP_NAME,
-    tagline: "Vercel のデプロイ管理を、iPhone から片手で。",
+    tagline: "Manage your Vercel deployments one-handed, from your iPhone.",
     href: "/verdash",
     icon: "/contents/verdash/icon.png",
     accent: "#337AE6",
@@ -50,7 +50,7 @@ export const appDirectory: AppDirItem[] = [
   },
   {
     name: MUGEN_SUDOKU_NAME,
-    tagline: "あてずっぽう不要。論理だけで必ず解ける本格数独。",
+    tagline: "No guessing required. Authentic Sudoku always solvable by logic alone.",
     href: "/mugen-sudoku",
     icon: "/contents/mugen-sudoku/icon.png",
     accent: MUGEN_SUDOKU_ACCENT,
@@ -58,7 +58,7 @@ export const appDirectory: AppDirItem[] = [
   },
   {
     name: "Buylis",
-    tagline: "フォルダ管理で、自分好みのお買い物リストに。",
+    tagline: "Organize with folders and shape a shopping list that's your own.",
     href: "/buylis",
     icon: "/contents/buylis/icon.png",
     accent: "#2C3A41",
@@ -82,7 +82,7 @@ export const appDirectory: AppDirItem[] = [
   },
   {
     name: ANNIV_APP_NAME,
-    tagline: "誕生日も記念日も、贈り物の記録も。大切な人を、まとめて。",
+    tagline: "Birthdays, anniversaries, and gift records. The people you care about, all in one place.",
     href: "/anniv",
     icon: "/contents/anniv/icon.png",
     accent: ANNIV_ACCENT,
@@ -90,7 +90,7 @@ export const appDirectory: AppDirItem[] = [
   },
   {
     name: SEEHUE_APP_NAME,
-    tagline: "色を補正し、色名を調べ、見え方をチェック。色のサポートカメラ。",
+    tagline: "Correct colors, look up color names, and check how they appear. A camera that supports your vision.",
     href: "/seehue",
     icon: "/contents/seehue/icon.png",
     accent: SEEHUE_ACCENT,
@@ -98,7 +98,7 @@ export const appDirectory: AppDirItem[] = [
   },
   {
     name: MARKPAD_APP_NAME,
-    tagline: "さっと書いて貼り付けて、すぐ美しく。Markdown エディタ。",
+    tagline: "Jot it down, paste it in, and it looks polished instantly. A Markdown editor.",
     href: "/markpad",
     icon: "/contents/markpad/icon.png",
     accent: MARKPAD_ACCENT,

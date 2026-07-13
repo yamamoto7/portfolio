@@ -7,11 +7,11 @@ import { ROUTIN_APP_NAME } from "@/lib/routin";
 export const metadata: Metadata = {
   title: ROUTIN_APP_NAME,
   description:
-    "頑張らなくても、いい。ストリークもスコアも通知もない、静かに続けられるルーティンアプリ。",
+    "You don't have to try hard. A quiet routine app you can keep up with—no streaks, no scores, no notifications.",
 };
 
 // TODO: App Store 公開後にURLを設定
-const APP_STORE_URL = "#";
+const APP_STORE_URL = "https://apps.apple.com/app/id6775340906";
 
 /* ------------------------------------------------------------------ *
  * Routin はアプリの世界観（静けさ・余白・sage green）を LP に移植する。
@@ -27,7 +27,7 @@ function AppStoreBadge() {
     >
       <Image
         src="/contents/common/appstore.png"
-        alt="App Store からダウンロード"
+        alt="Download on the App Store"
         width={342}
         height={108}
         className="h-12 w-auto"
@@ -72,38 +72,38 @@ interface Feature {
 const FEATURES: Feature[] = [
   {
     badge: "DAY TYPE",
-    heading: "その日に合わせて、入れ替わる。",
-    desc: "在宅・出社・お休み。暮らしのモードごとにルーティンが切り替わるから、毎日それらしく整います。気分で今日だけ上書きも。",
+    heading: "Shifts to fit the day.",
+    desc: "Working from home, at the office, or a day off—your routine switches with each mode of life, so every day falls into place. You can also override just today on a whim.",
     shot: 4,
-    alt: "日の種類を切り替える画面",
+    alt: "Day type switching screen",
   },
   {
     badge: "REFLECTION",
-    heading: "「できた」だけを、そっと見る。",
-    desc: "ストリークも達成率もありません。続けた日がカレンダーに灯るだけ。できなかった日を、責めない記録です。",
+    heading: "Gently see only what you did.",
+    desc: "No streaks, no completion rates. The days you kept going simply light up on the calendar—a record that never blames you for the days you missed.",
     shot: 3,
-    alt: "ふりかえりのカレンダー画面",
+    alt: "Reflection calendar screen",
   },
   {
     badge: "TEMPLATES",
-    heading: "50以上の下書きから、はじめる。",
-    desc: "朝のひととき、整える夜、在宅の一日。テンプレートを下敷きに、自分のリズムへ少しずつ寄せていけます。",
+    heading: "Start from 50+ ready-made drafts.",
+    desc: "A quiet morning, a calming night, a day at home. Use a template as your starting point and ease it toward your own rhythm.",
     shot: 2,
-    alt: "テンプレート一覧画面",
+    alt: "Template list screen",
   },
   {
     badge: "WIDGET",
-    heading: "ホーム画面から、今日をひと目で。",
-    desc: "ウィジェットで今日のルーティンが暮らしに溶け込む。アプリを開かなくても、やることがそっと目に入ります。",
+    heading: "Today at a glance, right from your home screen.",
+    desc: "With the widget, today's routine blends into daily life. Without even opening the app, what's ahead gently comes into view.",
     shot: 5,
-    alt: "ホーム画面ウィジェット",
+    alt: "Home screen widget",
   },
 ];
 
 const NO_PRESSURE = [
-  { k: "ストリーク", v: "なし" },
-  { k: "スコア・レベル", v: "なし" },
-  { k: "通知の催促", v: "なし" },
+  { k: "Streaks", v: "None" },
+  { k: "Scores & levels", v: "None" },
+  { k: "Notification nudges", v: "None" },
 ];
 
 export default function Page() {
@@ -116,7 +116,7 @@ export default function Page() {
             href={APP_STORE_URL}
             className="rounded-full bg-[#6A826D] px-4 py-2 text-[13px] font-bold text-white no-underline transition-opacity hover:opacity-90"
           >
-            入手する
+            Get the app
           </a>
         }
       />
@@ -132,25 +132,25 @@ export default function Page() {
             className="mb-7 h-16 w-16 rounded-[16px] shadow-[0_6px_18px_rgba(40,40,38,0.16)]"
           />
           <h1 className="mb-5 text-[40px] leading-[1.4] font-extrabold tracking-[-0.01em] max-[720px]:text-[30px]">
-            頑張らなくても、
+            You don&apos;t have
             <br />
-            いい。
+            to try hard.
           </h1>
           <p className="mb-9 text-[17px] leading-[1.9] text-[#85827D]">
-            ストリークも、スコアも、通知もありません。
+            No streaks, no scores, no notifications.
             <br />
-            静かに続けられる、ルーティンアプリ。
+            A routine app you can quietly keep up with.
           </p>
           <AppStoreBadge />
         </div>
-        <Shot n={1} label="今日のルーティン画面" priority />
+        <Shot n={1} label="Today's routine screen" priority />
       </section>
 
       {/* 引き算の価値 */}
       <section className="border-y border-[#E6E4DB] bg-[#FFFBFA]">
         <div className="mx-auto max-w-[960px] px-5 py-16 text-center">
           <p className="mb-10 text-[15px] tracking-[0.04em] text-[#85827D]">
-            続けるために、削ぎ落としたもの。
+            What we stripped away so you can keep going.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             {NO_PRESSURE.map((item) => (
@@ -194,10 +194,10 @@ export default function Page() {
       {/* CTA */}
       <section className="border-t border-[#E6E4DB] bg-[#FFFBFA] px-5 py-20 text-center">
         <h2 className="mb-3 text-[26px] font-extrabold tracking-[-0.01em]">
-          今日から、静かに。
+          Start today, quietly.
         </h2>
         <p className="mx-auto mb-8 max-w-[440px] text-[15px] leading-[1.9] text-[#85827D]">
-          アカウントは要りません。データはあなたの端末の中だけに、そっと。
+          No account needed. Your data stays quietly on your device alone.
         </p>
         <div className="flex justify-center">
           <AppStoreBadge />
@@ -207,18 +207,18 @@ export default function Page() {
       {/* Contact 導線 */}
       <section className="border-t border-[#E6E4DB] bg-[#F7F5F0] px-5 py-16 text-center">
         <h2 className="mb-3 text-[22px] font-extrabold tracking-[-0.01em]">
-          お困りですか？
+          Need help?
         </h2>
         <p className="mx-auto mb-7 max-w-[480px] text-[15px] leading-[1.9] text-[#85827D]">
-          アプリの使い方・ご要望・不具合のご報告など、
+          Questions about how to use the app, requests, or bug reports—
           <br className="max-[480px]:hidden" />
-          お気軽にお問い合わせください。
+          feel free to reach out anytime.
         </p>
         <Link
           href="/contact?category=app&app=routin"
           className="inline-block rounded-[12px] border border-[#E6E4DB] bg-[#FFFBFA] px-8 py-3 text-[15px] font-bold text-[#6A826D] no-underline transition-transform hover:-translate-y-0.5"
         >
-          お問い合わせ
+          Contact us
         </Link>
       </section>
 
@@ -233,13 +233,13 @@ export default function Page() {
               href="/contact?category=app&app=routin"
               className="text-[13px] text-[#85827D] no-underline transition-colors hover:text-[#6A826D]"
             >
-              お問い合わせ
+              Contact
             </Link>
             <Link
               href="/routin/privacy-policy"
               className="text-[13px] text-[#85827D] no-underline transition-colors hover:text-[#6A826D]"
             >
-              プライバシーポリシー
+              Privacy Policy
             </Link>
           </div>
           <p className="text-[13px] text-[#85827D]">© {2026} ychof</p>

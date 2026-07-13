@@ -13,9 +13,8 @@ export interface ContactOption {
 
 /** 問い合わせカテゴリ。配列順に表示。追加はここに1行足すだけ。 */
 export const CONTACT_CATEGORIES: ContactOption[] = [
-  { id: "app", label: "アプリについて" },
-  { id: "work", label: "お仕事・制作のご相談" },
-  { id: "other", label: "その他" },
+  { id: "app", label: "About an app" },
+  { id: "other", label: "Other" },
 ];
 
 /** カテゴリが "app" のときに選べるアプリ一覧。 */

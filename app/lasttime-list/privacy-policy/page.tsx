@@ -5,7 +5,7 @@ import { TERMS_WRAPPER_CLASS } from "@/lib/terms";
 import { LASTTIME_APP_NAME, LASTTIME_EFFECTIVE_DATE } from "@/lib/lasttime";
 
 export const metadata: Metadata = {
-  title: `プライバシーポリシー — ${LASTTIME_APP_NAME}`,
+  title: `Privacy Policy — ${LASTTIME_APP_NAME}`,
 };
 
 const APP_NAME = LASTTIME_APP_NAME;
@@ -20,7 +20,7 @@ export default function Page() {
             href="/lasttime-list"
             className="text-[13px] text-[#847F74] no-underline transition-colors hover:text-[#2E6A50]"
           >
-            アプリ紹介
+            About the app
           </Link>
         }
       />
@@ -28,83 +28,82 @@ export default function Page() {
       <div className={`${TERMS_WRAPPER_CLASS} flex-1`}>
         <h2>Privacy Policy</h2>
 
-        <h4>はじめに</h4>
-        <p>こちらは「{APP_NAME}」アプリのプライバシーポリシーです。</p>
+        <h4>Introduction</h4>
+        <p>This is the privacy policy for the “{APP_NAME}” app.</p>
         <p>
-          ychofは「{APP_NAME}
-          」アプリを無料アプリとして構築しました。本サービスは、ychofが無償で提供するものであり、そのまま使用することを前提としています。
+          ychof built the “{APP_NAME}
+          ” app as a free app. This service is provided by ychof at no cost and is intended for use as is.
         </p>
         <p>
-          本ページは、本サービスをご利用いただくにあたり、個人情報の取り扱いに関する方針をお知らせするものです。
-          本サービスを利用される場合、このポリシーに記載された情報の取り扱いに同意されたものとします。
-        </p>
-
-        <h4>情報の収集と使用</h4>
-        <p>
-          「{APP_NAME}
-          」で作成した記録・写真・メモなどのデータは、お客様のデバイス内、および後述のお客様自身のiCloudにのみ保存されます。
-          ychofがこれらの内容を収集・閲覧・外部送信することはありません。アカウント登録も必要ありません。
-        </p>
-        <p>
-          本アプリは広告を表示しません。アクセス解析などの目的でお客様を特定しうる情報を第三者へ送信することもありません。
+          This page informs you of our policies regarding the handling of personal information when you use this service.
+          By using this service, you agree to the handling of information described in this policy.
         </p>
 
-        <h4>iCloud（iCloud同期）について</h4>
+        <h4>Information Collection and Use</h4>
         <p>
-          お客様がiCloudにサインインしている場合、本アプリの記録・写真は、機種変更やバックアップに備えて
-          Appleが提供するiCloud（CloudKit）にお客様自身のアカウントで同期されます。
-          このデータはお客様のApple
-          IDに紐づくもので、ychofがアクセスすることはできません。
-          iCloudに保存された情報の取り扱いについては、
+          Data such as records, photos, and notes created in “{APP_NAME}
+          ” is stored only on your device and, as described below, in your own iCloud.
+          ychof does not collect, view, or transmit this content externally. No account registration is required.
+        </p>
+        <p>
+          This app does not display advertisements, nor does it send any information that could identify you to third parties for purposes such as access analytics.
+        </p>
+
+        <h4>About iCloud (iCloud Sync)</h4>
+        <p>
+          If you are signed in to iCloud, this app&apos;s records and photos are synced to your own account on
+          iCloud (CloudKit) provided by Apple, in preparation for device changes and backups.
+          This data is tied to your Apple
+          ID and cannot be accessed by ychof.
+          The handling of information stored in iCloud is governed by
           <a
             href="https://www.apple.com/legal/privacy/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Appleのプライバシーポリシー
+            Apple&apos;s Privacy Policy
           </a>
-          が適用されます。iCloudへの同期を望まない場合は、端末の設定からオフにできます。
+          . If you do not wish to sync to iCloud, you can turn it off in your device settings.
         </p>
 
-        <h4>写真について</h4>
+        <h4>About Photos</h4>
         <p>
-          記録に写真を添付する際、本アプリは写真ライブラリやカメラへのアクセスを求めることがあります。
-          選択・撮影された写真は記録の一部としてお客様のデバイス（およびお客様のiCloud）に保存され、
-          外部に送信されることはありません。
+          When attaching a photo to a record, this app may request access to your photo library or camera.
+          The photos you select or take are saved as part of the record on your device (and your iCloud),
+          and are never transmitted externally.
         </p>
 
-        <h4>ログデータについて</h4>
+        <h4>About Log Data</h4>
         <p>
-          本アプリでエラーが発生した場合、Appleの仕組みを通じて、デバイスの種別、
-          OSのバージョン、エラー発生時の状況などの診断情報がAppleに送信される場合があります。
-          これはお客様がデバイスの設定で許可している場合に限られ、ychofが個人を特定できる情報を受け取ることはありません。
+          If an error occurs in this app, diagnostic information such as your device type,
+          OS version, and the circumstances at the time of the error may be sent to Apple through Apple&apos;s mechanisms.
+          This only happens if you have allowed it in your device settings, and ychof does not receive any personally identifiable information.
         </p>
 
-        <h4>セキュリティ</h4>
+        <h4>Security</h4>
         <p>
-          本アプリは、設定でFace ID / Touch ID
-          / パスコードによる起動時ロックを有効にできます。
-          お客様の情報を保護するよう努めていますが、電子的な保存方法は100％安全とは限らず、絶対的な安全性を保証するものではありません。
+          This app lets you enable a launch lock using Face ID / Touch ID
+          / passcode in the settings.
+          While we strive to protect your information, no method of electronic storage is 100% secure, and we cannot guarantee its absolute security.
         </p>
 
-        <h4>子供のプライバシー</h4>
+        <h4>Children&apos;s Privacy</h4>
         <p>
-          ychofは、13歳未満のお子様から意図的に個人を特定できる情報を収集することはありません。
-          そもそも本アプリはお客様の情報を外部に収集しませんが、万が一懸念がある場合はご連絡ください。
+          ychof does not knowingly collect personally identifiable information from children under 13.
+          This app does not collect your information externally in the first place, but if you have any concerns, please contact us.
         </p>
 
-        <h4>本プライバシーポリシーの変更</h4>
+        <h4>Changes to This Privacy Policy</h4>
         <p>
-          本ポリシーは随時更新されることがあります。変更があった場合は、このページに掲載してお知らせします。
-          定期的にこのページをご確認いただくことをお勧めします。
+          This policy may be updated from time to time. If any changes are made, we will notify you by posting them on this page.
+          We recommend that you review this page periodically.
         </p>
-        <p>このポリシーは、{EFFECTIVE_DATE}より有効となります。</p>
+        <p>This policy is effective as of {EFFECTIVE_DATE}.</p>
 
-        <h4>お問い合わせ</h4>
+        <h4>Contact Us</h4>
         <p>
-          本プライバシーポリシーについてご質問やご提案がありましたら、
-          <Link href="/contact?category=app&app=lasttime-list">こちら</Link>
-          からお気軽にお問い合わせください。
+          If you have any questions or suggestions about this privacy policy, please feel free to contact us{" "}
+          <Link href="/contact?category=app&app=lasttime-list">here</Link>.
         </p>
       </div>
 
@@ -114,13 +113,13 @@ export default function Page() {
             href="/lasttime-list"
             className="text-[13px] text-[#847F74] no-underline transition-colors hover:text-[#2E6A50]"
           >
-            アプリ紹介
+            About the app
           </Link>
           <Link
             href="/contact?category=app&app=lasttime-list"
             className="text-[13px] text-[#847F74] no-underline transition-colors hover:text-[#2E6A50]"
           >
-            お問い合わせ
+            Contact
           </Link>
           <span className="text-[13px] text-[#847F74]">© 2026 ychof</span>
         </div>

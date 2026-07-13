@@ -9,9 +9,9 @@ import {
 } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "お問い合わせ",
+  title: "Contact",
   description:
-    "アプリの使い方・ご要望・不具合のご報告、お仕事のご相談など、お気軽にお問い合わせください。",
+    "Questions about how to use an app, feature requests, bug reports, work inquiries, and more. Feel free to get in touch.",
 };
 
 function first(v: string | string[] | undefined): string {
@@ -48,12 +48,12 @@ export default async function Page({
       <main className="mx-auto w-[800px] max-w-[90%] flex-1 pt-16 pb-20">
         <div className="mb-10 text-center">
           <h1 className="mb-4 text-[28px] font-extrabold tracking-[-0.01em]">
-            お問い合わせ
+            Contact
           </h1>
           <p className="mx-auto max-w-[560px] text-[15px] leading-[1.9] text-muted">
-            アプリの使い方・ご要望・不具合のご報告、お仕事のご相談など、
+            Questions about how to use an app, feature requests, bug reports, work inquiries, and more.
             <br className="max-[560px]:hidden" />
-            お気軽にお問い合わせください。
+            Feel free to get in touch.
           </p>
         </div>
 
@@ -66,7 +66,7 @@ export default async function Page({
             href="/"
             className="text-muted no-underline transition-colors hover:text-app-ink"
           >
-            ← トップへ戻る
+            ← Back to top
           </Link>
           <p className="mt-2">© 2026 ychof</p>
         </div>

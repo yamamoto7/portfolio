@@ -7,12 +7,12 @@ export default function BuylisFooter() {
       <div className="flex flex-wrap justify-between">
         <Wordmark href="/" />
         <div className="pt-2.5">
-          <Link href="/buylis">アプリ紹介ページ</Link>
+          <Link href="/buylis">About the app</Link>
           <br />
-          <Link href="/buylis/privacy-policy">プライバシーポリシー</Link>
+          <Link href="/buylis/privacy-policy">Privacy Policy</Link>
         </div>
         <div className="pt-2.5">
-          <Link href="/">開発者について</Link>
+          <Link href="/">About the developer</Link>
         </div>
       </div>
       <div className="text-center text-xs">© 2022 All rights reserved</div>

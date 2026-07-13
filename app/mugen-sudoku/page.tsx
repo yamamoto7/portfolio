@@ -7,7 +7,7 @@ import { MUGEN_SUDOKU_NAME } from "@/lib/mugen-sudoku";
 export const metadata: Metadata = {
   title: MUGEN_SUDOKU_NAME,
   description:
-    "鬼難度に、本気で挑む。あてずっぽう不要、論理だけで必ず解ける本格数独。プレイ中の割り込み広告なし。",
+    "Take on the toughest puzzles for real. A serious Sudoku experience where no guessing is needed—every puzzle is solvable through pure logic. No interruptive ads while you play.",
 };
 
 // TODO: ストア公開後に URL を設定
@@ -111,42 +111,42 @@ interface Feature {
 const FEATURES: Feature[] = [
   {
     seal: "一",
-    badge: "広告なし",
-    heading: "集中を、邪魔しない。",
-    desc: "プレイ中の割り込み広告は一切なし。むずかしい・もっと難しい・鬼の三段階、ただ盤面と向き合うだけ。",
+    badge: "No ads",
+    heading: "Nothing breaks your focus.",
+    desc: "Not a single interruptive ad while you play. Three levels—Hard, Harder, and Oni—just you and the board.",
     shot: 3,
-    alt: "難易度選択の画面",
+    alt: "Difficulty selection screen",
   },
   {
     seal: "二",
-    badge: "論理のみ",
-    heading: "あてずっぽうは、要らない。",
-    desc: "総当たりも勘も不要。すべての問題が、筋道だった論理だけで必ず解けるように作られています。",
+    badge: "Logic only",
+    heading: "No guessing required.",
+    desc: "No brute force, no hunches. Every puzzle is crafted to be solvable through clear, step-by-step logic alone.",
     shot: 5,
-    alt: "論理で解ける旨の説明画面",
+    alt: "Screen explaining that puzzles are solvable by logic",
   },
   {
     seal: "三",
-    badge: "解法解説",
-    heading: "詰まっても、一手ずつ。",
-    desc: "行き詰まったら、次の一手とその根拠を順に確認。使われている解法のテクニックも自然と身につきます。",
+    badge: "Solution guides",
+    heading: "Stuck? One move at a time.",
+    desc: "When you hit a wall, review the next move and the reasoning behind it, step by step. You'll naturally pick up the solving techniques along the way.",
     shot: 2,
-    alt: "解法ステップの解説画面",
+    alt: "Screen explaining the solving steps",
   },
   {
     seal: "四",
-    badge: "操作性",
-    heading: "思いのままの、操作性。",
-    desc: "数独マニアが練り上げた入力体験。候補メモも数字の確定も、思考を止めずになめらかに。",
+    badge: "Controls",
+    heading: "Controls that follow your intent.",
+    desc: "An input experience refined by Sudoku enthusiasts. Jot candidate notes or lock in numbers smoothly, without ever breaking your train of thought.",
     shot: 4,
-    alt: "操作ガイドの画面",
+    alt: "Controls guide screen",
   },
 ];
 
 const CLAIMS = [
-  { k: "収録", v: "999問" },
-  { k: "割り込み広告", v: "なし" },
-  { k: "解き方", v: "論理のみ" },
+  { k: "Puzzles", v: "999" },
+  { k: "Interruptive ads", v: "None" },
+  { k: "Solving", v: "Logic only" },
 ];
 
 export default function Page() {
@@ -161,7 +161,7 @@ export default function Page() {
             href={APP_STORE_URL}
             className="font-mincho rounded-[6px] bg-[var(--verm)] px-5 py-2 text-[14px] font-bold text-[#F6F0E1] no-underline transition-opacity hover:opacity-90"
           >
-            入手する
+            Get it
           </a>
         }
       />
@@ -189,34 +189,34 @@ export default function Page() {
                 className="h-12 w-12 shrink-0 rounded-[10px] shadow-[0_4px_12px_rgba(35,32,25,0.2)]"
               />
               <span className="font-mincho text-[15px] font-bold tracking-[0.16em] text-[var(--green)]">
-                本格 数独
+                Serious Sudoku
               </span>
             </div>
             <h1 className="font-mincho mb-6 text-[52px] leading-[1.28] font-black tracking-[0.01em] max-[720px]:text-[40px]">
-              鬼難度に、
+              Take on the
               <br />
-              本気で挑む。
+              toughest, for real.
             </h1>
             <p className="mb-9 text-[16px] leading-[2] text-[var(--sub)]">
-              あてずっぽう不要、論理だけで必ず解ける本格数独。
+              A serious Sudoku where no guessing is needed—every puzzle is solvable through pure logic.
               <br />
-              ナンプレマニア監修の、静かで研ぎ澄まされた一局を。
+              A quiet, finely honed game, curated by Sudoku enthusiasts.
             </p>
             <StoreButtons />
           </div>
-          <Shot n={1} alt="鬼難度の数独に挑む画面" priority />
+          <Shot n={1} alt="Screen for tackling an Oni-difficulty Sudoku" priority />
         </div>
       </section>
 
       {/* 一文の見せ場（松葉色の帯） */}
       <section className="bg-[var(--green)] px-6 py-20 text-center text-[#F1ECDC]">
         <p className="font-mincho mx-auto max-w-[760px] text-[30px] leading-[1.7] font-bold max-[720px]:text-[23px]">
-          解けないのではない。
+          It&apos;s not that it can&apos;t be solved.
           <br />
-          まだ、解いていないだけ。
+          You just haven&apos;t solved it yet.
         </p>
         <p className="mx-auto mt-6 max-w-[520px] text-[15px] leading-[2] text-[#CBD6C9]">
-          すべての問題が、論理だけで必ず解けるように作られています。
+          Every puzzle is crafted to be solvable through logic alone.
         </p>
       </section>
 
@@ -266,7 +266,7 @@ export default function Page() {
       <section className="px-6 py-24 text-center">
         <Seal char="鬼" className="mb-6 h-14 w-14 text-[28px]" />
         <p className="font-mincho mb-8 text-[30px] font-bold leading-[1.5] max-[720px]:text-[24px]">
-          鬼難度の数独を、はじめる。
+          Start an Oni-difficulty Sudoku.
         </p>
         <div className="flex justify-center">
           <StoreButtons />
@@ -276,18 +276,18 @@ export default function Page() {
       {/* Contact 導線 */}
       <section className="border-t border-[var(--line)] bg-[var(--surface)] px-6 py-20 text-center">
         <h2 className="font-mincho mb-3 text-[24px] font-bold">
-          お困りですか？
+          Need help?
         </h2>
         <p className="mx-auto mb-8 max-w-[520px] text-[15px] leading-[2] text-[var(--sub)]">
-          アプリの使い方・ご要望・不具合のご報告など、
+          Questions about how to use the app, feature requests, bug reports—
           <br className="max-[520px]:hidden" />
-          お気軽にお問い合わせください。
+          feel free to reach out anytime.
         </p>
         <Link
           href="/contact?category=app&app=mugen-sudoku"
           className="inline-block rounded-[8px] bg-[var(--green)] px-9 py-3.5 text-[15px] font-bold text-[#F6F0E1] no-underline transition-transform hover:-translate-y-0.5"
         >
-          お問い合わせ
+          Contact us
         </Link>
       </section>
 
@@ -302,13 +302,13 @@ export default function Page() {
               href="/contact?category=app&app=mugen-sudoku"
               className="text-[13px] text-[#B8AF9C] no-underline transition-colors hover:text-[#E7DEC9]"
             >
-              お問い合わせ
+              Contact
             </Link>
             <Link
               href="/mugen-sudoku/privacy-policy"
               className="text-[13px] text-[#B8AF9C] no-underline transition-colors hover:text-[#E7DEC9]"
             >
-              プライバシーポリシー
+              Privacy Policy
             </Link>
           </div>
           <p className="text-[12px] tracking-[0.06em] text-[#8E866F]">

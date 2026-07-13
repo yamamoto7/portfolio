@@ -22,10 +22,10 @@ export default function AppFooter({ app }: { app: AppConfig }) {
         </Link>
         <nav className="flex flex-wrap gap-5">
           <Link href={`/${app.slug}`} className={linkClass}>
-            アプリ紹介
+            Overview
           </Link>
           <Link href={`/${app.slug}/privacy-policy`} className={linkClass}>
-            プライバシーポリシー
+            Privacy Policy
           </Link>
           <a
             href={app.contactForm}
@@ -33,10 +33,10 @@ export default function AppFooter({ app }: { app: AppConfig }) {
             rel="noopener noreferrer"
             className={linkClass}
           >
-            お問い合わせ
+            Contact
           </a>
           <Link href="/" className={linkClass}>
-            開発者について
+            About the Developer
           </Link>
         </nav>
       </div>

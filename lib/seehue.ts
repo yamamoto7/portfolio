@@ -5,4 +5,4 @@ export const SEEHUE_SHORT_NAME = "SeeHue";
 /** アクセントカラー（アプリの AccentColor と同系のブルー）。 */
 export const SEEHUE_ACCENT = "#337AE6";
 /** プライバシーポリシー発効日。 */
-export const SEEHUE_EFFECTIVE_DATE = "2026年6月23日";
+export const SEEHUE_EFFECTIVE_DATE = "June 23, 2026";

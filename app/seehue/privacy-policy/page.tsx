@@ -5,7 +5,7 @@ import { TERMS_WRAPPER_CLASS } from "@/lib/terms";
 import { SEEHUE_APP_NAME, SEEHUE_EFFECTIVE_DATE } from "@/lib/seehue";
 
 export const metadata: Metadata = {
-  title: `プライバシーポリシー — ${SEEHUE_APP_NAME}`,
+  title: `Privacy Policy — ${SEEHUE_APP_NAME}`,
 };
 
 const APP_NAME = SEEHUE_APP_NAME;
@@ -20,7 +20,7 @@ export default function Page() {
             href="/seehue"
             className="text-[13px] text-[#6E7378] no-underline transition-colors hover:text-[#337AE6]"
           >
-            アプリ紹介
+            About the app
           </Link>
         }
       />
@@ -28,83 +28,83 @@ export default function Page() {
       <div className={`${TERMS_WRAPPER_CLASS} flex-1`}>
         <h2>Privacy Policy</h2>
 
-        <h4>はじめに</h4>
-        <p>こちらは「{APP_NAME}」（以下「本アプリ」）のプライバシーポリシーです。</p>
+        <h4>Introduction</h4>
+        <p>This is the Privacy Policy for &quot;{APP_NAME}&quot; (hereinafter &quot;the app&quot;).</p>
         <p>
-          本アプリは、ychofが提供する、色が見分けにくい方のための色のサポートカメラです。
-          本アプリを利用される場合、このポリシーに記載された情報の取り扱いに同意されたものとします。
+          The app is a color-assist camera for people who have difficulty distinguishing colors, provided by ychof.
+          By using the app, you agree to the handling of information described in this policy.
         </p>
 
-        <h4>情報の収集について</h4>
+        <h4>Collection of Information</h4>
         <p>
-          本アプリは、ychofが運営するサーバーを持ちません。アカウント登録も不要です。
-          作成したプロファイルや保存した色などの設定は、すべてお客様のデバイス内にのみ保存され、
-          ychofが収集・保存・閲覧することはありません。
+          The app has no servers operated by ychof, and no account registration is required.
+          Settings such as the profiles you create and the colors you save are stored solely on your device,
+          and ychof does not collect, store, or view them.
         </p>
 
-        <h4>カメラの利用について</h4>
+        <h4>Use of the Camera</h4>
         <p>
-          本アプリは、色の補正・シミュレーションや色名の確認のためにカメラを使用します。
-          カメラの映像は、お客様のデバイス内でリアルタイムに処理されるだけで、保存も外部への送信も行いません。
+          The app uses the camera to correct and simulate colors and to check color names.
+          The camera footage is only processed in real time on your device; it is never saved or transmitted externally.
         </p>
 
-        <h4>写真へのアクセス</h4>
+        <h4>Access to Photos</h4>
         <p>
-          写真を読み込んで補正・シミュレーションする場合、お客様が選択した画像をデバイス内でのみ処理します。
-          補正した画像を保存する操作を行った場合に限り、お客様の写真ライブラリに保存されます。
-          画像が ychof を含む第三者へ送信されることはありません。
+          When you load a photo to correct or simulate it, the image you select is processed only on your device.
+          It is saved to your photo library only when you perform an action to save the corrected image.
+          Images are never transmitted to any third party, including ychof.
         </p>
 
-        <h4>お問い合わせフォームについて</h4>
+        <h4>Contact Form</h4>
         <p>
-          アプリ内のお問い合わせ機能をご利用いただいた場合に限り、入力いただいた本文と、
-          不具合の調査に必要な技術情報（OSのバージョン・アプリのバージョン・ビルド番号）が開発者へ送信されます。
-          これはお客様が送信操作を行った場合のみで、自動的に収集されることはありません。
+          Only when you use the in-app contact feature, the message you enter and the technical information needed to investigate issues
+          (OS version, app version, and build number) are sent to the developer.
+          This happens only when you perform the send action; it is never collected automatically.
         </p>
 
-        <h4>広告・解析について</h4>
+        <h4>Advertising and Analytics</h4>
         <p>
-          本アプリは、広告SDKや、お客様の行動を追跡する解析ツールを使用していません。
+          The app does not use any advertising SDKs or analytics tools that track your behavior.
         </p>
 
-        <h4>ログデータについて</h4>
+        <h4>Log Data</h4>
         <p>
-          本アプリでエラーが発生した場合、Appleの仕組みを通じて、デバイスの種別・OSのバージョン・
-          エラー発生時の状況などの診断情報がAppleに送信される場合があります。
-          これはお客様がデバイスの設定で許可している場合に限られ、ychofが個人を特定できる情報を受け取ることはありません。
+          When an error occurs in the app, diagnostic information such as your device model, OS version,
+          and the circumstances at the time of the error may be sent to Apple through Apple&apos;s mechanisms.
+          This happens only if you have allowed it in your device settings, and ychof does not receive any personally identifiable information.
         </p>
 
-        <h4>免責事項</h4>
+        <h4>Disclaimer</h4>
         <p>
-          本アプリは色の見分けを支援するツールであり、色覚特性の診断・治療を行うものではありません。
-          セルフチェックの結果は画面の明るさや照明、端末の色表現によって変わります。
-          正確な診断については眼科を受診してください。
+          The app is a tool to assist with distinguishing colors; it does not diagnose or treat color vision characteristics.
+          Self-check results vary depending on screen brightness, lighting, and how your device renders color.
+          For an accurate diagnosis, please consult an ophthalmologist.
         </p>
 
-        <h4>セキュリティ</h4>
+        <h4>Security</h4>
         <p>
-          お客様の情報を保護するよう努めていますが、電子的な保存・送信方法は100％安全とは限らず、
-          絶対的な安全性を保証するものではありません。
+          We strive to protect your information, but no method of electronic storage or transmission is 100% secure,
+          and we cannot guarantee absolute security.
         </p>
 
-        <h4>子供のプライバシー</h4>
+        <h4>Children&apos;s Privacy</h4>
         <p>
-          ychofは、13歳未満のお子様から意図的に個人を特定できる情報を収集することはありません。
-          万が一、13歳未満の子供から個人情報が提供されたことが判明した場合は、直ちに削除します。
+          ychof does not knowingly collect personally identifiable information from children under 13.
+          If we discover that a child under 13 has provided us with personal information, we will delete it immediately.
         </p>
 
-        <h4>本プライバシーポリシーの変更</h4>
+        <h4>Changes to This Privacy Policy</h4>
         <p>
-          本ポリシーは随時更新されることがあります。変更があった場合は、このページに掲載してお知らせします。
-          定期的にこのページをご確認いただくことをお勧めします。
+          This policy may be updated from time to time. If there are any changes, we will notify you by posting them on this page.
+          We recommend that you review this page periodically.
         </p>
-        <p>このポリシーは、{EFFECTIVE_DATE}より有効となります。</p>
+        <p>This policy is effective as of {EFFECTIVE_DATE}.</p>
 
-        <h4>お問い合わせ</h4>
+        <h4>Contact</h4>
         <p>
-          本プライバシーポリシーについてご質問やご提案がありましたら、
-          <Link href="/contact?category=app&app=seehue">こちら</Link>
-          からお気軽にお問い合わせください。
+          If you have any questions or suggestions about this Privacy Policy,
+          please feel free to reach out{" "}
+          <Link href="/contact?category=app&app=seehue">here</Link>.
         </p>
       </div>
 
@@ -114,13 +114,13 @@ export default function Page() {
             href="/seehue"
             className="text-[13px] text-[#6E7378] no-underline transition-colors hover:text-[#337AE6]"
           >
-            アプリ紹介
+            About the app
           </Link>
           <Link
             href="/contact?category=app&app=seehue"
             className="text-[13px] text-[#6E7378] no-underline transition-colors hover:text-[#337AE6]"
           >
-            お問い合わせ
+            Contact
           </Link>
           <span className="text-[13px] text-[#6E7378]">© 2026 ychof</span>
         </div>

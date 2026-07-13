@@ -44,7 +44,7 @@ export default function Hero() {
             href="https://github.com/yamamoto7/yamamoto7/blob/master/RESUME.md"
             className={resumeButtonClass}
           >
-            履歴書 - 日本語
+            Resume - Japanese
           </a>
           <br />
           <br />

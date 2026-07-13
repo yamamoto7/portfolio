@@ -7,7 +7,7 @@ import { SEEHUE_APP_NAME, SEEHUE_SHORT_NAME } from "@/lib/seehue";
 export const metadata: Metadata = {
   title: SEEHUE_APP_NAME,
   description:
-    "色が見分けにくい方のための、色のサポートカメラ。カメラや写真の色を見やすく補正し、色の名前を調べ、自分の見え方をチェックできます。解析はすべて端末内で行われ、映像が保存・送信されることはありません。",
+    "A color-assist camera for people who have difficulty distinguishing colors. Adjust the colors of your camera or photos to make them easier to see, look up color names, and check how you perceive colors. All analysis happens entirely on your device—no footage is ever saved or transmitted.",
 };
 
 // TODO: App Store 公開後にURLを設定
@@ -27,7 +27,7 @@ function AppStoreBadge() {
     >
       <Image
         src="/contents/common/appstore.png"
-        alt="App Store からダウンロード"
+        alt="Download on the App Store"
         width={342}
         height={108}
         className="h-12 w-auto"
@@ -84,31 +84,31 @@ interface Feature {
 const FEATURES: Feature[] = [
   {
     badge: "SIMULATE & SHARE",
-    heading: "見え方を、そのまま伝える。",
-    desc: "「そのまま／補正／シミュレート」をワンタップで切り替え。見えている色をそのまま再現して写真にすれば、家族や友だちに自分の見え方を伝えられます。",
+    heading: "Show others exactly how you see.",
+    desc: "Switch between Original, Corrected, and Simulate with a single tap. Capture a photo that reproduces the colors as you see them, and you can show your family and friends how you perceive color.",
     shot: 2,
-    alt: "見え方のシミュレートとシェアの画面",
+    alt: "Screen for simulating and sharing how colors appear",
   },
   {
     badge: "INSPECT",
-    heading: "この色は、なに色？",
-    desc: "画面中央に写ったものの色を、色名（赤・青緑など）と明るさ・鮮やかさで表示。近い色の候補もわかるので、色の判断に迷ったときの相棒になります。",
+    heading: "What color is this?",
+    desc: "Displays the color of whatever is at the center of the screen by its name (red, teal, etc.) along with its brightness and vividness. It even suggests similar colors, making it a reliable companion whenever you're unsure about a color.",
     shot: 3,
-    alt: "色名を調べるカラーピッカーの画面",
+    alt: "Color picker screen for looking up color names",
   },
   {
     badge: "COMPARE",
-    heading: "保存して、その場で見くらべ。",
-    desc: "気になった色を保存しておけば、基準の色とカメラ映像をリアルタイムで照合。「同じ／似ている／ちがう」をその場で確認でき、服や小物の色合わせに便利です。",
+    heading: "Save a color, compare on the spot.",
+    desc: "Save a color you're curious about, then match it against the live camera feed in real time. Instantly see whether colors are the Same, Similar, or Different—handy for coordinating clothes and accessories.",
     shot: 4,
-    alt: "保存した色と見くらべる画面",
+    alt: "Screen for comparing against a saved color",
   },
   {
     badge: "SELF-CHECK",
-    heading: "見分けやすさを、チェック。",
-    desc: "赤緑・青黄それぞれの見分けやすさをセルフチェックで測定し、結果に合わせて補正の強さを自動調整。1型・2型・3型に対応し、プロファイルも作れます。",
+    heading: "Check how easily you tell colors apart.",
+    desc: "Measure how well you distinguish red-green and blue-yellow with a self-check, then automatically tune the correction strength to your results. Supports type 1, type 2, and type 3, and lets you create profiles.",
     shot: 5,
-    alt: "色覚セルフチェックの画面",
+    alt: "Color vision self-check screen",
   },
 ];
 
@@ -122,7 +122,7 @@ export default function Page() {
             href={APP_STORE_URL}
             className="rounded-full bg-[#337AE6] px-4 py-2 text-[13px] font-bold text-white no-underline transition-opacity hover:opacity-90"
           >
-            入手する
+            Get it
           </a>
         }
       />
@@ -141,18 +141,18 @@ export default function Page() {
             <Spectrum />
           </div>
           <h1 className="mb-5 text-[40px] leading-[1.4] font-extrabold tracking-[-0.01em] max-[720px]:text-[30px]">
-            色を、
+            Make colors
             <br />
-            見やすく。
+            easier to see.
           </h1>
           <p className="mb-9 text-[17px] leading-[1.9] text-[#6E7378]">
-            色が見分けにくい方のための、色のサポートカメラ。
+            A color-assist camera for people who have difficulty distinguishing colors.
             <br />
-            補正して、色名を調べ、自分の見え方をチェック。
+            Adjust colors, look up color names, and check how you perceive them.
           </p>
           <AppStoreBadge />
         </div>
-        <Shot n={1} label="補正カメラの画面" priority />
+        <Shot n={1} label="Correction camera screen" priority />
       </section>
 
       {/* 端末内で完結 */}
@@ -162,9 +162,9 @@ export default function Page() {
             ON-DEVICE
           </span>
           <p className="text-[19px] leading-[2] font-medium text-[#3C4248]">
-            解析は、すべて端末内で。
+            All analysis happens entirely on your device.
             <br />
-            カメラ映像や写真が、保存・送信されることはありません。
+            Camera footage and photos are never saved or transmitted.
           </p>
         </div>
       </section>
@@ -198,10 +198,10 @@ export default function Page() {
           <Spectrum />
         </div>
         <h2 className="mb-3 text-[26px] font-extrabold tracking-[-0.01em]">
-          色を、あなたの味方に。
+          Make color your ally.
         </h2>
         <p className="mx-auto mb-8 max-w-[520px] text-[15px] leading-[1.9] text-[#6E7378]">
-          アカウント登録は不要。すぐに使い始められます。
+          No account required. Start using it right away.
         </p>
         <div className="flex justify-center">
           <AppStoreBadge />
@@ -211,18 +211,18 @@ export default function Page() {
       {/* Contact 導線 */}
       <section className="border-t border-[#ECE7DE] bg-white px-5 py-16 text-center">
         <h2 className="mb-3 text-[22px] font-extrabold tracking-[-0.01em]">
-          お困りですか？
+          Need help?
         </h2>
         <p className="mx-auto mb-7 max-w-[480px] text-[15px] leading-[1.9] text-[#6E7378]">
-          アプリの使い方・ご要望・不具合のご報告など、
+          Questions about how to use the app, feature requests, bug reports—
           <br className="max-[480px]:hidden" />
-          お気軽にお問い合わせください。
+          feel free to reach out anytime.
         </p>
         <Link
           href="/contact?category=app&app=seehue"
           className="inline-block rounded-[12px] border border-[#ECE7DE] bg-[#FAF7F2] px-8 py-3 text-[15px] font-bold text-[#337AE6] no-underline transition-transform hover:-translate-y-0.5"
         >
-          お問い合わせ
+          Contact us
         </Link>
       </section>
 
@@ -237,18 +237,18 @@ export default function Page() {
               href="/contact?category=app&app=seehue"
               className="text-[13px] text-[#6E7378] no-underline transition-colors hover:text-[#337AE6]"
             >
-              お問い合わせ
+              Contact
             </Link>
             <Link
               href="/seehue/privacy-policy"
               className="text-[13px] text-[#6E7378] no-underline transition-colors hover:text-[#337AE6]"
             >
-              プライバシーポリシー
+              Privacy Policy
             </Link>
           </div>
           <p className="mx-auto max-w-[560px] text-[11px] leading-[1.7] text-[#9AA0A6]">
-            本アプリは色の見分けを支援するツールであり、色覚特性の診断・治療を行うものではありません。
-            正確な診断は眼科を受診してください。
+            This app is a tool to assist with distinguishing colors; it does not diagnose or treat color vision characteristics.
+            For an accurate diagnosis, please consult an ophthalmologist.
           </p>
           <p className="text-[13px] text-[#6E7378]">© 2026 ychof</p>
         </div>

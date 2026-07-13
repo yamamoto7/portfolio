@@ -7,11 +7,11 @@ import { LASTTIME_APP_NAME } from "@/lib/lasttime";
 export const metadata: Metadata = {
   title: LASTTIME_APP_NAME,
   description:
-    "最後にやったのは、いつ？両親への電話・歯ブラシの交換・里帰り・映画。大切だけど忘れがちなことの「最後にやった日」を記録して、忘れずにいられる記録帳。",
+    "When did you last do it? Calling your parents, changing your toothbrush, visiting home, seeing a movie. A gentle log for recording the last time you did the things that matter but are easy to forget, so you never lose track.",
 };
 
 // TODO: App Store 公開後にURLを設定
-const APP_STORE_URL = "#";
+const APP_STORE_URL = "https://apps.apple.com/app/id6777447199";
 
 /* ------------------------------------------------------------------ *
  * 「最後はいつ？」はアプリの世界観（あたたかいクリーム・森の緑・思い出）を
@@ -27,7 +27,7 @@ function AppStoreBadge() {
     >
       <Image
         src="/contents/common/appstore.png"
-        alt="App Store からダウンロード"
+        alt="Download on the App Store"
         width={342}
         height={108}
         className="h-12 w-auto"
@@ -64,14 +64,14 @@ function Shot({
 
 /** 「大切だけど忘れがち」の具体例チップ。 */
 const EXAMPLES = [
-  "両親への電話 ☎️",
-  "歯ブラシの交換 🪥",
-  "里帰り 🏠",
-  "映画 🎬",
-  "健康診断 🩺",
-  "観葉植物の水やり 🪴",
-  "大掃除 🧹",
-  "友達と会う ☕️",
+  "Calling your parents ☎️",
+  "Changing your toothbrush 🪥",
+  "Visiting home 🏠",
+  "Watching a movie 🎬",
+  "Health checkup 🩺",
+  "Watering the plants 🪴",
+  "Deep cleaning 🧹",
+  "Meeting a friend ☕️",
 ];
 
 interface Feature {
@@ -85,38 +85,38 @@ interface Feature {
 const FEATURES: Feature[] = [
   {
     badge: "RHYTHM",
-    heading: "「やった」を押すだけ。",
-    desc: "記録が積み重なると、あなたのペース（平均間隔）を自動で計算。「そろそろ」「超過」を、やさしい色でそっとお知らせします。",
+    heading: "Just tap “Done.”",
+    desc: "As your records add up, the app automatically works out your rhythm (your average interval) and gently signals “time soon” or “overdue” with soft, calming colors.",
     shot: 4,
-    alt: "経過日数と目標間隔の詳細画面",
+    alt: "Detail screen showing days elapsed and target interval",
   },
   {
     badge: "MEMORY",
-    heading: "写真とひとことで、思い出になる。",
-    desc: "記録には写真とメモを添えられます。ただの記録が、あとから見返したくなる小さな思い出に変わります。",
+    heading: "A photo and a few words turn it into a memory.",
+    desc: "Add a photo and a note to any record. What was just a log becomes a small memory you'll want to look back on later.",
     shot: 2,
-    alt: "写真とメモつきのタイムライン",
+    alt: "Timeline with photos and notes",
   },
   {
     badge: "LOOK BACK",
-    heading: "「◯年前の今日」に、ふと出会う。",
-    desc: "すべての記録は時系列に並び、「◯年前の今日」「はじめて」「ひさしぶり」といった彩りとともに、ふとした瞬間に振り返れます。",
+    heading: "Stumble upon “on this day, years ago.”",
+    desc: "Every record is arranged in chronological order, brought to life with touches like “on this day, years ago,” “first time,” and “long time no see” for those unexpected moments of looking back.",
     shot: 3,
-    alt: "「◯年前の今日」を振り返るタイムライン",
+    alt: "Timeline revisiting “on this day, years ago”",
   },
   {
     badge: "CALENDAR",
-    heading: "やった日を、ひと目で。",
-    desc: "カレンダーに切り替えれば、いつ何をやったかが月ごとにひと目で。続けてきた足あとが、静かに見えてきます。",
+    heading: "See your days at a glance.",
+    desc: "Switch to the calendar view and see what you did and when, month by month, at a glance. The footprints of everything you've kept up quietly come into view.",
     shot: 5,
-    alt: "やった日が並ぶカレンダー画面",
+    alt: "Calendar screen laying out the days you did things",
   },
 ];
 
 const SAFE = [
-  { k: "保存先", v: "端末と iCloud だけ" },
-  { k: "バックアップ", v: "iCloud 同期 ＋ 書き出し" },
-  { k: "プライバシー", v: "Face ID ロック" },
+  { k: "Storage", v: "Your device and iCloud only" },
+  { k: "Backup", v: "iCloud sync + export" },
+  { k: "Privacy", v: "Face ID lock" },
 ];
 
 export default function Page() {
@@ -129,7 +129,7 @@ export default function Page() {
             href={APP_STORE_URL}
             className="rounded-full bg-[#2E6A50] px-4 py-2 text-[13px] font-bold text-white no-underline transition-opacity hover:opacity-90"
           >
-            入手する
+            Get
           </a>
         }
       />
@@ -145,27 +145,27 @@ export default function Page() {
             className="mb-7 h-16 w-16 rounded-[16px] shadow-[0_6px_18px_rgba(42,42,40,0.16)]"
           />
           <h1 className="mb-5 text-[40px] leading-[1.4] font-extrabold tracking-[-0.01em] max-[720px]:text-[30px]">
-            最後にやったのは、
+            When did you
             <br />
-            いつ？
+            last do it?
           </h1>
           <p className="mb-9 text-[17px] leading-[1.9] text-[#847F74]">
-            両親への電話、歯ブラシの交換、里帰り、映画。
+            Calling your parents, changing your toothbrush, visiting home, a movie.
             <br />
-            大切なのに、つい間があいてしまうこと。
+            The things that matter, yet somehow slip through the cracks.
             <br />
-            その「最後にやった日」を、そっと記録。
+            Gently record the last time you did them.
           </p>
           <AppStoreBadge />
         </div>
-        <Shot n={1} label="「最後はいつ？」の一覧画面" h={2293} priority />
+        <Shot n={1} label="List screen of 最後はいつ？" h={2293} priority />
       </section>
 
       {/* 共感の導入：大切だけど忘れがち */}
       <section className="border-y border-[#E8E3D7] bg-[#FCFAF4]">
         <div className="mx-auto max-w-[960px] px-5 py-16 text-center">
           <p className="mb-9 text-[15px] tracking-[0.04em] text-[#847F74]">
-            こんな「大切だけど、忘れがち」に。
+            For the things that matter but are easy to forget.
           </p>
           <div className="flex flex-wrap justify-center gap-2.5">
             {EXAMPLES.map((ex) => (
@@ -207,10 +207,10 @@ export default function Page() {
       <section className="border-y border-[#E8E3D7] bg-[#FCFAF4]">
         <div className="mx-auto max-w-[960px] px-5 py-16 text-center">
           <p className="mb-3 text-[15px] tracking-[0.04em] text-[#847F74]">
-            あなたの記録は、あなたのものだけ。
+            Your records are yours alone.
           </p>
           <p className="mx-auto mb-10 max-w-[460px] text-[14px] leading-[1.9] text-[#847F74]">
-            アカウント登録はいりません。データが外部に送られることもありません。
+            No account required. Your data is never sent anywhere.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             {SAFE.map((item) => (
@@ -231,10 +231,10 @@ export default function Page() {
       {/* CTA */}
       <section className="border-t border-[#E8E3D7] bg-[#F6F3EC] px-5 py-20 text-center">
         <h2 className="mb-3 text-[26px] font-extrabold tracking-[-0.01em]">
-          大切なことほど、つい後回しに。
+          The most important things are the easiest to put off.
         </h2>
         <p className="mx-auto mb-8 max-w-[460px] text-[15px] leading-[1.9] text-[#847F74]">
-          「最後はいつ？」で、忘れずにいよう。
+          Let 最後はいつ？ help you never forget them.
         </p>
         <div className="flex justify-center">
           <AppStoreBadge />
@@ -244,18 +244,18 @@ export default function Page() {
       {/* Contact 導線 */}
       <section className="border-t border-[#E8E3D7] bg-[#FCFAF4] px-5 py-16 text-center">
         <h2 className="mb-3 text-[22px] font-extrabold tracking-[-0.01em]">
-          お困りですか？
+          Need help?
         </h2>
         <p className="mx-auto mb-7 max-w-[480px] text-[15px] leading-[1.9] text-[#847F74]">
-          アプリの使い方・ご要望・不具合のご報告など、
+          Questions about how to use the app, feature requests, bug reports —
           <br className="max-[480px]:hidden" />
-          お気軽にお問い合わせください。
+          feel free to reach out anytime.
         </p>
         <Link
           href="/contact?category=app&app=lasttime-list"
           className="inline-block rounded-[12px] border border-[#E8E3D7] bg-[#F6F3EC] px-8 py-3 text-[15px] font-bold text-[#2E6A50] no-underline transition-transform hover:-translate-y-0.5"
         >
-          お問い合わせ
+          Contact us
         </Link>
       </section>
 
@@ -270,13 +270,13 @@ export default function Page() {
               href="/contact?category=app&app=lasttime-list"
               className="text-[13px] text-[#847F74] no-underline transition-colors hover:text-[#2E6A50]"
             >
-              お問い合わせ
+              Contact
             </Link>
             <Link
               href="/lasttime-list/privacy-policy"
               className="text-[13px] text-[#847F74] no-underline transition-colors hover:text-[#2E6A50]"
             >
-              プライバシーポリシー
+              Privacy Policy
             </Link>
           </div>
           <p className="text-[13px] text-[#847F74]">© 2026 ychof</p>

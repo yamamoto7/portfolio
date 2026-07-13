@@ -16,10 +16,20 @@ type Output = {
   title: string;
   category: string;
   tags: string[];
+  /** Square thumbnail for the grid card (app icon). Falls back to `image`. */
+  icon?: string;
+  /** Larger visual shown in the detail modal (usually a screenshot). */
   image?: string;
   description: string;
   links: { label: string; href: string }[];
 };
+
+// Grid groups, in display order. Each label heads a section of the Outputs list.
+const GROUPS: { category: string; label: string }[] = [
+  { category: "Mobile App", label: "Mobile Apps" },
+  { category: "Chrome Extension", label: "Chrome Extension" },
+  { category: "Experiment", label: "Lab" },
+];
 
 const STATES = [
   { line1: "KENTA", line2: "YAMAMOTO" }, // 0 home
@@ -28,11 +38,10 @@ const STATES = [
 ];
 
 const MONO = { fontFamily: "var(--font-mono)" };
-const PER_PAGE = 3;
 
 const SOCIAL = [
   { label: "GitHub", href: "https://github.com/yamamoto7", Icon: FaGithub },
-  { label: "X", href: "https://x.com/yamamoto7", Icon: FaXTwitter }, // TODO: confirm X handle
+  { label: "X", href: "https://x.com/ymkn_ymmtym", Icon: FaXTwitter },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/kentayamamoto7/", Icon: FaLinkedin },
   { label: "Facebook", href: "https://www.facebook.com/kenta.yamamoto.94064176", Icon: FaFacebook },
 ];
@@ -44,18 +53,118 @@ const INTRO = [
   "I enjoy developing software and turning ideas into real products.",
 ];
 
-// TODO: descriptions / store links are placeholders — replace later.
+// Published apps first (iOS + the Chrome extension), then the two early
+// experiments. Each iOS app links to its bespoke landing page under the site.
 const OUTPUTS: Output[] = [
+  {
+    title: "Routin",
+    category: "Mobile App",
+    tags: ["SwiftUI"],
+    icon: "/contents/routin/icon.png",
+    image: "/contents/routin/screen1.png",
+    description:
+      "A calm, unhurried habit tracker — built to help you keep going without pressure or streak guilt.",
+    links: [{ label: "Landing page", href: "/routin" }],
+  },
+  {
+    title: "最後はいつ？",
+    category: "Mobile App",
+    tags: ["SwiftUI"],
+    icon: "/contents/lasttime/icon.png",
+    image: "/contents/lasttime/screen1.png",
+    description:
+      "A logbook for the “last time you did it.” Record when you last did the things that matter, so you never lose track.",
+    links: [{ label: "Landing page", href: "/lasttime-list" }],
+  },
+  {
+    title: "Verdash",
+    category: "Mobile App",
+    tags: ["SwiftUI"],
+    icon: "/contents/verdash/icon.png",
+    image: "/contents/verdash/screen1.png",
+    description:
+      "Manage your Vercel deployments one-handed from your iPhone — status, logs, and redeploys on the go.",
+    links: [{ label: "Landing page", href: "/verdash" }],
+  },
+  {
+    title: "鬼難易度数独",
+    category: "Mobile App",
+    tags: ["SwiftUI"],
+    icon: "/contents/mugen-sudoku/icon.png",
+    image: "/contents/mugen-sudoku/screen1.png",
+    description:
+      "Hardcore Sudoku that is always solvable by pure logic — no guessing required.",
+    links: [{ label: "Landing page", href: "/mugen-sudoku" }],
+  },
   {
     title: "Buylis",
     category: "Mobile App",
     tags: ["Flutter"],
+    icon: "/contents/buylis/icon.png",
     image: "/home/developments/buylis_screen.png",
     description:
       "A mobile app to share shopping lists with family in real time. I designed and built both the app and its landing page.",
-    links: [
-      { label: "Landing page", href: "/buylis" },
-    ],
+    links: [{ label: "Landing page", href: "/buylis" }],
+  },
+  {
+    title: "無限数学",
+    category: "Mobile App",
+    tags: ["SwiftUI"],
+    icon: "/contents/mugen-sugaku/icon.png",
+    image: "/contents/mugen-sugaku/screen1.png",
+    description:
+      "Rediscover math as a liberal art — practice problems spanning grade-school through university entrance exams.",
+    links: [{ label: "Landing page", href: "/mugen-sugaku" }],
+  },
+  {
+    title: "タイル交換周期",
+    category: "Mobile App",
+    tags: ["SwiftUI"],
+    icon: "/contents/tile-care/icon.png",
+    image: "/contents/tile-care/screen1.png",
+    description:
+      "Tracks which tile you last replaced and which one is next. It does that one thing, and nothing else.",
+    links: [{ label: "Landing page", href: "/tile-care" }],
+  },
+  {
+    title: "Anniv",
+    category: "Mobile App",
+    tags: ["SwiftUI"],
+    icon: "/contents/anniv/icon.png",
+    image: "/contents/anniv/screen1.png",
+    description:
+      "Birthdays, anniversaries, and gift history for the people who matter — all in one reminder app.",
+    links: [{ label: "Landing page", href: "/anniv" }],
+  },
+  {
+    title: "SeeHue",
+    category: "Mobile App",
+    tags: ["SwiftUI"],
+    icon: "/contents/seehue/icon.png",
+    image: "/contents/seehue/screen1.png",
+    description:
+      "A color-support camera: correct colors, look up color names, and check how a scene looks to different types of color vision.",
+    links: [{ label: "Landing page", href: "/seehue" }],
+  },
+  {
+    title: "MarkPad",
+    category: "Mobile App",
+    tags: ["SwiftUI"],
+    icon: "/contents/markpad/icon.png",
+    image: "/contents/markpad/screen1.png",
+    description:
+      "Jot down or paste text and see it rendered beautifully at once — a fast, focused Markdown editor.",
+    links: [{ label: "Landing page", href: "/markpad" }],
+  },
+  {
+    title: "Header Modify",
+    category: "Chrome Extension",
+    tags: ["JavaScript"],
+    icon: "/contents/header-modify/icon.png",
+    image: "/contents/header-modify/icon.png",
+    description:
+      "A lightweight, ModHeader-style Chrome extension that adds custom HTTP request headers to any site — with profiles, URL filters, and presets. Everything runs locally.",
+    links: [{ label: "Landing page", href: "/header-modify" }],
   },
   {
     title: "Color-blindness simulator",
@@ -90,18 +199,13 @@ export default function FluidPortfolio() {
     nameAmt: 0.12,
   });
   const [view, setView] = useState<View>("home");
-  const [page, setPage] = useState(0);
   const [selected, setSelected] = useState<Output | null>(null);
 
   function go(v: View) {
     setSelected(null);
-    if (v === "outputs") setPage(0);
     setView(v);
     api.current.setState(v === "home" ? 0 : v === "about" ? 1 : 2);
   }
-
-  const pageCount = Math.ceil(OUTPUTS.length / PER_PAGE);
-  const pageItems = OUTPUTS.slice(page * PER_PAGE, page * PER_PAGE + PER_PAGE);
 
   // keep the two bottom buttons registered as smoke sources (positions shift
   // when their labels change between views)
@@ -142,7 +246,7 @@ export default function FluidPortfolio() {
         <div className="pointer-events-none absolute inset-x-0 top-[45%] bottom-36 z-10 flex items-center justify-center px-6 sm:top-[50%] sm:bottom-28">
           <Reveal
             key={view}
-            className="pointer-events-auto max-h-full w-full max-w-md overflow-y-auto"
+            className="scrollbar-subtle pointer-events-auto max-h-full w-full max-w-md overflow-y-auto"
           >
             {view === "about" ? (
               <div className="flex flex-col items-center text-center">
@@ -175,54 +279,53 @@ export default function FluidPortfolio() {
                 </div>
               </div>
             ) : (
-              <div className="w-full">
-                <div className="grid gap-2">
-                  {pageItems.map((o) => (
-                    <button
-                      key={o.title}
-                      onClick={() => {
-                        api.current.burst(); // scatter the fluid on tap
-                        setSelected(o);
-                      }}
-                      className="w-full rounded-xl bg-white/[0.05] p-3 text-left backdrop-blur-md transition-colors hover:bg-white/[0.1] sm:p-3.5"
-                    >
-                      <div className="flex items-center justify-between gap-3">
-                        <span className="text-sm font-medium">{o.title}</span>
-                        <span className="shrink-0 text-xs text-white/40">↗</span>
-                      </div>
-                      <div className="mt-2 flex flex-wrap items-center gap-1.5">
-                        <Badge>{o.category}</Badge>
-                        {o.tags.map((t) => (
-                          <Tag key={t}>{t}</Tag>
+              <div className="w-full space-y-5">
+                {GROUPS.map((g) => {
+                  const items = OUTPUTS.filter((o) => o.category === g.category);
+                  if (!items.length) return null;
+                  return (
+                    <div key={g.category}>
+                      <h3
+                        className="mb-2.5 flex items-center gap-3 text-[10px] uppercase tracking-[0.25em] text-white/45"
+                        style={MONO}
+                      >
+                        {g.label}
+                        <span className="h-px flex-1 bg-white/10" />
+                      </h3>
+                      <div className="grid grid-cols-2 gap-2">
+                        {items.map((o) => (
+                          <button
+                            key={o.title}
+                            onClick={() => {
+                              api.current.burst(); // scatter the fluid on tap
+                              setSelected(o);
+                            }}
+                            className="flex items-center gap-2.5 rounded-xl bg-white/[0.05] p-2.5 text-left backdrop-blur-md transition-colors hover:bg-white/[0.1]"
+                          >
+                            <Image
+                              src={o.icon ?? o.image ?? "/home/profile.png"}
+                              alt=""
+                              width={80}
+                              height={80}
+                              className="h-9 w-9 shrink-0 rounded-lg object-cover ring-1 ring-white/10"
+                            />
+                            <span className="min-w-0 flex-1">
+                              <span className="block truncate text-[13px] font-medium leading-tight">
+                                {o.title}
+                              </span>
+                              <span
+                                className="mt-0.5 block truncate text-[10px] text-white/45"
+                                style={MONO}
+                              >
+                                {o.tags.join(" · ")}
+                              </span>
+                            </span>
+                          </button>
                         ))}
                       </div>
-                    </button>
-                  ))}
-                </div>
-
-                {pageCount > 1 && (
-                  <div className="mt-3 flex items-center justify-center gap-5 text-white/60">
-                    <button
-                      disabled={page === 0}
-                      onClick={() => setPage((p) => Math.max(0, p - 1))}
-                      className="text-base transition-colors hover:text-white disabled:opacity-25"
-                      aria-label="previous"
-                    >
-                      ←
-                    </button>
-                    <span className="text-[11px] tracking-[0.2em]" style={MONO}>
-                      {page + 1} / {pageCount}
-                    </span>
-                    <button
-                      disabled={page === pageCount - 1}
-                      onClick={() => setPage((p) => Math.min(pageCount - 1, p + 1))}
-                      className="text-base transition-colors hover:text-white disabled:opacity-25"
-                      aria-label="next"
-                    >
-                      →
-                    </button>
-                  </div>
-                )}
+                    </div>
+                  );
+                })}
               </div>
             )}
           </Reveal>

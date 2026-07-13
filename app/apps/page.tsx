@@ -5,9 +5,9 @@ import Wordmark from "@/components/Wordmark";
 import { appDirectory } from "@/lib/app-directory";
 
 export const metadata: Metadata = {
-  title: "アプリ一覧",
+  title: "Apps",
   description:
-    "ychof（Kenta Yamamoto）が個人で開発・公開している iOS アプリの一覧。",
+    "A directory of iOS apps personally built and published by ychof (Kenta Yamamoto).",
 };
 
 export default function Page() {
@@ -20,7 +20,7 @@ export default function Page() {
             href="/contact"
             className="text-[13px] text-muted no-underline transition-colors hover:text-app-ink"
           >
-            お問い合わせ
+            Contact
           </Link>
         </div>
       </header>
@@ -28,12 +28,12 @@ export default function Page() {
       <main className="mx-auto w-[800px] max-w-[90%] flex-1 pt-16 pb-20">
         <div className="mb-12 text-center">
           <h1 className="mb-4 text-[28px] font-extrabold tracking-[-0.01em]">
-            アプリ一覧
+            Apps
           </h1>
           <p className="mx-auto max-w-[560px] text-[15px] leading-[1.9] text-muted">
-            個人で開発・公開している iOS アプリです。
+            iOS apps I&apos;ve personally built and published.
             <br className="max-[560px]:hidden" />
-            気になるものがあれば、各ページをのぞいてみてください。
+            If something catches your eye, take a look at its page.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export default function Page() {
             href="/"
             className="text-muted no-underline transition-colors hover:text-app-ink"
           >
-            ← トップへ戻る
+            ← Back to top
           </Link>
           <p className="mt-2">© 2026 ychof</p>
         </div>

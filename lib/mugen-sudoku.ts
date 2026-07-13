@@ -3,4 +3,4 @@ export const MUGEN_SUDOKU_NAME = "鬼難易度数独";
 /** アクセントカラー（和の松葉色）。 */
 export const MUGEN_SUDOKU_ACCENT = "#3A5A42";
 /** プライバシーポリシー発効日。 */
-export const MUGEN_SUDOKU_EFFECTIVE_DATE = "2026年5月25日";
+export const MUGEN_SUDOKU_EFFECTIVE_DATE = "May 25, 2026";

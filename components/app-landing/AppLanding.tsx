@@ -97,9 +97,9 @@ export default function AppLanding({ app }: { app: AppConfig }) {
       </section>
 
       <section className="border-t border-line bg-white px-5 py-14 text-center">
-        <h2 className="mb-2.5 text-xl font-extrabold">お困りですか？</h2>
+        <h2 className="mb-2.5 text-xl font-extrabold">Need help?</h2>
         <p className="mx-auto mb-6 max-w-[520px] text-[15px] text-muted">
-          アプリの使い方・ご要望・不具合のご報告など、お気軽にお問い合わせください。
+          Feel free to reach out with questions about how to use the app, feature requests, or bug reports.
         </p>
         <a
           href={app.contactForm}
@@ -107,7 +107,7 @@ export default function AppLanding({ app }: { app: AppConfig }) {
           rel="noopener noreferrer"
           className="inline-block rounded-[10px] bg-[var(--accent)] px-8 py-[13px] text-[15px] font-bold text-white no-underline transition-transform hover:-translate-y-0.5 hover:opacity-90"
         >
-          お問い合わせ
+          Contact
         </a>
       </section>
 

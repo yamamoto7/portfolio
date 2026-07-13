@@ -7,11 +7,11 @@ import { MARKPAD_APP_NAME, MARKPAD_SHORT_NAME } from "@/lib/markpad";
 export const metadata: Metadata = {
   title: MARKPAD_APP_NAME,
   description:
-    "Markdown でサッと書いて、すぐ美しくプレビューできるエディター。AIが返す Markdown を貼り付ければ、コードも表も崩れずきれいに。コード・数式・Mermaid 図もオフラインで描けて、割り込み広告はありません。",
+    "A Markdown editor for writing quickly and previewing beautifully in an instant. Paste the Markdown your AI returns and code and tables render cleanly without breaking. Render code, math, and Mermaid diagrams offline, with no interruptive ads.",
 };
 
 // TODO: App Store 公開後にURLを設定
-const APP_STORE_URL = "#";
+const APP_STORE_URL = "https://apps.apple.com/app/id6780535165";
 
 /* ------------------------------------------------------------------ *
  * MarkPad は Markdown エディタ。アプリの清潔なエディタ画面の世界観
@@ -27,7 +27,7 @@ function AppStoreBadge() {
     >
       <Image
         src="/contents/common/appstore.png"
-        alt="App Store からダウンロード"
+        alt="Download on the App Store"
         width={342}
         height={108}
         className="h-12 w-auto"
@@ -70,43 +70,43 @@ interface Feature {
 const FEATURES: Feature[] = [
   {
     badge: "PREVIEW",
-    heading: "貼り付けて、すぐ美しく。",
-    desc: "AIが返す Markdown を貼り付ければ、見出し・リスト・表・図まで崩れずきれいに。編集とプレビューはワンタップで切り替えられ、スマホでもサッと読めます。",
+    heading: "Paste it, and it's instantly beautiful.",
+    desc: "Paste the Markdown your AI returns and headings, lists, tables, and diagrams all render cleanly. Switch between editing and preview with one tap, and read comfortably even on your phone.",
     shot: 2,
-    alt: "MarkPad のプレビュー画面",
+    alt: "MarkPad preview screen",
   },
   {
     badge: "THEME",
-    heading: "見た目は、自分好みに。",
-    desc: "プレビューテーマを「標準／GitHub／ドキュメント」から選択。実際の表示をプレビューで確かめながら、読みやすい見た目に整えられます。",
+    heading: "Make the look your own.",
+    desc: "Choose a preview theme from Standard, GitHub, or Document. Check the actual rendering in the preview and fine-tune it into a look that's easy to read.",
     shot: 3,
-    alt: "プレビューテーマの選択画面",
+    alt: "Preview theme selection screen",
   },
   {
     badge: "RICH",
-    heading: "表も、数式も、コードも。",
-    desc: "コードブロックはシンタックスハイライト＋コピーボタン。表・チェックリスト・引用・コールアウト・ブロック数式まで、崩れずきれいに表示します。",
+    heading: "Tables, math, and code alike.",
+    desc: "Code blocks come with syntax highlighting plus a copy button. Tables, checklists, quotes, callouts, and block math all display cleanly without breaking.",
     shot: 4,
-    alt: "表・数式・コードのプレビュー画面",
+    alt: "Preview screen for tables, math, and code",
   },
   {
     badge: "DIAGRAM",
-    heading: "Mermaid 図だって、描ける。",
-    desc: "フローチャートやシーケンス図などの Mermaid 図をアプリ内で描画。タップで拡大・スクロールでき、図の確認もスマホで完結します。",
+    heading: "Even Mermaid diagrams, drawn with ease.",
+    desc: "Render Mermaid diagrams such as flowcharts and sequence diagrams right inside the app. Tap to zoom and scroll, so you can review diagrams entirely on your phone.",
     shot: 5,
-    alt: "Mermaid 図のプレビュー画面",
+    alt: "Mermaid diagram preview screen",
   },
 ];
 
 const SUPPORTED = [
-  "シンタックスハイライト",
-  "表",
-  "チェックリスト",
-  "ブロック数式",
-  "Mermaid 図",
-  "コールアウト",
-  "折りたたみ",
-  "==ハイライト==",
+  "Syntax highlighting",
+  "Tables",
+  "Checklists",
+  "Block math",
+  "Mermaid diagrams",
+  "Callouts",
+  "Collapsible sections",
+  "==Highlight==",
 ];
 
 export default function Page() {
@@ -119,7 +119,7 @@ export default function Page() {
             href={APP_STORE_URL}
             className="rounded-full bg-[#337AE5] px-4 py-2 font-mono text-[13px] font-bold text-white no-underline transition-opacity hover:opacity-90"
           >
-            入手する
+            Get the app
           </a>
         }
       />
@@ -138,30 +138,30 @@ export default function Page() {
             MARKDOWN EDITOR
           </span>
           <h1 className="mb-5 text-[40px] leading-[1.4] font-extrabold tracking-[-0.02em] max-[720px]:text-[30px]">
-            書いて、貼って、
+            Write, paste,
             <br />
-            すぐ美しく。
+            instantly beautiful.
           </h1>
           <p className="mb-9 text-[17px] leading-[1.9] text-[#656D76]">
-            Markdown でサッと書いて、すぐ美しくプレビュー。
+            Write quickly in Markdown and preview beautifully in an instant.
             <br />
-            AIが返す Markdown も、崩れずきれいに読めます。
+            Even the Markdown your AI returns reads cleanly, without breaking.
           </p>
           <AppStoreBadge />
         </div>
-        <Shot n={1} label="MarkPad の編集画面" priority />
+        <Shot n={1} label="MarkPad editing screen" priority />
       </section>
 
       {/* オフライン・広告なし */}
       <section className="border-y border-[#E6E8EB] bg-white">
         <div className="mx-auto flex max-w-[960px] flex-wrap items-center justify-center gap-x-10 gap-y-3 px-5 py-12 text-center font-mono text-[13px] text-[#656D76]">
-          <span>オフラインでも快適</span>
+          <span>Great offline</span>
           <span className="text-[#D0D7DE] max-[520px]:hidden">·</span>
-          <span>割り込み広告なし</span>
+          <span>No interruptive ads</span>
           <span className="text-[#D0D7DE] max-[520px]:hidden">·</span>
-          <span>データは端末内に保存</span>
+          <span>Data stored on device</span>
           <span className="text-[#D0D7DE] max-[520px]:hidden">·</span>
-          <span>19言語に対応</span>
+          <span>19 languages supported</span>
         </div>
       </section>
 
@@ -192,7 +192,7 @@ export default function Page() {
       <section className="border-t border-[#E6E8EB] bg-white">
         <div className="mx-auto max-w-[960px] px-5 py-16 text-center">
           <p className="mb-9 font-mono text-[13px] tracking-[0.06em] text-[#656D76]">
-            対応している記法。
+            Supported syntax.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {SUPPORTED.map((s) => (
@@ -210,10 +210,10 @@ export default function Page() {
       {/* CTA */}
       <section className="border-t border-[#E6E8EB] bg-[#FBFBFC] px-5 py-20 text-center">
         <h2 className="mb-3 text-[26px] font-extrabold tracking-[-0.01em]">
-          書くことに、もっと気持ちよく。
+          Make writing feel even better.
         </h2>
         <p className="mx-auto mb-8 max-w-[460px] text-[15px] leading-[1.9] text-[#656D76]">
-          アカウントは不要。テキストや .md ファイルでの共有にも対応しています。
+          No account required. Sharing as text or .md files is supported too.
         </p>
         <div className="flex justify-center">
           <AppStoreBadge />
@@ -223,18 +223,18 @@ export default function Page() {
       {/* Contact 導線 */}
       <section className="border-t border-[#E6E8EB] bg-white px-5 py-16 text-center">
         <h2 className="mb-3 text-[22px] font-extrabold tracking-[-0.01em]">
-          お困りですか？
+          Need help?
         </h2>
         <p className="mx-auto mb-7 max-w-[480px] text-[15px] leading-[1.9] text-[#656D76]">
-          アプリの使い方・ご要望・不具合のご報告など、
+          For questions about using the app, feature requests, or bug reports,
           <br className="max-[480px]:hidden" />
-          お気軽にお問い合わせください。
+          feel free to get in touch.
         </p>
         <Link
           href="/contact?category=app&app=markpad"
           className="inline-block rounded-[12px] border border-[#E6E8EB] bg-[#FBFBFC] px-8 py-3 text-[15px] font-bold text-[#337AE5] no-underline transition-transform hover:-translate-y-0.5"
         >
-          お問い合わせ
+          Contact
         </Link>
       </section>
 
@@ -249,13 +249,13 @@ export default function Page() {
               href="/contact?category=app&app=markpad"
               className="text-[13px] text-[#656D76] no-underline transition-colors hover:text-[#337AE5]"
             >
-              お問い合わせ
+              Contact
             </Link>
             <Link
               href="/markpad/privacy-policy"
               className="text-[13px] text-[#656D76] no-underline transition-colors hover:text-[#337AE5]"
             >
-              プライバシーポリシー
+              Privacy Policy
             </Link>
           </div>
           <p className="text-[13px] text-[#656D76]">© 2026 ychof</p>

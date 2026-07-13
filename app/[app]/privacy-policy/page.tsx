@@ -16,7 +16,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { app } = await params;
   const config = apps[app];
-  return { title: config ? `プライバシーポリシー - ${config.fullName}` : undefined };
+  return { title: config ? `Privacy Policy - ${config.fullName}` : undefined };
 }
 
 export default async function Page({

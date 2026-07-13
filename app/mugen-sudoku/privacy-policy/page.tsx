@@ -9,7 +9,7 @@ import {
 } from "@/lib/mugen-sudoku";
 
 export const metadata: Metadata = {
-  title: `プライバシーポリシー — ${MUGEN_SUDOKU_NAME}`,
+  title: `Privacy Policy — ${MUGEN_SUDOKU_NAME}`,
 };
 
 const APP_NAME = MUGEN_SUDOKU_NAME;
@@ -26,7 +26,7 @@ export default function Page() {
             href="/mugen-sudoku"
             className="text-[13px] text-muted no-underline transition-colors hover:text-[var(--accent)]"
           >
-            アプリ紹介
+            About the app
           </Link>
         }
       />
@@ -34,24 +34,24 @@ export default function Page() {
       <div className={`${TERMS_WRAPPER_CLASS} flex-1`}>
         <h2>Privacy Policy</h2>
 
-        <h4>はじめに</h4>
-        <p>こちらは「{APP_NAME}」アプリのプライバシーポリシーです。</p>
+        <h4>Introduction</h4>
+        <p>This is the Privacy Policy for the &quot;{APP_NAME}&quot; app.</p>
         <p>
-          ychofは「{APP_NAME}
-          」アプリを無料アプリとして構築しました。本サービスは、ychofが無償で提供するものであり、そのまま使用することを前提としています。
+          ychof built the &quot;{APP_NAME}
+          &quot; app as a free app. This service is provided by ychof at no cost and is intended to be used as-is.
         </p>
         <p>
-          本ページは、本サービスをご利用いただくにあたり、個人情報の取り扱いに関する方針をお知らせするものです。
-          本サービスを利用される場合、このポリシーに記載された情報の取り扱いに同意されたものとします。
+          This page informs you of our policies regarding the handling of personal information for anyone who uses this service.
+          By using this service, you agree to the handling of information described in this policy.
         </p>
 
-        <h4>情報の収集と使用</h4>
+        <h4>Collection and Use of Information</h4>
         <p>
-          本アプリのご利用にあたり、ychofがお客様の個人を特定できる情報を収集・閲覧することはありません。
-          アカウント登録も必要ありません。
+          ychof does not collect or view any personally identifiable information when you use this app.
+          No account registration is required either.
         </p>
         <p>
-          ただし本アプリは、お客様を特定しうる情報を収集する可能性のある以下の第三者サービスを利用しています。
+          However, this app uses the following third-party services that may collect information that could identify you.
         </p>
         <ul>
           <li>
@@ -60,59 +60,59 @@ export default function Page() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              AdMob（Google）
+              AdMob (Google)
             </a>
           </li>
         </ul>
         <p>
-          これらのサービスが収集する情報やその取り扱いについては、上記リンク先のポリシーをご確認ください。
+          For details on what information these services collect and how it is handled, please review the policies at the links above.
         </p>
 
-        <h4>ログデータについて</h4>
+        <h4>Log Data</h4>
         <p>
-          本アプリでエラーが発生した場合、第三者の製品を通じて、お客様のデバイスのIPアドレス、デバイス名、
-          OSのバージョン、本サービスの利用日時、その他の統計情報などのログデータが収集される場合があります。
+          When an error occurs in this app, log data such as your device&apos;s IP address, device name,
+          OS version, the date and time you used the service, and other statistics may be collected through third-party products.
         </p>
 
-        <h4>クッキー（Cookie）</h4>
+        <h4>Cookies</h4>
         <p>
-          クッキーは、一般的に匿名の一意の識別子として使用される少量のデータを含むファイルです。
-          本サービス自体がこの「Cookie」を明示的に使用することはありませんが、
-          上記の第三者サービスが情報収集や広告配信のために「Cookie」を使用する場合があります。
+          Cookies are files containing a small amount of data that are commonly used as anonymous unique identifiers.
+          This service does not explicitly use &quot;cookies&quot; itself, but
+          the third-party services above may use &quot;cookies&quot; to collect information and serve ads.
         </p>
 
-        <h4>セキュリティ</h4>
+        <h4>Security</h4>
         <p>
-          お客様の情報を保護するよう商業的に利用可能な手段で努めていますが、
-          インターネット上の送信方法や電子的な保存方法は100％安全とは限らず、絶対的な安全性を保証するものではありません。
+          We strive to protect your information by commercially acceptable means, but
+          no method of transmission over the internet or method of electronic storage is 100% secure, and we cannot guarantee absolute security.
         </p>
 
-        <h4>他のサイトへのリンク</h4>
+        <h4>Links to Other Sites</h4>
         <p>
-          本サービスには、他のサイトへのリンクが含まれる場合があります。
-          これらの外部サイトはychofが運営しているものではないため、各サイトのプライバシーポリシーをご確認いただくことをお勧めします。
-          第三者のサイトやサービスの内容・ポリシー・慣行について、ychofは責任を負いません。
+          This service may contain links to other sites.
+          Because these external sites are not operated by ychof, we recommend that you review the privacy policy of each site.
+          ychof has no responsibility for the content, policies, or practices of any third-party sites or services.
         </p>
 
-        <h4>子供のプライバシー</h4>
+        <h4>Children&apos;s Privacy</h4>
         <p>
-          ychofは、13歳未満のお子様から意図的に個人を特定できる情報を収集することはありません。
-          万が一、13歳未満の子供から個人情報が提供されたことが判明した場合は、直ちに削除します。
-          保護者の方で、お子様が個人情報を提供したことにお気づきの場合は、ご連絡ください。
+          ychof does not knowingly collect personally identifiable information from children under 13.
+          If we discover that a child under 13 has provided us with personal information, we will delete it immediately.
+          If you are a parent or guardian and become aware that your child has provided personal information, please contact us.
         </p>
 
-        <h4>本プライバシーポリシーの変更</h4>
+        <h4>Changes to This Privacy Policy</h4>
         <p>
-          本ポリシーは随時更新されることがあります。変更があった場合は、このページに掲載してお知らせします。
-          定期的にこのページをご確認いただくことをお勧めします。
+          This policy may be updated from time to time. If there are any changes, we will notify you by posting them on this page.
+          We recommend that you review this page periodically.
         </p>
-        <p>このポリシーは、{MUGEN_SUDOKU_EFFECTIVE_DATE}より有効となります。</p>
+        <p>This policy is effective as of {MUGEN_SUDOKU_EFFECTIVE_DATE}.</p>
 
-        <h4>お問い合わせ</h4>
+        <h4>Contact</h4>
         <p>
-          本プライバシーポリシーについてご質問やご提案がありましたら、
-          <Link href="/contact?category=app&app=mugen-sudoku">こちら</Link>
-          からお気軽にお問い合わせください。
+          If you have any questions or suggestions about this Privacy Policy,
+          please feel free to reach out{" "}
+          <Link href="/contact?category=app&app=mugen-sudoku">here</Link>.
         </p>
       </div>
 
@@ -122,13 +122,13 @@ export default function Page() {
             href="/mugen-sudoku"
             className="text-[13px] text-muted no-underline transition-colors hover:text-[var(--accent)]"
           >
-            アプリ紹介
+            About the app
           </Link>
           <Link
             href="/contact?category=app&app=mugen-sudoku"
             className="text-[13px] text-muted no-underline transition-colors hover:text-[var(--accent)]"
           >
-            お問い合わせ
+            Contact
           </Link>
           <span className="text-[13px] text-muted">© 2026 ychof</span>
         </div>

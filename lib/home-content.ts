@@ -148,16 +148,16 @@ export const homeContent: Record<Lang, HomeContent> = {
   ja: {
     postSections: [
       {
-        title: "技術ブログ",
+        title: "Tech blog",
         posts: [
           {
-            title: "データカタログを作成してZOZOTOWNデータベース定義をまとめた話",
+            title: "Building a Data Catalog to Consolidate ZOZOTOWN's Database Definitions",
             url: "https://techblog.zozo.com/entry/data-catalog",
             img: "/home/blog/data-catalogue.jpg",
             categories: [{ title: "Company Tech Blog" }, { title: "Japanese" }],
           },
           {
-            title: "入門書を終えた人に捧げる、社会人のためのGit中級編",
+            title: "For People Who Have Finished the Beginner Books: Intermediate Git for Working Professionals",
             url: "https://qiita.com/yamamoto7/items/fe15a1e7e360b4015fae",
             img: "/home/blog/git.png",
             categories: [{ title: "Japanese" }],
@@ -167,17 +167,17 @@ export const homeContent: Record<Lang, HomeContent> = {
     ],
     developmentSections: [
       {
-        title: "開発物",
+        title: "Developments",
         developments: [
           {
-            title: "ポートフォリオ",
+            title: "Portfolio",
             img: "/home/developments/portfolio_screen.png",
-            techs: [{ title: "使用技術", contents: ["React", "Gatsby", "TypeScript"] }],
+            techs: [{ title: "Technologies", contents: ["React", "Gatsby", "TypeScript"] }],
             contents: [
               {
-                title: "概要",
+                title: "About",
                 contents:
-                  "このサイト。作ったものを見れるようにしようと思い作成。作成中だけどとりあえず公開中。",
+                  "This website. I built it to have a place to show the things I make. Still a work in progress, but published for now.",
               },
             ],
             links: [
@@ -189,16 +189,16 @@ export const homeContent: Record<Lang, HomeContent> = {
             ],
           },
           {
-            title: "お買い物リストアプリ",
+            title: "Shopping list APP",
             img: "/home/developments/buylis_screen.png",
             techs: [
-              { title: "使用技術 - アプリ", contents: ["Flutter"] },
-              { title: "使用技術 - LP", contents: ["React", "Gatsby", "TypeScript"] },
+              { title: "Technologies - APP", contents: ["Flutter"] },
+              { title: "Technologies - LP", contents: ["React", "Gatsby", "TypeScript"] },
             ],
             contents: [
               {
-                title: "概要",
-                contents: "お買い物リスト。android, iOSのストアからインストール可能。",
+                title: "About",
+                contents: "A shopping list app. Available for install from the Android and iOS stores.",
               },
             ],
             links: [{ title: "Product LP", icon: "Page", url: "/buylis" }],
@@ -206,26 +206,26 @@ export const homeContent: Record<Lang, HomeContent> = {
         ],
       },
       {
-        title: "開発物(未deploy)",
+        title: "Developments (not deployed)",
         developments: [
           {
-            title: "Colorblind の視点再現と、区別しにくい境界線の検出",
+            title: "Reproducing a Colorblind Perspective and Detecting Hard-to-Distinguish Boundaries",
             img: "/home/developments/color-blindness.png",
-            techs: [{ title: "使用技術", contents: ["C++", "OpenCV"] }],
+            techs: [{ title: "Technologies", contents: ["C++", "OpenCV"] }],
             contents: [
               {
-                title: "概要",
+                title: "About",
                 contents:
-                  "カメラの入力をリアルタイムに処理して、Colorblindの視点を再現と見えにくい部分の抽出を行うやつ。何かに役立てたいと思って開発した。",
+                  "Processes camera input in real time to reproduce a colorblind perspective and extract the areas that are hard to see. I built it hoping it could be useful for something.",
               },
             ],
             links: [],
           },
           {
-            title: "JPEGの画像圧縮ロジックを実装して挙動を確認する",
+            title: "Implementing JPEG Image Compression Logic to Observe Its Behavior",
             img: "/home/developments/image-compression.png",
-            techs: [{ title: "使用技術", contents: ["Java"] }],
-            contents: [{ title: "概要", contents: "画像圧縮ロジックを実装して遊んだやつ。" }],
+            techs: [{ title: "Technologies", contents: ["Java"] }],
+            contents: [{ title: "About", contents: "A little project where I implemented image compression logic for fun." }],
             links: [],
           },
         ],

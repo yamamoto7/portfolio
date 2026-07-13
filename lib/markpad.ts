@@ -5,4 +5,4 @@ export const MARKPAD_SHORT_NAME = "MarkPad";
 /** アクセントカラー（エディタのアクセントと同系のブルー）。 */
 export const MARKPAD_ACCENT = "#337AE5";
 /** プライバシーポリシー発効日。 */
-export const MARKPAD_EFFECTIVE_DATE = "2026年6月23日";
+export const MARKPAD_EFFECTIVE_DATE = "June 23, 2026";

@@ -5,11 +5,11 @@ import { TERMS_WRAPPER_CLASS } from "@/lib/terms";
 import { ROUTIN_APP_NAME } from "@/lib/routin";
 
 export const metadata: Metadata = {
-  title: `プライバシーポリシー — ${ROUTIN_APP_NAME}`,
+  title: `Privacy Policy — ${ROUTIN_APP_NAME}`,
 };
 
 const APP_NAME = ROUTIN_APP_NAME;
-const EFFECTIVE_DATE = "2026年6月6日";
+const EFFECTIVE_DATE = "June 6, 2026";
 
 export default function Page() {
   return (
@@ -20,7 +20,7 @@ export default function Page() {
             href="/routin"
             className="text-[13px] text-[#85827D] no-underline transition-colors hover:text-[#6A826D]"
           >
-            アプリ紹介
+            App overview
           </Link>
         }
       />
@@ -28,25 +28,29 @@ export default function Page() {
       <div className={`${TERMS_WRAPPER_CLASS} flex-1`}>
         <h2>Privacy Policy</h2>
 
-        <h4>はじめに</h4>
-        <p>こちらは「{APP_NAME}」アプリのプライバシーポリシーです。</p>
+        <h4>Introduction</h4>
+        <p>This is the privacy policy for the &quot;{APP_NAME}&quot; app.</p>
         <p>
-          ychofは「{APP_NAME}
-          」アプリを無料アプリとして構築しました。本サービスは、ychofが無償で提供するものであり、そのまま使用することを前提としています。
+          ychof built the &quot;{APP_NAME}&quot; app as a free app. This Service
+          is provided by ychof at no cost and is intended to be used as is.
         </p>
         <p>
-          本ページは、本サービスをご利用いただくにあたり、個人情報の取り扱いに関する方針をお知らせするものです。
-          本サービスを利用される場合、このポリシーに記載された情報の取り扱いに同意されたものとします。
+          This page informs you of our policies regarding the handling of
+          personal information in connection with your use of this Service. If
+          you choose to use this Service, you agree to the handling of
+          information described in this policy.
         </p>
 
-        <h4>情報の収集と使用</h4>
+        <h4>Information Collection and Use</h4>
         <p>
-          「{APP_NAME}
-          」で作成したルーティンや記録などのデータは、お客様のデバイス内にのみ保存されます。
-          ychofがこれらの内容を収集・閲覧することはありません。アカウント登録も必要ありません。
+          Data you create in &quot;{APP_NAME}&quot;, such as routines and
+          records, is stored only on your device. ychof does not collect or view
+          this content. No account registration is required.
         </p>
         <p>
-          ただし本アプリは、広告を表示するために、お客様を特定しうる情報を収集する可能性のある以下の第三者サービスを利用しています。
+          However, in order to display ads, this app uses the following
+          third-party service, which may collect information that can be used to
+          identify you.
         </p>
         <ul>
           <li>
@@ -60,54 +64,65 @@ export default function Page() {
           </li>
         </ul>
         <p>
-          AdMobが収集する情報やその取り扱いについては、上記リンク先のポリシーをご確認ください。
+          For information on what AdMob collects and how it handles that data,
+          please review the policy at the link above.
         </p>
 
-        <h4>ログデータについて</h4>
+        <h4>Log Data</h4>
         <p>
-          本アプリでエラーが発生した場合、第三者の製品を通じて、お客様のデバイスのIPアドレス、デバイス名、
-          OSのバージョン、本サービスの利用日時、その他の統計情報などのログデータが収集される場合があります。
+          If an error occurs in this app, log data may be collected through a
+          third-party product, including your device&apos;s IP address, device
+          name, OS version, the date and time you use this Service, and other
+          statistical information.
         </p>
 
-        <h4>クッキー（Cookie）</h4>
+        <h4>Cookies</h4>
         <p>
-          クッキーは、一般的に匿名の一意の識別子として使用される少量のデータを含むファイルです。
-          本サービス自体がこの「Cookie」を明示的に使用することはありませんが、
-          上記の第三者サービス（AdMob）が情報収集や広告配信のために「Cookie」を使用する場合があります。
+          Cookies are files containing a small amount of data that are commonly
+          used as anonymous unique identifiers. This Service does not explicitly
+          use these &quot;cookies&quot; itself, but the third-party service noted
+          above (AdMob) may use &quot;cookies&quot; to collect information and
+          deliver ads.
         </p>
 
-        <h4>セキュリティ</h4>
+        <h4>Security</h4>
         <p>
-          お客様の情報を保護するよう商業的に利用可能な手段で努めていますが、
-          インターネット上の送信方法や電子的な保存方法は100％安全とは限らず、絶対的な安全性を保証するものではありません。
+          We strive to protect your information using commercially acceptable
+          means, but no method of transmission over the internet or method of
+          electronic storage is 100% secure, and we cannot guarantee absolute
+          security.
         </p>
 
-        <h4>他のサイトへのリンク</h4>
+        <h4>Links to Other Sites</h4>
         <p>
-          本サービスには、他のサイトへのリンクが含まれる場合があります。
-          これらの外部サイトはychofが運営しているものではないため、各サイトのプライバシーポリシーをご確認いただくことをお勧めします。
-          第三者のサイトやサービスの内容・ポリシー・慣行について、ychofは責任を負いません。
+          This Service may contain links to other sites. These external sites
+          are not operated by ychof, so we recommend that you review the privacy
+          policy of each site. ychof is not responsible for the content,
+          policies, or practices of any third-party sites or services.
         </p>
 
-        <h4>子供のプライバシー</h4>
+        <h4>Children&apos;s Privacy</h4>
         <p>
-          ychofは、13歳未満のお子様から意図的に個人を特定できる情報を収集することはありません。
-          万が一、13歳未満の子供から個人情報が提供されたことが判明した場合は、直ちに削除します。
-          保護者の方で、お子様が個人情報を提供したことにお気づきの場合は、ご連絡ください。
+          ychof does not knowingly collect personally identifiable information
+          from children under 13. If we discover that a child under 13 has
+          provided personal information, we will delete it immediately. If you
+          are a parent or guardian and become aware that your child has provided
+          us with personal information, please contact us.
         </p>
 
-        <h4>本プライバシーポリシーの変更</h4>
+        <h4>Changes to This Privacy Policy</h4>
         <p>
-          本ポリシーは随時更新されることがあります。変更があった場合は、このページに掲載してお知らせします。
-          定期的にこのページをご確認いただくことをお勧めします。
+          This policy may be updated from time to time. If there are any
+          changes, we will notify you by posting them on this page. We recommend
+          that you review this page periodically.
         </p>
-        <p>このポリシーは、{EFFECTIVE_DATE}より有効となります。</p>
+        <p>This policy is effective as of {EFFECTIVE_DATE}.</p>
 
-        <h4>お問い合わせ</h4>
+        <h4>Contact Us</h4>
         <p>
-          本プライバシーポリシーについてご質問やご提案がありましたら、
-          <Link href="/contact?category=app&app=routin">こちら</Link>
-          からお気軽にお問い合わせください。
+          If you have any questions or suggestions about this privacy policy,
+          please feel free to contact us{" "}
+          <Link href="/contact?category=app&app=routin">here</Link>.
         </p>
       </div>
 
@@ -117,13 +132,13 @@ export default function Page() {
             href="/routin"
             className="text-[13px] text-[#85827D] no-underline transition-colors hover:text-[#6A826D]"
           >
-            アプリ紹介
+            App overview
           </Link>
           <Link
             href="/contact?category=app&app=routin"
             className="text-[13px] text-[#85827D] no-underline transition-colors hover:text-[#6A826D]"
           >
-            お問い合わせ
+            Contact
           </Link>
           <span className="text-[13px] text-[#85827D]">© 2026 ychof</span>
         </div>

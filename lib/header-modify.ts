@@ -7,4 +7,4 @@ export const HEADER_MODIFY_ACCENT = "#4F8CFF";
 /** プライバシーポリシー発効日。 */
 export const HEADER_MODIFY_EFFECTIVE_DATE = "July 10, 2026";
 /** Chrome Web Store の掲載 URL。TODO: 公開後に差し替える。 */
-export const HEADER_MODIFY_STORE_URL = "#";
+export const HEADER_MODIFY_STORE_URL = "https://chromewebstore.google.com/detail/header-modify/agbgpchmmgfgdilhnaloggpmmdkecjbo";

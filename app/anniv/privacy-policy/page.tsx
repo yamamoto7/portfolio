@@ -5,7 +5,7 @@ import { TERMS_WRAPPER_CLASS } from "@/lib/terms";
 import { ANNIV_APP_NAME, ANNIV_EFFECTIVE_DATE } from "@/lib/anniv";
 
 export const metadata: Metadata = {
-  title: `プライバシーポリシー — ${ANNIV_APP_NAME}`,
+  title: `Privacy Policy — ${ANNIV_APP_NAME}`,
 };
 
 const APP_NAME = ANNIV_APP_NAME;
@@ -20,7 +20,7 @@ export default function Page() {
             href="/anniv"
             className="text-[13px] text-[#9C857F] no-underline transition-colors hover:text-[#E8736B]"
           >
-            アプリ紹介
+            About the app
           </Link>
         }
       />
@@ -28,81 +28,80 @@ export default function Page() {
       <div className={`${TERMS_WRAPPER_CLASS} flex-1`}>
         <h2>Privacy Policy</h2>
 
-        <h4>はじめに</h4>
-        <p>こちらは「{APP_NAME}」（以下「本アプリ」）のプライバシーポリシーです。</p>
+        <h4>Introduction</h4>
+        <p>This is the privacy policy for &quot;{APP_NAME}&quot; (the &quot;App&quot;).</p>
         <p>
-          本アプリは、ychofが無料で提供する、誕生日・記念日と贈り物の記録を管理するためのアプリです。
-          本アプリを利用される場合、このポリシーに記載された情報の取り扱いに同意されたものとします。
+          The App is provided free of charge by ychof for managing birthdays, anniversaries, and gift records.
+          By using the App, you are deemed to have agreed to the handling of information described in this policy.
         </p>
 
-        <h4>情報の収集について</h4>
+        <h4>Collection of Information</h4>
         <p>
-          本アプリは、ychofが運営するサーバーを持ちません。アカウント登録も不要です。
-          登録した人物・誕生日・記念日・贈り物の記録・メモ・写真などのデータは、すべてお客様のデバイス内にのみ保存されます。
-          ychofがこれらの内容を収集・保存・閲覧することはありません。
+          The App has no server operated by ychof. No account registration is required.
+          Data such as the people, birthdays, anniversaries, gift records, notes, and photos you register is stored only on your device.
+          ychof does not collect, store, or view any of this content.
         </p>
 
-        <h4>写真へのアクセス</h4>
+        <h4>Access to Photos</h4>
         <p>
-          人物のアイコンに写真を設定する場合に限り、お客様が選択した写真を本アプリが読み込みます。
-          選択した写真はデバイス内のデータとして保存され、ychofを含む第三者に送信されることはありません。
+          Only when you set a photo as a person&apos;s icon does the App read the photo you select.
+          The selected photo is saved as data on your device and is never transmitted to any third party, including ychof.
         </p>
 
-        <h4>通知について</h4>
+        <h4>Notifications</h4>
         <p>
-          誕生日や記念日のリマインダーは、お客様のデバイス内で動作するローカル通知として送信されます。
-          通知の利用は任意で、デバイスの設定からいつでもオフにできます。通知のために情報が外部へ送信されることはありません。
+          Reminders for birthdays and anniversaries are sent as local notifications that run on your device.
+          Notifications are optional and can be turned off at any time in your device settings. No information is sent externally for notifications.
         </p>
 
-        <h4>データのバックアップ</h4>
+        <h4>Data Backup</h4>
         <p>
-          本アプリのバックアップ機能は、お客様の操作によってデータをファイルとして書き出し・読み込みするものです。
-          書き出したファイルの保存先や共有はお客様ご自身の管理下にあり、ychofのサーバーへ送信・保存されることはありません。
+          The App&apos;s backup feature exports and imports your data as a file through your own actions.
+          The storage location and sharing of the exported file are under your own control and are never transmitted to or stored on ychof&apos;s servers.
         </p>
 
-        <h4>お問い合わせフォームについて</h4>
+        <h4>Contact Form</h4>
         <p>
-          アプリ内のお問い合わせ機能をご利用いただいた場合に限り、入力いただいた本文と、
-          不具合の調査に必要な技術情報（OSのバージョン・アプリのバージョン・ビルド番号）が開発者へ送信されます。
-          これはお客様が送信操作を行った場合のみで、自動的に収集されることはありません。
+          Only when you use the in-app contact feature are the message you enter and
+          the technical information needed to investigate issues (OS version, app version, and build number) sent to the developer.
+          This happens only when you perform the send action and is never collected automatically.
         </p>
 
-        <h4>広告・解析について</h4>
+        <h4>Advertising and Analytics</h4>
         <p>
-          本アプリは、広告SDKや、お客様の行動を追跡する解析ツールを使用していません。
+          The App does not use any advertising SDKs or analytics tools that track your behavior.
         </p>
 
-        <h4>ログデータについて</h4>
+        <h4>Log Data</h4>
         <p>
-          本アプリでエラーが発生した場合、Appleの仕組みを通じて、デバイスの種別・OSのバージョン・
-          エラー発生時の状況などの診断情報がAppleに送信される場合があります。
-          これはお客様がデバイスの設定で許可している場合に限られ、ychofが個人を特定できる情報を受け取ることはありません。
+          If an error occurs in the App, diagnostic information such as your device type, OS version,
+          and the circumstances at the time of the error may be sent to Apple through Apple&apos;s mechanisms.
+          This happens only if you have permitted it in your device settings, and ychof does not receive any personally identifiable information.
         </p>
 
-        <h4>セキュリティ</h4>
+        <h4>Security</h4>
         <p>
-          お客様の情報を保護するよう努めていますが、電子的な保存・送信方法は100％安全とは限らず、
-          絶対的な安全性を保証するものではありません。
+          While we strive to protect your information, no method of electronic storage or transmission is 100% secure,
+          and we cannot guarantee absolute security.
         </p>
 
-        <h4>子供のプライバシー</h4>
+        <h4>Children&apos;s Privacy</h4>
         <p>
-          ychofは、13歳未満のお子様から意図的に個人を特定できる情報を収集することはありません。
-          万が一、13歳未満の子供から個人情報が提供されたことが判明した場合は、直ちに削除します。
+          ychof does not knowingly collect personally identifiable information from children under the age of 13.
+          If we learn that personal information has been provided by a child under the age of 13, we will delete it immediately.
         </p>
 
-        <h4>本プライバシーポリシーの変更</h4>
+        <h4>Changes to This Privacy Policy</h4>
         <p>
-          本ポリシーは随時更新されることがあります。変更があった場合は、このページに掲載してお知らせします。
-          定期的にこのページをご確認いただくことをお勧めします。
+          This policy may be updated from time to time. If changes are made, we will notify you by posting them on this page.
+          We recommend that you review this page periodically.
         </p>
-        <p>このポリシーは、{EFFECTIVE_DATE}より有効となります。</p>
+        <p>This policy is effective as of {EFFECTIVE_DATE}.</p>
 
-        <h4>お問い合わせ</h4>
+        <h4>Contact</h4>
         <p>
-          本プライバシーポリシーについてご質問やご提案がありましたら、
-          <Link href="/contact?category=app&app=anniv">こちら</Link>
-          からお気軽にお問い合わせください。
+          If you have any questions or suggestions about this privacy policy,
+          please feel free to <Link href="/contact?category=app&app=anniv">contact us here</Link>.
         </p>
       </div>
 
@@ -112,13 +111,13 @@ export default function Page() {
             href="/anniv"
             className="text-[13px] text-[#9C857F] no-underline transition-colors hover:text-[#E8736B]"
           >
-            アプリ紹介
+            About the app
           </Link>
           <Link
             href="/contact?category=app&app=anniv"
             className="text-[13px] text-[#9C857F] no-underline transition-colors hover:text-[#E8736B]"
           >
-            お問い合わせ
+            Contact
           </Link>
           <span className="text-[13px] text-[#9C857F]">© 2026 ychof</span>
         </div>

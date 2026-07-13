@@ -42,7 +42,7 @@ export default function Page() {
             className="mx-auto h-auto w-[200px]"
           />
           <br />
-          フォルダ管理で貴方好みのお買物リストに
+          Shape a shopping list your way with folder organization
           <br />
           <a href="https://apps.apple.com/app/id1665553308">
             <Image
@@ -68,19 +68,19 @@ export default function Page() {
       <section className={SECTION}>
         <Screenshot n={1} />
         <div className={CONTENT_RIGHT}>
-          <span className="font-bold">それ以上でもそれ以下でもない</span>
+          <span className="font-bold">Nothing more, nothing less</span>
           <br />
-          シンプルでわかりやすいお買い物リスト
+          A simple, easy-to-understand shopping list
         </div>
       </section>
 
       <section className={SECTION}>
         <div className={CONTENT_LEFT}>
-          <span className="font-bold">好きなように使える</span>
+          <span className="font-bold">Use it however you like</span>
           <br />
-          価格や商品名をメモして
+          Jot down prices and item names
           <br />
-          長く使いやすいリストへ
+          for a list that stays easy to use
           <br />
         </div>
         <Screenshot n={2} />
@@ -89,22 +89,22 @@ export default function Page() {
       <section className={SECTION}>
         <Screenshot n={3} />
         <div className={CONTENT_RIGHT}>
-          <span className="font-bold">フォルダ管理機能</span>
+          <span className="font-bold">Folder organization</span>
           <br />
-          お店ごと、カテゴリごとに
+          Organize by store or by category
           <br />
-          貴方好みのリスト管理を実現
+          to manage lists exactly your way
           <br />
         </div>
       </section>
 
       <section className={SECTION}>
         <div className={CONTENT_LEFT}>
-          <span className="font-bold">始めてみましょう</span>
+          <span className="font-bold">Let&apos;s get started</span>
           <br />
-          ちょっぴり新しい
+          A slightly new way
           <br />
-          お買い物リスト管理
+          to manage your shopping list
           <br />
         </div>
         <Screenshot n={4} />

@@ -8,7 +8,7 @@ import {
 } from "@/lib/verdash";
 
 export const metadata: Metadata = {
-  title: `プライバシーポリシー — ${VERDASH_APP_NAME}`,
+  title: `Privacy Policy — ${VERDASH_APP_NAME}`,
 };
 
 const APP_NAME = VERDASH_APP_NAME;
@@ -36,7 +36,7 @@ export default function Page() {
             href="/verdash"
             className="text-[13px] text-[#8F8F8F] no-underline transition-colors hover:text-[#EDEDED]"
           >
-            アプリ紹介
+            About the app
           </Link>
         }
       />
@@ -44,82 +44,77 @@ export default function Page() {
       <div className={`${WRAP} flex-1`}>
         <h2>Privacy Policy</h2>
 
-        <h4>はじめに</h4>
-        <p>こちらは「{APP_NAME}」（以下「本アプリ」）のプライバシーポリシーです。</p>
+        <h4>Introduction</h4>
+        <p>This is the privacy policy for &quot;{APP_NAME}&quot; (the &quot;App&quot;).</p>
         <p>
-          本アプリは、ychofが提供する、Vercel をiPhoneから操作するための非公式ダッシュボードクライアントです。
-          本アプリは Vercel Inc. が提供する公式アプリではなく、同社とは無関係です。Vercel は Vercel Inc. の商標です。
+          The App is an unofficial dashboard client provided by ychof for operating Vercel from an iPhone.
+          It is not an official app provided by Vercel Inc. and is not affiliated with that company. Vercel is a trademark of Vercel Inc.
         </p>
         <p>
-          本アプリを利用される場合、このポリシーに記載された情報の取り扱いに同意されたものとします。
-        </p>
-
-        <h4>情報の収集について</h4>
-        <p>
-          本アプリは、ychofが運営するサーバーを持ちません。アカウント登録も不要です。
-          ychofが、お客様の個人情報やVercel上のデータを収集・保存・閲覧することはありません。
+          By using the App, you are deemed to have agreed to the handling of information described in this policy.
         </p>
 
-        <h4>アクセストークンの取り扱い</h4>
+        <h4>Collection of Information</h4>
         <p>
-          本アプリのご利用には、Vercel の Personal Access Token (PAT)
-          が必要です。入力されたトークンは、お客様のデバイス内の
-          iOS キーチェーン（Keychain）にのみ安全に保存され、ychof
-          を含む第三者に送信されることはありません。トークンはアプリ内からいつでも削除できます。
+          The App has no server operated by ychof. No account registration is required.
+          ychof does not collect, store, or view your personal information or any data on Vercel.
         </p>
 
-        <h4>Vercel API との通信</h4>
+        <h4>Handling of Access Tokens</h4>
         <p>
-          本アプリは、お客様のトークンを用いて、お客様の端末から直接
-          Vercel の API とHTTPSで通信します。表示されるプロジェクト・デプロイ・ログ・環境変数などの情報は、
-          この通信によってその都度取得されるもので、お客様のデバイス外（ychof側）に蓄積されることはありません。
+          Using the App requires a Vercel Personal Access Token (PAT).
+          The token you enter is stored securely only in the iOS Keychain on your device
+          and is never transmitted to any third party, including ychof. You can delete the token from within the App at any time.
+        </p>
+
+        <h4>Communication with the Vercel API</h4>
+        <p>
+          Using your token, the App communicates directly with the Vercel API over HTTPS from your device. Information such as the projects, deployments, logs, and environment variables shown
+          is fetched anew through this communication each time and is never accumulated outside your device (on ychof&apos;s side).
         </p>
         <p>
-          Vercel
-          へ送信・取得される情報や、Vercel側での取り扱いについては、
+          For information sent to or retrieved from Vercel, and for its handling on Vercel&apos;s side,
           <a
             href="https://vercel.com/legal/privacy-policy"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Vercel のプライバシーポリシー
+            Vercel&apos;s Privacy Policy
           </a>
-          が適用されます。
+          applies.
         </p>
 
-        <h4>ログデータについて</h4>
+        <h4>Log Data</h4>
         <p>
-          本アプリでエラーが発生した場合、Appleの仕組みを通じて、デバイスの種別、
-          OSのバージョン、エラー発生時の状況などの診断情報がAppleに送信される場合があります。
-          これはお客様がデバイスの設定で許可している場合に限られ、ychofが個人を特定できる情報を受け取ることはありません。
+          If an error occurs in the App, diagnostic information such as your device type,
+          OS version, and the circumstances at the time of the error may be sent to Apple through Apple&apos;s mechanisms.
+          This happens only if you have permitted it in your device settings, and ychof does not receive any personally identifiable information.
         </p>
 
-        <h4>セキュリティ</h4>
+        <h4>Security</h4>
         <p>
-          アクセストークンはiOSのキーチェーンに保存し、Vercel
-          API との通信はすべてHTTPSで行います。
-          お客様の情報を保護するよう努めていますが、電子的な保存・送信方法は100％安全とは限らず、絶対的な安全性を保証するものではありません。
-          トークンの管理（不要になった際の失効など）はお客様ご自身でも行ってください。
+          Access tokens are stored in the iOS Keychain, and all communication with the Vercel API is conducted over HTTPS.
+          While we strive to protect your information, no method of electronic storage or transmission is 100% secure, and we cannot guarantee absolute security.
+          Please also manage your tokens yourself, such as revoking them when they are no longer needed.
         </p>
 
-        <h4>子供のプライバシー</h4>
+        <h4>Children&apos;s Privacy</h4>
         <p>
-          本アプリは開発者向けのツールであり、13歳未満のお子様を対象としていません。
-          ychofが13歳未満のお子様から個人を特定できる情報を収集することはありません。
+          The App is a tool for developers and is not intended for children under the age of 13.
+          ychof does not collect personally identifiable information from children under the age of 13.
         </p>
 
-        <h4>本プライバシーポリシーの変更</h4>
+        <h4>Changes to This Privacy Policy</h4>
         <p>
-          本ポリシーは随時更新されることがあります。変更があった場合は、このページに掲載してお知らせします。
-          定期的にこのページをご確認いただくことをお勧めします。
+          This policy may be updated from time to time. If changes are made, we will notify you by posting them on this page.
+          We recommend that you review this page periodically.
         </p>
-        <p>このポリシーは、{EFFECTIVE_DATE}より有効となります。</p>
+        <p>This policy is effective as of {EFFECTIVE_DATE}.</p>
 
-        <h4>お問い合わせ</h4>
+        <h4>Contact</h4>
         <p>
-          本プライバシーポリシーについてご質問やご提案がありましたら、
-          <Link href="/contact?category=app&app=verdash">こちら</Link>
-          からお気軽にお問い合わせください。
+          If you have any questions or suggestions about this privacy policy,
+          please feel free to <Link href="/contact?category=app&app=verdash">contact us here</Link>.
         </p>
       </div>
 
@@ -130,18 +125,18 @@ export default function Page() {
               href="/verdash"
               className="text-[13px] text-[#8F8F8F] no-underline transition-colors hover:text-[#EDEDED]"
             >
-              アプリ紹介
+              About the app
             </Link>
             <Link
               href="/contact?category=app&app=verdash"
               className="text-[13px] text-[#8F8F8F] no-underline transition-colors hover:text-[#EDEDED]"
             >
-              お問い合わせ
+              Contact
             </Link>
             <span className="text-[13px] text-[#8F8F8F]">© 2026 ychof</span>
           </div>
           <p className="mx-auto max-w-[520px] font-mono text-[11px] leading-[1.7] text-[#5F5F5F]">
-            {VERDASH_SHORT_NAME} は Vercel Inc. の公式アプリではありません。
+            {VERDASH_SHORT_NAME} is not an official app of Vercel Inc.
           </p>
         </div>
       </footer>

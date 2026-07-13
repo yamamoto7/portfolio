@@ -5,4 +5,4 @@ export const ANNIV_SHORT_NAME = "Anniv";
 /** アクセントカラー（アイコンのコーラルピンク／マーケ見出しと同系）。 */
 export const ANNIV_ACCENT = "#E8736B";
 /** プライバシーポリシー発効日。 */
-export const ANNIV_EFFECTIVE_DATE = "2026年6月23日";
+export const ANNIV_EFFECTIVE_DATE = "June 23, 2026";
