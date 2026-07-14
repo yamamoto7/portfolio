@@ -67,7 +67,7 @@ const OUTPUTS: Output[] = [
     links: [{ label: "Landing page", href: "/routin" }],
   },
   {
-    title: "最後はいつ？",
+    title: "Since",
     category: "Mobile App",
     tags: ["SwiftUI"],
     icon: "/contents/lasttime/icon.png",
@@ -87,7 +87,7 @@ const OUTPUTS: Output[] = [
     links: [{ label: "Landing page", href: "/verdash" }],
   },
   {
-    title: "鬼難易度数独",
+    title: "Diabolical Sudoku",
     category: "Mobile App",
     tags: ["SwiftUI"],
     icon: "/contents/mugen-sudoku/icon.png",
@@ -107,7 +107,7 @@ const OUTPUTS: Output[] = [
     links: [{ label: "Landing page", href: "/buylis" }],
   },
   {
-    title: "無限数学",
+    title: "Infinite Math",
     category: "Mobile App",
     tags: ["SwiftUI"],
     icon: "/contents/mugen-sugaku/icon.png",
@@ -117,7 +117,7 @@ const OUTPUTS: Output[] = [
     links: [{ label: "Landing page", href: "/mugen-sugaku" }],
   },
   {
-    title: "タイル交換周期",
+    title: "Tile Carpet Cycle",
     category: "Mobile App",
     tags: ["SwiftUI"],
     icon: "/contents/tile-care/icon.png",
@@ -243,10 +243,18 @@ export default function FluidPortfolio() {
 
       {/* revealed content (below the morphed name) */}
       {view !== "home" && (
-        <div className="pointer-events-none absolute inset-x-0 top-[45%] bottom-36 z-10 flex items-center justify-center px-6 sm:top-[50%] sm:bottom-28">
+        <div
+          className={`pointer-events-none absolute inset-x-0 z-10 flex items-center justify-center px-8 sm:px-12 ${
+            view === "outputs"
+              ? "top-[42%] bottom-24 sm:top-[36%] sm:bottom-16"
+              : "top-[45%] bottom-36 sm:top-[50%] sm:bottom-28"
+          }`}
+        >
           <Reveal
             key={view}
-            className="scrollbar-subtle pointer-events-auto max-h-full w-full max-w-md overflow-y-auto"
+            className={`scrollbar-subtle pointer-events-auto max-h-full w-full overflow-y-auto ${
+              view === "outputs" ? "max-w-4xl" : "max-w-md"
+            }`}
           >
             {view === "about" ? (
               <div className="flex flex-col items-center text-center">
@@ -279,7 +287,7 @@ export default function FluidPortfolio() {
                 </div>
               </div>
             ) : (
-              <div className="w-full space-y-5">
+              <div className="w-full space-y-5 sm:space-y-6">
                 {GROUPS.map((g) => {
                   const items = OUTPUTS.filter((o) => o.category === g.category);
                   if (!items.length) return null;
@@ -292,7 +300,7 @@ export default function FluidPortfolio() {
                         {g.label}
                         <span className="h-px flex-1 bg-white/10" />
                       </h3>
-                      <div className="grid grid-cols-2 gap-2">
+                      <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
                         {items.map((o) => (
                           <button
                             key={o.title}
@@ -310,7 +318,7 @@ export default function FluidPortfolio() {
                               className="h-9 w-9 shrink-0 rounded-lg object-cover ring-1 ring-white/10"
                             />
                             <span className="min-w-0 flex-1">
-                              <span className="block truncate text-[13px] font-medium leading-tight">
+                              <span className="line-clamp-2 text-[13px] font-medium leading-tight">
                                 {o.title}
                               </span>
                               <span
