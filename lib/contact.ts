@@ -1,10 +1,12 @@
 import { ROUTIN_APP_NAME } from "@/lib/routin";
 import { LASTTIME_APP_NAME } from "@/lib/lasttime";
 import { VERDASH_APP_NAME } from "@/lib/verdash";
+import { MUGEN_SUDOKU_NAME } from "@/lib/mugen-sudoku";
 import { ANNIV_APP_NAME } from "@/lib/anniv";
 import { SEEHUE_APP_NAME } from "@/lib/seehue";
 import { MARKPAD_APP_NAME } from "@/lib/markpad";
 import { HEADER_MODIFY_APP_NAME } from "@/lib/header-modify";
+import { apps } from "@/lib/apps";
 
 export interface ContactOption {
   id: string;
@@ -23,9 +25,9 @@ export const CONTACT_APPS: ContactOption[] = [
   { id: "lasttime-list", label: LASTTIME_APP_NAME },
   { id: "verdash", label: VERDASH_APP_NAME },
   { id: "buylis", label: "Buylis" },
-  { id: "mugen-sudoku", label: "鬼難易度数独" },
-  { id: "mugen-sugaku", label: "無限数学" },
-  { id: "tile-care", label: "タイル交換周期" },
+  { id: "mugen-sudoku", label: MUGEN_SUDOKU_NAME },
+  { id: "mugen-sugaku", label: apps["mugen-sugaku"].displayName },
+  { id: "tile-care", label: apps["tile-care"].displayName },
   { id: "anniv", label: ANNIV_APP_NAME },
   { id: "seehue", label: SEEHUE_APP_NAME },
   { id: "markpad", label: MARKPAD_APP_NAME },

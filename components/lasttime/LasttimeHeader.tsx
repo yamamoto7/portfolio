@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { LASTTIME_APP_NAME } from "@/lib/lasttime";
+import { LASTTIME_SHORT_NAME } from "@/lib/lasttime";
 
 /** 「最後はいつ？」の共通ヘッダー。right に CTA や戻りリンクを差し込む。 */
 export default function LasttimeHeader({ right }: { right?: React.ReactNode }) {
@@ -13,13 +13,13 @@ export default function LasttimeHeader({ right }: { right?: React.ReactNode }) {
         >
           <Image
             src="/contents/lasttime/icon.png"
-            alt="最後はいつ？"
+            alt={LASTTIME_SHORT_NAME}
             width={1024}
             height={1024}
             className="h-9 w-9 shrink-0 rounded-[9px] shadow-[0_2px_8px_rgba(42,42,40,0.14)]"
           />
           <span className="truncate font-dm text-[15px] font-bold tracking-[-0.01em] text-[#2A2A28]">
-            {LASTTIME_APP_NAME}
+            {LASTTIME_SHORT_NAME}
           </span>
         </Link>
         <div className="shrink-0">{right}</div>

@@ -1,5 +1,5 @@
 /** MarkPad の正式アプリ名（App Store 表記）。表示はすべてここを参照する。 */
-export const MARKPAD_APP_NAME = "MarkPad｜Markdownエディター";
+export const MARKPAD_APP_NAME = "MarkPad – Markdown Editor";
 /** ヘッダー／フッターで使う短いブランド名。 */
 export const MARKPAD_SHORT_NAME = "MarkPad";
 /** アクセントカラー（エディタのアクセントと同系のブルー）。 */

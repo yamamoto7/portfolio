@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MUGEN_SUDOKU_NAME } from "@/lib/mugen-sudoku";
+import { MUGEN_SUDOKU_SHORT_NAME } from "@/lib/mugen-sudoku";
 
 /** 鬼難易度数独の共通ヘッダー（和テイスト）。right に CTA や戻りリンクを差し込む。 */
 export default function MugenSudokuHeader({
@@ -17,13 +17,13 @@ export default function MugenSudokuHeader({
         >
           <Image
             src="/contents/mugen-sudoku/icon.png"
-            alt={MUGEN_SUDOKU_NAME}
+            alt={MUGEN_SUDOKU_SHORT_NAME}
             width={1024}
             height={1024}
             className="h-9 w-9 shrink-0 rounded-[9px] shadow-[0_2px_8px_rgba(35,32,25,0.16)]"
           />
           <span className="font-mincho truncate text-[18px] font-bold tracking-[0.02em] text-[#232019]">
-            {MUGEN_SUDOKU_NAME}
+            {MUGEN_SUDOKU_SHORT_NAME}
           </span>
         </Link>
         <div className="shrink-0">{right}</div>

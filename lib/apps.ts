@@ -29,8 +29,8 @@ export interface AppConfig {
 export const apps: Record<string, AppConfig> = {
   "mugen-sugaku": {
     slug: "mugen-sugaku",
-    displayName: "無限数学",
-    fullName: "無限数学",
+    displayName: "Infinite Math: Brain Puzzles",
+    fullName: "Infinite Math: Brain Puzzles",
     accent: "#7048e8",
     heroTitle: ["Mathematical literacy", "for grown-ups"],
     heroLead: "Mathematics as a liberal art, once more. From university entrance exams to elementary school entrance exams.",
@@ -57,8 +57,8 @@ export const apps: Record<string, AppConfig> = {
   },
   "tile-care": {
     slug: "tile-care",
-    displayName: "タイル交換周期",
-    fullName: "タイル交換周期",
+    displayName: "Tile Carpet Cycle",
+    fullName: "Tile Carpet Cycle",
     accent: "#0ca678",
     heroTitle: ["Track your carpet tile", "replacement cycle"],
     heroLead: "Which tile you replaced and when, and which one is next. An app that does just that.",

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ROUTIN_APP_NAME } from "@/lib/routin";
+import { ROUTIN_SHORT_NAME } from "@/lib/routin";
 
 /** Routin の共通ヘッダー。right に CTA や戻りリンクを差し込む。 */
 export default function RoutinHeader({ right }: { right?: React.ReactNode }) {
@@ -19,7 +19,7 @@ export default function RoutinHeader({ right }: { right?: React.ReactNode }) {
             className="h-9 w-9 shrink-0 rounded-[9px] shadow-[0_2px_8px_rgba(40,40,38,0.14)]"
           />
           <span className="truncate font-dm text-[15px] font-bold tracking-[-0.01em] text-[#282826]">
-            {ROUTIN_APP_NAME}
+            {ROUTIN_SHORT_NAME}
           </span>
         </Link>
         <div className="shrink-0">{right}</div>

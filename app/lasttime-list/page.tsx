@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import LasttimeHeader from "@/components/lasttime/LasttimeHeader";
-import { LASTTIME_APP_NAME } from "@/lib/lasttime";
+import { LASTTIME_APP_NAME, LASTTIME_SHORT_NAME } from "@/lib/lasttime";
 
 export const metadata: Metadata = {
   title: LASTTIME_APP_NAME,
@@ -139,7 +139,7 @@ export default function Page() {
         <div className="max-w-[460px] flex-[1_1_360px]">
           <Image
             src="/contents/lasttime/icon.png"
-            alt="最後はいつ？"
+            alt={LASTTIME_SHORT_NAME}
             width={1024}
             height={1024}
             className="mb-7 h-16 w-16 rounded-[16px] shadow-[0_6px_18px_rgba(42,42,40,0.16)]"
@@ -158,7 +158,7 @@ export default function Page() {
           </p>
           <AppStoreBadge />
         </div>
-        <Shot n={1} label="List screen of 最後はいつ？" h={2293} priority />
+        <Shot n={1} label={`List screen of ${LASTTIME_SHORT_NAME}`} h={2293} priority />
       </section>
 
       {/* 共感の導入：大切だけど忘れがち */}
@@ -234,7 +234,7 @@ export default function Page() {
           The most important things are the easiest to put off.
         </h2>
         <p className="mx-auto mb-8 max-w-[460px] text-[15px] leading-[1.9] text-[#847F74]">
-          Let 最後はいつ？ help you never forget them.
+          Let {LASTTIME_SHORT_NAME} help you never forget them.
         </p>
         <div className="flex justify-center">
           <AppStoreBadge />
