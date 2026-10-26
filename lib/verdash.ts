@@ -5,4 +5,4 @@ export const VERDASH_SHORT_NAME = "Verdash";
 /** アクセントカラー（アプリアイコンの三角と同じブルー）。 */
 export const VERDASH_ACCENT = "#337AE6";
 /** プライバシーポリシー発効日。 */
-export const VERDASH_EFFECTIVE_DATE = "June 8, 2026";
+export const VERDASH_EFFECTIVE_DATE = "October 26, 2026";

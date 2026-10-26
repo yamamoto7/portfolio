@@ -47,7 +47,7 @@ export default function Page() {
         <h4>Introduction</h4>
         <p>This is the privacy policy for &quot;{APP_NAME}&quot; (the &quot;App&quot;).</p>
         <p>
-          The App is an unofficial dashboard client provided by ychof for operating Vercel from an iPhone.
+          The App is an unofficial dashboard client provided by ychof for operating Vercel from an iPhone or Android device.
           It is not an official app provided by Vercel Inc. and is not affiliated with that company. Vercel is a trademark of Vercel Inc.
         </p>
         <p>
@@ -56,14 +56,14 @@ export default function Page() {
 
         <h4>Collection of Information</h4>
         <p>
-          The App has no server operated by ychof. No account registration is required.
-          ychof does not collect, store, or view your personal information or any data on Vercel.
+          No account registration is required.
+          ychof does not collect, store, or view your access tokens or any data on Vercel.
         </p>
 
         <h4>Handling of Access Tokens</h4>
         <p>
           Using the App requires a Vercel Personal Access Token (PAT).
-          The token you enter is stored securely only in the iOS Keychain on your device
+          The token you enter is stored securely only on your device (in the iOS Keychain, or encrypted with the Android Keystore)
           and is never transmitted to any third party, including ychof. You can delete the token from within the App at any time.
         </p>
 
@@ -84,16 +84,40 @@ export default function Page() {
           applies.
         </p>
 
-        <h4>Log Data</h4>
+        <h4>Contact Form</h4>
         <p>
-          If an error occurs in the App, diagnostic information such as your device type,
-          OS version, and the circumstances at the time of the error may be sent to Apple through Apple&apos;s mechanisms.
-          This happens only if you have permitted it in your device settings, and ychof does not receive any personally identifiable information.
+          Only when you use the in-app contact feature, the message you enter, your email address (optional), and the
+          technical information needed to investigate an issue (OS version, app version, and build number) are sent to the developer.
+          This happens only when you choose to submit, and nothing is collected automatically.
         </p>
+
+        <h4>Usage Data and Crash Reports</h4>
+        <p>
+          To improve the App&apos;s quality, the App uses Google&apos;s Firebase Analytics and Firebase Crashlytics.
+          These services anonymously collect how the App is used (for example, screens viewed, app launches,
+          and session information), crash and performance diagnostics (such as stack traces, device model,
+          OS version, and app version), and an app instance identifier.
+          Your access tokens and the contents of your Vercel projects (names, deployments, logs, environment variables, and so on) are never included.
+        </p>
+        <p>
+          This information is not linked to your identity, is not used for advertising or tracking,
+          and the advertising identifier (IDFA / Advertising ID) is not collected.
+          You can turn this off at any time under Settings &gt; Privacy &gt; &quot;Send usage and crash reports&quot;.
+        </p>
+        <p>
+          For details on how Google handles this data, see the{" "}
+          <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">
+            Firebase privacy information
+          </a>
+          .
+        </p>
+
+        <h4>Advertising</h4>
+        <p>The App does not display advertisements and does not use any advertising SDK.</p>
 
         <h4>Security</h4>
         <p>
-          Access tokens are stored in the iOS Keychain, and all communication with the Vercel API is conducted over HTTPS.
+          Access tokens are stored only on your device (iOS Keychain / Android Keystore), and all communication with the Vercel API is conducted over HTTPS.
           While we strive to protect your information, no method of electronic storage or transmission is 100% secure, and we cannot guarantee absolute security.
           Please also manage your tokens yourself, such as revoking them when they are no longer needed.
         </p>
