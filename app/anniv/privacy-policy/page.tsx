@@ -37,7 +37,7 @@ export default function Page() {
 
         <h4>Collection of Information</h4>
         <p>
-          The App has no server operated by ychof. No account registration is required.
+          No account registration is required.
           Data such as the people, birthdays, anniversaries, gift records, notes, and photos you register is stored only on your device.
           ychof does not collect, store, or view any of this content.
         </p>
@@ -67,16 +67,30 @@ export default function Page() {
           This happens only when you perform the send action and is never collected automatically.
         </p>
 
-        <h4>Advertising and Analytics</h4>
+        <h4>Usage Data and Crash Reports</h4>
         <p>
-          The App does not use any advertising SDKs or analytics tools that track your behavior.
+          To improve the App&apos;s quality, the App uses Google&apos;s Firebase Analytics and Firebase Crashlytics.
+          These services anonymously collect how the App is used (for example, screens viewed, app launches,
+          and session information), crash and performance diagnostics (such as stack traces, device model,
+          OS version, and app version), and an app instance identifier.
+          The people, birthdays, anniversaries, gift records, notes, and photos you register are never included.
+        </p>
+        <p>
+          This information is not linked to your identity, is not used for advertising or tracking,
+          and the advertising identifier (IDFA / Advertising ID) is not collected.
+          You can turn this off at any time under Settings &gt; Privacy &gt; &quot;Send usage and crash reports&quot;.
+        </p>
+        <p>
+          For details on how Google handles this data, see the{" "}
+          <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">
+            Firebase privacy information
+          </a>
+          .
         </p>
 
-        <h4>Log Data</h4>
+        <h4>Advertising</h4>
         <p>
-          If an error occurs in the App, diagnostic information such as your device type, OS version,
-          and the circumstances at the time of the error may be sent to Apple through Apple&apos;s mechanisms.
-          This happens only if you have permitted it in your device settings, and ychof does not receive any personally identifiable information.
+          The App does not display advertisements and does not use any advertising SDK.
         </p>
 
         <h4>Security</h4>
