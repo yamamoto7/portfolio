@@ -45,9 +45,6 @@ export default function Page() {
           ” is stored only on your device and, as described below, in your own iCloud.
           ychof does not collect, view, or transmit this content externally. No account registration is required.
         </p>
-        <p>
-          This app does not display advertisements, nor does it send any information that could identify you to third parties for purposes such as access analytics.
-        </p>
 
         <h4>About iCloud (iCloud Sync)</h4>
         <p>
@@ -73,11 +70,43 @@ export default function Page() {
           and are never transmitted externally.
         </p>
 
-        <h4>About Log Data</h4>
+        <h4>Data Backup</h4>
         <p>
-          If an error occurs in this app, diagnostic information such as your device type,
-          OS version, and the circumstances at the time of the error may be sent to Apple through Apple&apos;s mechanisms.
-          This only happens if you have allowed it in your device settings, and ychof does not receive any personally identifiable information.
+          The backup feature exports and imports your records and photos as a file through your own actions.
+          The storage location and sharing of the exported file are under your own control and are never transmitted to or stored on ychof&apos;s servers.
+        </p>
+
+        <h4>Contact Form</h4>
+        <p>
+          Only when you use the in-app contact feature are the message you enter, the email address you optionally provide,
+          and the technical information needed to investigate issues (OS version and app version) sent to the developer.
+          This happens only when you perform the send action and is never collected automatically.
+        </p>
+
+        <h4>Usage Data and Crash Reports</h4>
+        <p>
+          To improve the app&apos;s quality, this app uses Google&apos;s Firebase Analytics and Firebase Crashlytics.
+          These services anonymously collect how the app is used (for example, screens viewed, app launches,
+          and session information), crash and performance diagnostics (such as stack traces, device model,
+          OS version, and app version), and an app instance identifier.
+          The records, photos, and notes you create are never included.
+        </p>
+        <p>
+          This information is not linked to your identity, is not used for advertising or tracking,
+          and the advertising identifier (IDFA / Advertising ID) is not collected.
+          You can turn this off at any time under Settings &gt; Privacy &gt; &quot;Send usage and crash reports&quot;.
+        </p>
+        <p>
+          For details on how Google handles this data, see the{" "}
+          <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">
+            Firebase privacy information
+          </a>
+          .
+        </p>
+
+        <h4>Advertising</h4>
+        <p>
+          This app does not display advertisements and does not use any advertising SDK.
         </p>
 
         <h4>Security</h4>
@@ -90,7 +119,7 @@ export default function Page() {
         <h4>Children&apos;s Privacy</h4>
         <p>
           ychof does not knowingly collect personally identifiable information from children under 13.
-          This app does not collect your information externally in the first place, but if you have any concerns, please contact us.
+          This app does not collect information that identifies you, but if you have any concerns, please contact us.
         </p>
 
         <h4>Changes to This Privacy Policy</h4>

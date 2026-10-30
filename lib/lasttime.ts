@@ -7,4 +7,4 @@ export const LASTTIME_FULL_NAME = "Since — When Did You Last?";
 /** アクセントカラー（深い森の緑。アプリアイコン／マーケ見出しと同系）。 */
 export const LASTTIME_ACCENT = "#2E6A50";
 /** プライバシーポリシー発効日。 */
-export const LASTTIME_EFFECTIVE_DATE = "June 8, 2026";
+export const LASTTIME_EFFECTIVE_DATE = "October 30, 2026";
