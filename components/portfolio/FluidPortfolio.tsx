@@ -414,15 +414,7 @@ export default function FluidPortfolio() {
             </div>
 
             {selected.image && (
-              <div className="relative mb-3 h-52 w-full overflow-hidden rounded-lg bg-white/5">
-                <Image
-                  src={selected.image}
-                  alt={selected.title}
-                  fill
-                  sizes="(max-width: 768px) 90vw, 400px"
-                  className="object-contain"
-                />
-              </div>
+              <OutputImage key={selected.image} src={selected.image} alt={selected.title} />
             )}
 
             <p className="text-[13px] leading-relaxed text-white/75">{selected.description}</p>
@@ -450,6 +442,38 @@ export default function FluidPortfolio() {
         </div>
       )}
     </main>
+  );
+}
+
+// Detail-modal visual. Most outputs are portrait phone screenshots, so a fixed
+// landscape frame left them shrunk and floating in empty side space. Instead we
+// size the frame to the image's own aspect ratio once it loads (capped in
+// height), so it always fits snugly whether portrait, square, or landscape.
+function OutputImage({ src, alt }: { src: string; alt: string }) {
+  const [ratio, setRatio] = useState<number | null>(null);
+  return (
+    <div className="mb-3 flex justify-center">
+      <div
+        className="relative overflow-hidden rounded-lg bg-white/5"
+        style={{
+          aspectRatio: ratio ?? 3 / 4,
+          height: "min(46vh, 320px)",
+          maxWidth: "100%",
+        }}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes="(max-width: 768px) 90vw, 400px"
+          className="object-contain"
+          onLoad={(e) => {
+            const img = e.currentTarget;
+            if (img.naturalHeight > 0) setRatio(img.naturalWidth / img.naturalHeight);
+          }}
+        />
+      </div>
+    </div>
   );
 }
 
